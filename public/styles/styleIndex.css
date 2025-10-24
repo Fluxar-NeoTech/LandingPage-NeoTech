@@ -1,0 +1,1059 @@
+:root {
+    --bg: #ffffff;
+    --text: #111;
+    --muted: #374151;
+    --white: #fff;
+    --primary-50: #f52d9b;
+    --primary-100: #8E52F5;
+    --primary-200: #7A3FF2;
+    --primary-300: #6F1FB9;
+    --purple-700: #650082;
+    --purple-800: #9c14c2;
+    --radius: 14px;
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, .06);
+    --transition-fast: .2s;
+    --fontsizeTitulo1: 4rem;
+    --fontsizeTitulo2: 3rem;
+    --fontsizeTitulo3: 2.4rem;
+}
+
+:root {
+    /* ==========================
+          CORES E VARIÁVEIS
+    =========================== */
+    --bg: #ffffff;
+    --text: #ffffff;
+    --muted: #374151;
+    --white: #fff;
+    --primary-50: #f52d9b;
+    --primary-100: #8E52F5;
+    --primary-200: #7A3FF2;
+    --primary-300: #6F1FB9;
+    --purple-700: #650082;
+    --purple-800: #9c14c2;
+    --radius: 14px;
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, .06);
+    --transition-fast: .2s;
+
+    /* ==========================
+          FONTES E TIPOGRAFIA
+    =========================== */
+    --font-title: 'Montserrat', sans-serif;
+    /* para títulos principais */
+    --font-subtitle: 'Poppins', sans-serif;
+    /* subtítulos e headers médios */
+    --font-body: 'Roboto', sans-serif;
+    /* textos e parágrafos */
+
+    /* tamanhos padronizados */
+    --fontsizeTitulo1: 4rem;
+    /* hero titles */
+    --fontsizeTitulo2: 2.4rem;
+    /* section titles */
+    --fontsizeTitulo3: 1.4rem;
+    /* card titles / subtítulos */
+    --fontsizeBody: 1.4rem;
+    /* parágrafos padrão */
+    --lineheightBody: 1.7;
+}
+
+/* ==========================
+       APLICAÇÃO GLOBAL
+  ========================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-title);
+    font-weight: 800;
+    color: var(--text);
+}
+
+h2 {
+    font-size: var(--fontsizeTitulo2);
+}
+
+h3 {
+    font-size: var(--fontsizeTitulo3);
+}
+
+p,
+li,
+a,
+button,
+input {
+    font-family: var(--font-body);
+    font-size: var(--fontsizeBody);
+    line-height: var(--lineheightBody);
+    color: var(--text);
+}
+
+/* Subtítulos específicos */
+.subtitle,
+.section-subtitle {
+    font-family: var(--font-subtitle);
+    font-weight: 600;
+    color: var(--purple-800);
+}
+
+
+html,
+body {
+    background-color: white;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    /* impede o scroll lateral */
+}
+
+
+/* ======================================================
+     HEADER
+  ====================================================== */
+.header {
+    width: 100%;
+    height: 70px;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    border-bottom-left-radius: 1.3rem;
+    border-bottom-right-radius: 1.3rem;
+}
+
+.container-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.logo img {
+    width: 10rem;
+    margin-left: 5rem;
+}
+
+/* Navegação */
+.nav-menu ul {
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    transition: color .3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--purple-800);
+    font-weight: 700;
+}
+
+/* ==========================
+   BOTÕES HEADER
+========================== */
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-right: 3rem;
+}
+
+/* ===== Botão Cadastrar (principal) ===== */
+.btn-cadastrar {
+    font-family: var(--font-subtitle);
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: var(--purple-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
+}
+
+.btn-cadastrar:hover {
+    transform: translateY(-2px);
+}
+
+.btn-cadastrar:active {
+    transform: translateY(1px);
+}
+
+/* ===== Botão Entrar (secundário) ===== */
+.btn-entrar {
+    font-family: var(--font-subtitle);
+    font-size: 1rem;
+    padding: 6px 28px;
+    border-radius: 12px;
+    background: transparent;
+    border: 2px solid var(--purple-800);
+    color: var(--purple-800);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
+}
+
+.btn-entrar:hover {
+    background: var(--purple-800);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(156, 20, 194, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-entrar:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(156, 20, 194, 0.25);
+}
+
+/* ======================================================
+     HERO
+  ====================================================== */
+.inicio-content {
+    background-color: var(--purple-700);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 90dvh;
+    width: 100%;
+    padding: 1.5rem 2.5rem;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Texto */
+.text-inicio {
+    margin-top: 10%;
+    width: 44rem;
+    margin-left: 8rem;
+}
+
+.text-inicio h2 {
+    line-height: 1.3;
+    transform: scaleX(1.05);
+    transform-origin: left;
+    font-weight: 700;
+    max-width: 80%;
+    word-spacing: 10px;
+    color: var(--bg);
+    margin-bottom: 0.6rem;
+}
+
+.text-inicio p {
+    margin-top: 20px;
+    transform: scaleX(1.05);
+    transform-origin: left;
+    color: rgb(224, 224, 224);
+    max-width: 90%;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    word-spacing: 1px;
+    font-weight: 500;
+}
+
+/* Botão principal */
+.divLinkInicio {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    gap: 28px;
+}
+
+.button-inicio {
+    background: white;
+    background-size: 300%;
+    animation: brilho 6s linear infinite;
+    color: var(--purple-700);
+    font-size: 1.2rem;
+    border: none;
+    padding: 8px 40px;
+    border-radius: 35px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(90, 0, 180, 0.3);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.button-inicio:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.linkNeoTech {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 5px;
+    text-decoration-color: #fff;
+    transition: opacity 0.3s ease;
+}
+
+.linkNeoTech:hover {
+    opacity: 0.8;
+}
+
+/* Mockup */
+.celularInicio {
+    width: 33rem;
+    height: 100%;
+    z-index: 3;
+    position: relative;
+}
+
+.celularImgInicio {
+    width: 32rem;
+    top: 3rem;
+    position: absolute;
+    right: 6rem;
+    height: 40rem;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.corteInicio {
+    width: 100%;
+    top: 40dvh;
+    height: 30rem;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* ======================================================
+     SEÇÃO "O QUE RESOLVEMOS"
+  ====================================================== */
+.resolvemos {
+    height: 63rem;
+    background: #fff;
+    padding: 2rem;
+}
+
+.rz-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.rz-title {
+    font-weight: 800;
+    color: var(--purple-700);
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.rz-subtitle {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    width: 60%;
+    line-height: 1.5;
+    margin: 0 auto 5rem;
+}
+
+/* Cards */
+.rz-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.rz-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.4rem 4rem;
+    width: 390px;
+    min-height: 480px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #f1e9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rz-card:hover {
+    transform: translateY(-5px);
+}
+
+.rz-head {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.rz-icon {
+    margin-bottom: 0.6rem;
+}
+
+.rz-card-title {
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.rz-card-text {
+    font-size: 1.2rem;
+    text-align: justify;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* Cores + Glow */
+.is-purple {
+    box-shadow: 0 0 14px rgba(96, 0, 160, 0.4);
+}
+
+.is-purple .rz-icon,
+.is-purple .rz-card-title {
+    color: #850289;
+}
+
+.is-pink {
+    box-shadow: 0 0 16px rgba(245, 45, 155, 0.3);
+}
+
+.is-pink .rz-icon,
+.is-pink .rz-card-title {
+    color: #f52d9b;
+}
+
+.is-orange {
+    box-shadow: 0 0 16px rgba(255, 138, 5, 0.3);
+}
+
+.is-orange .rz-icon,
+.is-orange .rz-card-title {
+    color: #ff8a05;
+}
+
+/* ======================================================
+     SEÇÃO "A NEOTECH"
+  ====================================================== */
+.corteNeoTechCima {
+    width: 100%;
+    top: 200dvh;
+    height: 10rem;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sobreNeoTech {
+    background: var(--purple-700);
+    color: #fff;
+    padding: 0rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nt-container {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.nt-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.nt-title img {
+    width: 20rem;
+    margin-bottom: 3rem;
+}
+
+.nt-text p {
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: #f5f5f5;
+}
+
+.nt-text strong {
+    font-weight: 700;
+    color: #fff;
+}
+
+.nt-img {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.imgNot {
+    margin-top: 2.5rem;
+    width: 35rem;
+    z-index: 2;
+    position: relative;
+}
+
+.corteNeoTechBaixo {
+    width: 100%;
+    top: 149pc;
+    height: 10rem;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ===========================
+   SEÇÃO "O FLUXAR"
+=========================== */
+.sobreFluxar {
+    background: #fff;
+    height: 60rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    padding: 0rem 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== Container interno ===== */
+.sobreFluxar>div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 4rem;
+    max-width: 1300px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* ===== Imagem da mão com celular ===== */
+.maoCelularFluxar {
+    width: 500px;
+    height: 50rem;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    transform: translateY(7rem);
+}
+
+/* ===== Texto ===== */
+.fx-text {
+    flex: 1;
+    display: flex;
+    text-align: end;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    word-spacing: 7px;
+    max-width: 603px;
+    margin-top: 2.5rem;
+    margin-right: 30px;
+}
+
+.fx-title img {
+    width: 17rem;
+    margin-bottom: 1.4rem;
+}
+
+/* ===== Parágrafos ===== */
+.fx-text p {
+    color: #222;
+    line-height: 1.8;
+    text-align: end;
+    margin-bottom: 2.6rem;
+}
+
+.fx-text strong {
+    font-weight: 700;
+    color: #000;
+}
+
+/* ======================================================
+     SEÇÃO "COMO O FLUXAR MELHORA SUA EMPRESA"
+====================================================== */
+.melhoraFluxar {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+    width: 100%;
+    height: 80rem;
+    padding: 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 8;
+}
+
+/* ===== Corte Branco Superior ===== */
+.corteFluxarMelhoramos {
+    position: absolute;
+    top: 5pc;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 25rem;
+    z-index: 3;
+}
+
+/* ===== TÍTULO ===== */
+.titleMelhora {
+    text-align: center;
+    position: absolute;
+    top: 0pc;
+    left: 20%;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.titleMelhora h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--purple-700);
+    line-height: 1.35;
+    letter-spacing: 7px;
+}
+
+.risco {
+    position: absolute;
+    bottom: 5rem;
+    left: 67%;
+    transform: translateX(-50%);
+    width: 20rem;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.container-melhora {
+    width: 100vw;
+    margin-top: 8pc;
+    display: flex;
+    justify-content: end;
+}
+
+.melhora-container {
+    display: flex;
+    align-items: center;
+    background-color: #650082;
+    gap: 8rem;
+    border-bottom-left-radius: 10pc;
+    max-width: 95%;
+    height: 1000px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* ===== BLOCO DE TEXTO ===== */
+.texto-melhora {
+    color: #fff;
+    border-radius: 40px;
+    padding: 3.2rem 4rem;
+    width: 900px;
+    margin-left: 5rem;
+    margin-top: 5rem;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-melhora h3 {
+    font-weight: 800;
+    max-width: 100%;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 2rem;
+}
+
+.texto-melhora h3 span {
+    color: #ff8a05;
+    /* destaque laranja */
+}
+
+.texto-melhora p {
+    line-height: 1.8;
+    font-weight: 600;
+    color: #f5f5f5;
+    max-width: 100%;
+}
+
+/* ===== IMAGEM DO CELULAR ===== */
+.img-melhora {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 6pc;
+}
+
+.img-melhora img {
+    width: 580px;
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+    z-index: 2;
+}
+
+/* ======================================================
+     SEÇÃO "DADOS E ANÁLISES"
+====================================================== */
+.dadosFluxar {
+    background: var(--bg);
+    padding: 6rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    width: 100%;
+}
+
+.dados-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    width: 100%;
+}
+
+/* ===== Cada bloco ===== */
+.dados-card-decisao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--purple-700);
+    width: 95%;
+    height: 40pc;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    padding: 4rem 5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dados-card-analise {
+    display: flex;
+    margin-left: 5%;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--purple-700);
+    width: 95%;
+    height: 40pc;
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    padding: 4rem 5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dados-card-estoque {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--purple-700);
+    width: 95%;
+    height: 40pc;
+    border-top-right-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    padding: 4rem 5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dados-card-Ia {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    align-items: center;
+    background: var(--purple-700);
+    width: 95%;
+    height: 50pc;
+    border-top-left-radius: 5rem;
+    border-bottom-left-radius: 5rem;
+    padding: 4rem 5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dados-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Texto ===== */
+.dados-texto {
+    flex: 1;
+    color: #fff;
+    padding-right: 3rem;
+}
+
+.dados-texto h3 {
+    width: 70%;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.dados-texto h3 span {
+    color: #ff8a05;
+}
+
+.dados-texto p {
+    line-height: 1.8;
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+/* ===== Imagem ===== */
+.dados-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dados-img img {
+    width: 500px;
+    filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
+    transform: rotate(-4deg);
+    border-radius: 25px;
+}
+
+.dados-card-estoque img {
+    width: 580px;
+}
+
+.dados-card-Ia img {
+    width: 780px;
+}
+
+/* ===== Alterna lado do celular (2º card invertido) ===== */
+.dados-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.dados-card:nth-child(even) .dados-texto {
+    padding-left: 3rem;
+    padding-right: 0;
+}
+
+.corteRoxoIa {
+    width: 95%;
+    top: 478pc;
+    height: 18rem;
+    right: 0;
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* ======================================================
+     SEÇÃO "IDEALIZAÇÃO DO PROJETO"
+====================================================== */
+.idealizacao {
+    background: #fff;
+    padding: 14rem 3.5rem;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.idealizacao-container {
+    max-width: 800px;
+    /* antes 1000px */
+    width: 100%;
+    border-left: 4px solid var(--purple-700);
+    /* antes 5px */
+    padding-left: 2rem;
+    /* antes 3rem */
+}
+
+.idealizacao-titulo {
+    /* antes 2.5rem */
+    font-weight: 800;
+    color: var(--purple-700);
+    margin-bottom: 1.5rem;
+    /* antes 2rem */
+}
+
+.idealizacao-texto {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+
+.idealizacao-texto strong {
+    color: var(--purple-800);
+    font-weight: 700;
+}
+
+/* ======================================================
+     FOOTER - NEOTECH STYLE
+====================================================== */
+.footer {
+    background: linear-gradient(360deg, #390048,#390048 ,var(--purple-700));
+    color: #fff;
+    padding: 4rem 6rem 2rem 6rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 3rem;
+    justify-items: center;
+    align-items: start;
+}
+
+.footer-logo img {
+    width: 150px;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+.footer-logo p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 300px;
+    color: #f0f0f0;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    font-family: var(--font-subtitle);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #e7e7e7;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-50);
+    transform: translateX(4px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-icons a img {
+    width: 26px;
+    height: 26px;
+    filter: brightness(90%);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.15);
+    filter: brightness(120%) drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+/* Linha final */
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.2rem;
+    font-size: 0.95rem;
+    color: #ddd;
+    font-family: var(--font-body);
+}
+
+.footer-bottom .heart {
+    color: var(--primary-50);
+    animation: pulse 1.6s infinite;
+}
+
+/* ======================================================
+     ANIMAÇÕES
+  ====================================================== */
+@keyframes brilho {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ======================================================
+     ANIMAÇÃO FADE REVEAL
+====================================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 1.5s ease, transform 2s ease;
+}
+
+.reveal[data-reveal="up"] {
+    transform: translateY(56px);
+}
+
+.reveal[data-reveal="left"] {
+    transform: translateX(-56px);
+}
+
+.reveal[data-reveal="leftSection"] {
+    transform: translateX(-808px);
+}
+
+.reveal[data-reveal="right"] {
+    transform: translateX(56px);
+}
+
+.reveal[data-reveal="rightSection"] {
+    transform: translateX(808px);
+}
+
+.reveal.is-in {
+    opacity: 1;
+    transform: translate(0, 0);
+}
