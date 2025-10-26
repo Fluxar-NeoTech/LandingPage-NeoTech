@@ -38,6 +38,9 @@ body {
     padding: 28px;
     box-shadow: 0 12px 40px rgba(70, 0, 90, 0.06), 0 4px 12px rgba(15, 15, 20, 0.04);
     border: 1px solid rgba(111, 27, 185, 0.06);
+    position: relative;
+    top: 125px;
+    left: 80px;
 }
 
 .caixa__header {
@@ -95,6 +98,34 @@ legend {
     gap: 14px;
     margin-top: 10px;
 }
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.FluxarLogoSECTION{
+    width: 50%;
+}
+#logoFluxarAPP {
+    height: 150px; 
+    width: auto;
+    position: relative;
+    top: 340px;
+    left: 310px;
+}
+#logo-container {
+    background-color: var(--purple-800);
+    height: 864px;
+    padding-right: 220px;
+    margin-left: -267px;
+    padding-right: 100px;
+}
+
+.formSECTION{
+    width: 50%;
+}
+
 
 .inputs {
     position: relative;
@@ -221,21 +252,4 @@ legend {
         width: 42px;
         height: 42px;
     }
-}
-
-
-
-
-#logoFluxarAPP {
-    height: 150px; 
-    width: auto;
-    margin-top: 350px;
-    margin-left: 210px;
-}
-#logo-container {
-    background-color: #FEFAFF;
-    height: 860px;
-    padding-right: 220px;
-    margin-left: -267px;
-    padding-right: 100px;
 }

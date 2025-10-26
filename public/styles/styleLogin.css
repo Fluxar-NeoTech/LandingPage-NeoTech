@@ -31,7 +31,6 @@ body {
     justify-content: center;
     padding: 32px;
 }
-
 /* Caixa central (card) */
 .caixa {
     width: min(520px, 94vw);
@@ -41,6 +40,8 @@ body {
     box-shadow: 0 12px 40px rgba(70, 0, 90, 0.06), 0 4px 12px rgba(15, 15, 20, 0.04);
     border: 1px solid rgba(111, 27, 185, 0.06);
     position: relative;
+    top: 220px;
+    left: 100px;    
 }
 
 /* Topo com logo e título */
@@ -88,6 +89,34 @@ fieldset {
     gap: 14px;
     margin-top: 16px;
 }
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.FluxarLogoSECTION{
+    width: 50%;
+}
+#logoFluxarAPP {
+    height: 150px; 
+    width: auto;
+    position: relative;
+    top: 340px;
+    left: 310px;
+}
+#logo-container {
+    background-color: var(--purple-800);
+    height: 864px;
+    padding-right: 220px;
+    margin-left: -267px;
+    padding-right: 100px;
+}
+
+.formSECTION{
+    width: 50%;
+}
+
 
 /* input wrapper com label animado */
 .inputs {
@@ -143,7 +172,7 @@ fieldset {
 
 .icon-toggle {
     width: 36px;
-    height: 36px;
+    height: 30px;
     border-radius: 8px;
     display: grid;
     place-items: center;
@@ -241,19 +270,4 @@ legend {
         border-radius: 10px;
         font-size: .95rem;
     }
-}
-
-
-#logoFluxarAPP {
-    height: 150px; 
-    width: auto;
-    margin-top: 350px;
-    margin-left: 210px;
-}
-#logo-container {
-    background-color: #FEFAFF;
-    height: 860px;
-    padding-right: 220px;
-    margin-left: -267px;
-    padding-right: 100px;
 }

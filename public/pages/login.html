@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Entrar • Fluxar</title>
 
   <!-- fonte parecida com a do projeto -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/public/styles/">
+  <link rel="stylesheet" href="/public/styles/styleLogin.css">
 </head>
+
 <body>
-  <div id="logo-container">
-    <img src="/assets/icons/FluxarLogoAPP.png" alt="Logo do aplicativo fluxar" id="logoFluxarAPP">
-  </div>
-
-  <div class="caixa" role="main" aria-labelledby="loginTitle">
-    <div class="caixa__header">
-      <!-- aqui você pode trocar por sua logo real (img) -->
-      <div>
-        <h1 id="loginTitle" class="caixa__title">Entrar no Fluxar</h1>
-        <div class="caixa__sub">Gerencie seu estoque com mais segurança e rapidez</div>
+  <main>
+    <section class="FluxarLogoSECTION">
+      <div id="logo-container">
+        <img src="/public/assets/icons/FluxarLogoAPP.png" alt="Logo do aplicativo fluxar" id="logoFluxarAPP">
       </div>
-    </div>
+    </section>
+    <section class="">
 
-    <form id="form" autocomplete="on" novalidate>
-      <fieldset>
-        <legend>Conta</legend>
-
-        <div class="form-grid">
-          <div class="inputs">
-            <input type="text" name="email" id="email" class="inputUser" placeholder=" " required autocomplete="email" />
-            <label for="email" class="labelinput">Email</label>
-          </div>
-
-          <div class="inputs inputs--with-icon">
-            <input type="password" name="senha" id="senha" class="inputUser" placeholder=" " required autocomplete="current-password" />
-            <label for="senha" class="labelinput">Senha</label>
-            <!-- ícone toggler (JS pequeno pode alternar) -->
-            <button type="button" class="icon-toggle" aria-label="Mostrar senha" id="togglePwd">👁️</button>
-          </div>
-
-          <button type="submit" id="submit">Entrar no Fluxar</button>
-
-          <div class="row" aria-hidden="false">
-            <a href="#" id="forgot">Esqueci minha senha</a>
-            <span>Não tem conta? <a href="cadastro.html" id="signup">Criar conta</a></span>
+      <div class="caixa" role="main" aria-labelledby="loginTitle">
+        <div class="caixa__header">
+          <!-- aqui você pode trocar por sua logo real (img) -->
+          <div>
+            <h1 id="loginTitle" class="caixa__title">Entrar no Fluxar</h1>
+            <div class="caixa__sub">Gerencie seu estoque com mais segurança e rapidez</div>
           </div>
         </div>
+        <form id="form" autocomplete="on" novalidate>
+          <fieldset>
+            <legend>Conta</legend>
+            <div class="form-grid">
+              <div class="inputs">
+                <input type="text" name="email" id="email" class="inputUser" placeholder=" " required
+                  autocomplete="email" />
+                <label for="email" class="labelinput">Email</label>
+              </div>
+              <div class="inputs inputs--with-icon">
+                <input type="password" name="senha" id="senha" class="inputUser" placeholder=" " required
+                  autocomplete="current-password" />
+                <label for="senha" class="labelinput">Senha</label>
+                <button type="button" class="icon-toggle" aria-label="Mostrar senha" id="togglePwd">👁️</button>
+              </div>
+              <!-- ícone toggler (JS pequeno pode alternar) -->
+              <button type="submit" id="submit">Entrar no Fluxar</button>
+              <div class="row" aria-hidden="false">
+                <a href="#" id="forgot">Esqueci minha senha</a>
+                <span>Não tem conta? <a href="cadastro.html" id="signup">Criar conta</a></span>
+              </div>
+
+            </div>
+      </div>
       </fieldset>
-    </form>
-  </div>
+      </form>
+    </section>
+
+  </main>
 
   <script>
     // toggle show/hide password (pequeno acessível)
@@ -75,4 +82,5 @@
     });
   </script>
 </body>
+
 </html>

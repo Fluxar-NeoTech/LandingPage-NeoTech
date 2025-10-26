@@ -14,26 +14,34 @@
 <body>
     <header class="header">
         <div class="container-header">
-            <div class="logo reveal" data-reveal="up">
-                <img src="assets/icons/NeoTechLogo.png" alt="Logo NeoTech"> <!-- adicionar a logo -->
+            <div class="logo reveal" data-reveal="down">
+                <img src="assets/icons/NeoTechLogo.png" alt="Logo NeoTech">
             </div>
 
-            <nav class="nav-menu"> <!-- parte dos links do header -->
+            <!-- ícone hamburguer (novo) -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li class="reveal" data-reveal="left"><a href="">Início</a></li>
-                    <li class="reveal" data-reveal="left"><a href="#NeoTech">NeoTech</a></li>
-                    <li class="reveal" data-reveal="left"><a href="#Fluxar">Fluxar</a></li>
-                    <li class="reveal" data-reveal="left"><a href="#">Planos</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html">Início</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html#NeoTech">NeoTech</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html#Fluxar">Fluxar</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/pages/planos.html">Planos</a></li>
                     <li class="reveal" data-reveal="left"><a href="#">Sobre Nós</a></li>
                 </ul>
             </nav>
 
-            <div class="buttons reveal" data-reveal="down"> <!-- onde iremos adiquirir clientes (cadastro e login) -->
+            <div class="buttons reveal" data-reveal="down">
                 <a href="pages/singUp.html"><button class="btn-cadastrar">Cadastrar</button></a>
                 <a href="pages/login.html" target="_blank"><button class="btn-entrar">Entrar</button></a>
             </div>
         </div>
     </header>
+
 
     <main>
         <section class="inicio-content">
@@ -109,7 +117,7 @@
         <section class="sobreNeoTech" id="NeoTech">
             <img src="assets/images/corteDeitado.png" alt="" class="corteNeoTechCima">
             <div class="nt-container">
-                <div class="nt-text reveal" data-reveal="left">
+                <div class="nt-text">
                     <div class="nt-title">
                         <img class="img-nt" src="assets/images/PalavraNeoTechComTraco.png" alt="">
                     </div>
@@ -123,19 +131,22 @@
                                 industriais mais eficientes e ecológicos.</strong></p>
                     </div>
                 </div>
-                <div class="nt-img reveal" data-reveal="up">
-                    <img class="imgNot" src="assets/images/neoTechNotBook.png" alt="">
+                <div class="nt-img">
+                    <img class="imgNot" src="assets/images/ neoTechNotBook.png" alt="">
                 </div>
             </div>
             <img src="assets/images/corteEmPe.png" alt="" class="corteNeoTechBaixo">
         </section>
-        <section class="sobreFluxar">
+        <section class="sobreFluxar" id="Fluxar">
             <div class="introduction">
                 <img src="assets/images/mão com celular fluxar (1) 2.png" alt="" class="maoCelularFluxar reveal"
                     data-reveal="left">
                 <div class="fx-text reveal" data-reveal="right">
                     <div class="fx-title">
                         <img src="assets/images/O fluxar.png" alt="">
+                    </div>
+                    <div class="fx-titleRoxo">
+                        <img src="assets/icons/FLuxarLogoRoxa.png" alt="">
                     </div>
                     <div>
                         <p>O <strong>Fluxar</strong> surge como a ferramenta principal para <strong>gestores e
@@ -152,13 +163,13 @@
                 </div>
             </div>
         </section>
-        <section class="melhoraFluxar reveal" data-reveal="rightSection">
+        <section class="melhoraFluxar">
             <img src="assets/images/corteBrancoMelhoramos.png" alt="" class="corteFluxarMelhoramos">
             <div class="titleMelhora reveal" data-reveal="up">
                 <img src="assets/images/risco.png" alt="" class="risco">
                 <h2>COMO O FLUXAR<br>MELHORA SUA EMPRESA?</h2>
             </div>
-            <div class="container-melhora">
+            <div class="container-melhora reveal"data-reveal="rightSection">
                 <div class="melhora-container">
                     <div class="texto-melhora">
                         <h3>TRANSFORMA <span>EXCESSO</span> EM <span>OPORTUNIDADE</span></h3>
@@ -259,15 +270,17 @@
                 </p>
             </div>
         </section>
-        <section class="nossa-equipe">
-            <div>
-                <h3></h3>
-                <div>
-                    <img src="assets/images/imagem neotech.png" alt="">
+        <section class="nossa-equipe reveal" data-reveal="up">
+            <div class="equipe-container">
+                <h3 class="equipe-title">Nossa Equipe</h3>
+
+                <div class="equipe-img-wrapper">
+                    <a href=""><img src="assets/images/imagem neotech.png" alt="Equipe NeoTech" class="equipe-img"></a>
                 </div>
-                <img src="assets/images/corteRoxoFinal.png" alt="">
             </div>
+            <img src="assets/images/corteRoxoFinal.png" alt="Corte decorativo" class="equipe-corte">
         </section>
+
 
     </main>
     <footer class="footer">
@@ -314,16 +327,17 @@
                     <a href="">esquecioemail@gmail.com</a>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="footer-bottom">
-            <p>© 2025 NeoTech. Todos os direitos reservados. <span class="heart">❤</span> Desenvolvido por Fluxares
-                Sousa.</p>
+            <p>© 2025 NeoTech. Todos os direitos reservados. <span class="heart">❤</span> Desenvolvido por Fluxares.</p>
         </div>
     </footer>
 
     <script src="script/reveal.js"></script>
+    <script src="script/menuHamburguer.js"></script>
+    <script src="script/footer.js"></script>
 </body>
 
 </html>
