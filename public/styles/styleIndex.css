@@ -1408,11 +1408,11 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media (min-width: 480px) {
 
     /* CÓPIA IDÊNTICA DO BLOCO DE 360px */
     /* ====== TODO O CONTEÚDO ABAIXO É O MESMO ====== */
-    .container-header {
+    container-header {
         margin: 0px;
         padding: 0;
     }
@@ -1422,10 +1422,12 @@ body {
         margin-left: 10px;
     }
 
+    /* ===== MENU MOBILE ===== */
     .nav-menu {
         position: fixed;
         top: 0;
         left: 100%;
+        /* começa fora da tela, à direita */
         width: 100%;
         max-width: 75%;
         height: 100vh;
@@ -1440,10 +1442,13 @@ body {
         z-index: 300;
     }
 
+    /* ===== MENU ATIVO ===== */
     .nav-menu.active {
         left: 100%;
+        /* cola na esquerda, cobrindo header */
     }
 
+    /* ===== HEADER ===== */
     header.header {
         transition: transform 0.4s ease;
         z-index: 200;
@@ -1454,6 +1459,7 @@ body {
         transform: translateX(-75%);
     }
 
+    /* ===== ESCURECIMENTO DO FUNDO ===== */
     body.menu-open::before {
         content: "";
         position: fixed;
@@ -1463,6 +1469,7 @@ body {
         z-index: 100;
     }
 
+    /* ===== LINKS ===== */
     .nav-menu ul {
         list-style: none;
         display: flex;
@@ -1485,6 +1492,7 @@ body {
         text-shadow: 0 0 10px rgba(255, 138, 5, 0.4);
     }
 
+    /* ===== LINHA DIVISÓRIA ===== */
     .nav-menu::after {
         content: "";
         display: block;
@@ -1494,6 +1502,7 @@ body {
         margin: 2rem auto;
     }
 
+    /* ===== BOTÕES ===== */
     .nav-menu .btn-cadastrar,
     .nav-menu .btn-entrar {
         width: 180px;
@@ -1502,6 +1511,7 @@ body {
         margin: 0.5rem auto;
     }
 
+    /* ===== ESCONDE BOTÕES ORIGINAIS ===== */
     .buttons {
         display: none;
     }
@@ -1523,6 +1533,7 @@ body {
         transition: all 0.4s ease;
     }
 
+    /* ====== ESTADO ATIVO ====== */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translateY(13px);
         background: var(--purple-700);
@@ -1542,6 +1553,7 @@ body {
         height: 90dvh;
     }
 
+    /* Texto */
     .text-inicio {
         display: flex;
         padding-top: 3rem;
@@ -1572,6 +1584,7 @@ body {
         font-weight: 400;
     }
 
+    /* Botão principal */
     .divLinkInicio {
         display: flex;
         align-items: center;
@@ -1614,6 +1627,7 @@ body {
         opacity: 0.8;
     }
 
+    /* Mockup */
     .celularInicio {
         display: none;
     }
@@ -1628,6 +1642,51 @@ body {
         pointer-events: none;
     }
 
+    /* ===== SEÇÃO "O QUE RESOLVEMOS" ===== */
+    .corteNeoTechCima {
+        top: 279dvh;
+        height: 3rem;
+    }
+
+    .resolvemos {
+        height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .rz-title {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .rz-subtitle {
+        font-size: 0.9rem;
+        width: 90%;
+        margin-bottom: 3rem;
+    }
+
+    .rz-cards {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .rz-card {
+        width: 100%;
+        min-height: auto;
+        padding: 1.8rem;
+    }
+
+    .rz-card-title {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .rz-card-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    /* ===== SEÇÃO "A NEOTECH" ===== */
     .sobreNeoTech {
         width: 100%;
         flex-direction: column;
@@ -1635,7 +1694,269 @@ body {
         padding: 6rem 0rem;
     }
 
-    /* ===== FOOTER COPIADO ===== */
+    .nt-container {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .nt-title img {
+        width: 10rem;
+        margin: 0 auto 2rem auto;
+    }
+
+    .nt-text p {
+        font-size: 0.8rem;
+        padding: 1rem;
+        line-height: 1.4;
+    }
+
+    .imgNot {
+        display: none;
+    }
+
+    .corteNeoTechBaixo {
+        top: 376dvh;
+        height: 3rem;
+    }
+
+    /* ===== SEÇÃO "O FLUXAR" ===== */
+    .sobreFluxar {
+        display: flex;
+        padding-top: 0rem;
+        flex-direction: column;
+        justify-content: left;
+        height: 30rem;
+        margin-top: 30%;
+        width: 100%;
+        box-shadow: 0 16px 20px -12px rgba(0, 0, 0, 0.25);
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        padding: 16px;
+    }
+
+    .maoCelularFluxar {
+        display: none;
+    }
+
+    .fx-text {
+        text-align: center;
+        margin: 0;
+        gap: 1rem;
+    }
+
+    .fx-title img {
+        display: none;
+    }
+
+    .fx-titleRoxo {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .fx-titleRoxo img {
+        width: 11rem;
+    }
+
+    .fx-text p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* ===== SEÇÃO "COMO O FLUXAR MELHORA SUA EMPRESA" ===== */
+    .melhoraFluxar {
+        padding: 3rem 1.5rem;
+        height: auto;
+    }
+
+    .titleMelhora {
+        position: static;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .titleMelhora h2 {
+        font-size: 1.7rem;
+        letter-spacing: 2px;
+    }
+
+    .risco {
+        width: 8rem;
+        left: 74%;
+        bottom: 4.2rem;
+    }
+
+    .corteFluxarMelhoramos {
+        position: absolute;
+        top: 9pc;
+        left: 0;
+        pointer-events: none;
+        width: 100%;
+        height: 10rem;
+        z-index: 3;
+    }
+
+    .melhora-container {
+        gap: 8rem;
+        border-bottom-right-radius: 0;
+        max-width: 95%;
+        height: 500px;
+        width: 100%;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 1.5s ease, transform 2s ease;
+    }
+
+    .reveal[data-reveal="up"] {
+        transform: translateY(56px);
+    }
+
+    .reveal[data-reveal="left"] {
+        transform: translateX(-56px);
+    }
+
+    .reveal[data-reveal="leftSection"] {
+        transform: translateX(-170px);
+    }
+
+    .reveal[data-reveal="right"] {
+        transform: translateX(56px);
+    }
+
+    .reveal[data-reveal="rightSection"] {
+        transform: translateX(170px);
+    }
+
+    .reveal.is-in {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .container-melhora {
+        margin-top: 2pc;
+    }
+
+    .texto-melhora {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+        padding-top: 8rem;
+    }
+
+    .texto-melhora h3 {
+        width: 100%;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .texto-melhora p {
+        font-size: 0.9rem;
+    }
+
+    .img-melhora {
+        display: none;
+    }
+
+    /* ===== SEÇÃO "DADOS E ANÁLISES" ===== */
+    .dadosFluxar {
+        padding: 3rem 0rem;
+        gap: 3rem;
+    }
+
+    .dados-container {
+        gap: 3rem;
+    }
+
+    .dados-card-decisao,
+    .dados-card-analise,
+    .dados-card-estoque,
+    .dados-card-Ia {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .dados-card-Ia {
+        border-bottom-left-radius: 0;
+    }
+
+    .dados-texto {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dados-texto h3 {
+        font-size: 1.2rem;
+        width: 90%;
+    }
+
+    .dados-texto p {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .dados-img img {
+        width: 14rem;
+        transform: none;
+    }
+
+    .corteRoxoIa {
+        width: 95%;
+        top: 346.3pc;
+        height: 6rem;
+    }
+
+    /* ===== SEÇÃO "IDEALIZAÇÃO" ===== */
+    .idealizacao {
+        padding: 5rem 1.5rem;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .idealizacao-container {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .idealizacao-titulo {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .idealizacao-texto {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* ===== SEÇÃO "NOSSA EQUIPE" ===== */
+    .nossa-equipe {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .equipe-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .equipe-img {
+        max-width: 95%;
+        border-radius: 14px;
+    }
+
+    .equipe-img-wrapper {
+        padding: 0;
+    }
+
+    /* ===== REFINAMENTO FOOTER MOBILE ===== */
     .footer {
         padding: 3rem 1.5rem;
         background: linear-gradient(180deg, #5a007a 0%, #390048 100%);
@@ -1656,7 +1977,9 @@ body {
     .footer-links {
         width: 100%;
         padding: 0.8rem 0;
+        text-align: left;
         border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        /* linha entre Produto e Empresa */
     }
 
     .footer-links h4 {
@@ -1710,11 +2033,16 @@ body {
 
     .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.25);
-        padding-top: 1.4rem;
-        font-size: 0.85rem;
+        padding-top: 1.10xrem;
+        font-size: 0.25rem;
         color: #ccc;
         margin-top: 2.4rem;
     }
+
+    .footer-bottom p {
+        font-size: 0.65rem;
+    }
+
 }
 
 
@@ -2287,6 +2615,7 @@ body {
     .footer-links {
         width: 100%;
         padding: 0.8rem 0;
+        text-align: left;
         border-bottom: 1px solid rgba(255, 255, 255, 0.25);
         /* linha entre Produto e Empresa */
     }
@@ -2342,10 +2671,14 @@ body {
 
     .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.25);
-        padding-top: 1.4rem;
-        font-size: 0.85rem;
+        padding-top: 1.10xrem;
+        font-size: 0.25rem;
         color: #ccc;
         margin-top: 2.4rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.65rem;
     }
 
 }
