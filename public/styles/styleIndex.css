@@ -2049,7 +2049,7 @@ body {
 /* ======================================================
      🔹 CELULARES PEQUENOS (até 360px)
   ====================================================== */
-@media (max-width: 360px) {
+@media (min-width: 320px) {
     .container-header {
         margin: 0px;
         padding: 0;

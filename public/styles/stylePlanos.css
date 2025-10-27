@@ -69,17 +69,6 @@
     font-family: var(--font-body);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--font-title);
-    font-weight: 800;
-    color: var(--text);
-}
-
 h2 {
     font-size: var(--fontsizeTitulo2);
 }
@@ -331,13 +320,18 @@ body {
 
 
 
+#PLANOSTODOS{
+    display: flex;
+    justify-content: space-between;
+}
+
 .assinar>.preco {
     display: flex;
     justify-content: center;
     padding: 10px;
 }
 /* ===== PLANO 1 ===== */
-.planoMensal1 {
+.planoMensalPAR {
     background-color: var(--white);
     color: var(--purple-700);
     position: relative;
@@ -345,5 +339,24 @@ body {
     width: 25%;
     padding: 35px;
     border-radius: 10px;
+} .planoMensalPAR>h1{
+    padding: 10px;
+    position: relative;
+    left: 50px;
 }
 
+.assinarbotao {
+    position: relative;
+    left: 100px;
+    font-family: var(--font-subtitle);
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: var(--white);
+    background-color: var(--purple-800);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
+}
+/* ===== PLANO 2 ===== */
