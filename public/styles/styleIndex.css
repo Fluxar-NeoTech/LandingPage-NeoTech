@@ -970,7 +970,6 @@ body {
     position: relative;
     text-align: center;
     width: 100%;
-    max-width: 900px;
     z-index: 2;
 }
 
@@ -2047,7 +2046,7 @@ body {
 
 
 /* ======================================================
-     🔹 CELULARES PEQUENOS (até 360px)
+     🔹 CELULARES PEQUENOS (320)
   ====================================================== */
 @media (min-width: 320px) {
     .container-header {
@@ -2069,7 +2068,7 @@ body {
         width: 100%;
         max-width: 75%;
         height: 100vh;
-        background: linear-gradient(180deg, #7200a8 0%, #54006b 100%);
+        background: linear-gradient(180deg, var(--purple-800) 0%, var(--purple-700) 100%);
         box-shadow: -6px 0 18px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
         display: flex;
@@ -2272,7 +2271,7 @@ body {
 
     .corteInicio {
         width: 100%;
-        top: 67dvh;
+        top: 68dvh;
         height: 10rem;
         left: 0;
         position: absolute;
@@ -2282,12 +2281,13 @@ body {
 
     /* ===== SEÇÃO "O QUE RESOLVEMOS" ===== */
     .corteNeoTechCima {
-        top: 279dvh;
-        height: 3rem;
+        position: absolute;
+        top: 239dvh;
+        height: 4rem;
     }
 
     .resolvemos {
-        height: auto;
+        height: 68rem;
         padding: 3rem 1rem;
     }
 
@@ -2329,6 +2329,7 @@ body {
         width: 100%;
         flex-direction: column;
         text-align: center;
+        height: 30rem;
         padding: 6rem 0rem;
     }
 
@@ -2344,7 +2345,7 @@ body {
     }
 
     .nt-text p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         padding: 1rem;
         line-height: 1.4;
     }
@@ -2354,7 +2355,7 @@ body {
     }
 
     .corteNeoTechBaixo {
-        top: 376dvh;
+        top: 305dvh;
         height: 3rem;
     }
 
@@ -2515,7 +2516,7 @@ body {
     .dados-card-estoque,
     .dados-card-Ia {
         flex-direction: column;
-        height: auto;
+        height: 28rem;
         padding: 2rem 1rem;
         text-align: center;
     }
@@ -2548,8 +2549,8 @@ body {
 
     .corteRoxoIa {
         width: 95%;
-        top: 346.3pc;
-        height: 6rem;
+        top: 346.5pc;
+        height: 6.5rem;
     }
 
     /* ===== SEÇÃO "IDEALIZAÇÃO" ===== */
@@ -2576,28 +2577,35 @@ body {
 
     /* ===== SEÇÃO "NOSSA EQUIPE" ===== */
     .nossa-equipe {
+        display: flex;
+        align-items: center;
         height: auto;
-        padding: 4rem 1rem;
+        padding: 5rem 1rem;
     }
+    .equipe-container{
 
+    }
     .equipe-title {
         font-size: 1.5rem;
         margin-bottom: 2rem;
     }
 
     .equipe-img {
-        max-width: 95%;
+        max-width: 100%;
         border-radius: 14px;
     }
-
+    .equipe-corte{
+        height: 14rem;
+    }
     .equipe-img-wrapper {
+
         padding: 0;
     }
 
     /* ===== REFINAMENTO FOOTER MOBILE ===== */
     .footer {
         padding: 3rem 1.5rem;
-        background: linear-gradient(180deg, #5a007a 0%, #390048 100%);
+        background: linear-gradient(180deg, var(--purple-700),#390048 100%);
     }
 
     .footer-logo img {

@@ -46,50 +46,45 @@
             <a href="#" target="_blank"><button class="btn-anual">Anual</button></a>
         </div>
 
-        <div id="PLANOSTODOS">
+        <div id="PLANOSTODOSMENSAL">
             <!-- PLANO 1 - MENSAL -->
-            <div class="planoMensalPAR">
+            <div class="planoMensalPAR" id="p1m">
                 <h1>ESSENCIAL</h1>
                 <ul class="lista-de-info">
                     <li>
-                        <p>Todas as funcionalidades do plano Essencial incluídas</p>
+                        <p>Controle de entrada e saída de materiais</p>
                     </li>
                     <li>
-                        <p>Controle completo de inventário com histórico</p>
+                        <p>Cálculo automático de estoque</p>
                     </li>
                     <li>
-                        <p>Relatórios semanais e mensais em PDF e gráficos</p>
+                        <p>Capacidade atual do estoque</p>
                     </li>
                     <li>
-                        <p>Análise gráfica mensal de estoque</p>
+                        <p>Alertas de estoque baixo ou cheio</p>
                     </li>
                     <li>
-                        <p>Análise comparativa entre unidades</p>
+                        <p>Interface web para adição de dados</p>
                     </li>
                     <li>
-                        <p>API/CNPJ com até 3 consultas/mês</p>
+                        <p>Relatórios semanais em PDF</p>
                     </li>
                     <li>
-                        <p>Painel avançado com filtros e buscas</p>
-                    </li>
-                    <li>
-                        <p>Exportação em Excel/CSV</p>
-                    </li>
-                    <li>
-                        <p>Suporte prioritário (12h úteis)</p>
+                        <p>Suporte padrão (48h úteis)</p>
                     </li>
                 </ul>
 
-                <div class="assinar">
+                <div class="assinar" id="planos1assinar">
                     <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco">499,00</span>/mês</p>
+                            class="preco">599,99</span>/mês</p>
                     <a href="#"><button class="assinarbotao">Assinar</button></a>
                 </div>
             </div>
 
             <!-- PLANO 2 - MENSAL -->
-            <div class="planoMensalIMPAR">
-                <h1>ESSENCIAL</h1>
+            <div class="planoMensalIMPAR" id="p2m">
+                <img src="/public/assets/images/seloAproved.png" alt="Selo de mais recomendado" id="selo">
+                <h1>PROFESSIONAL</h1>
                 <ul class="lista-de-info">
                     <li>
                         <p>Todas as funcionalidades do plano Essencial incluídas</p>
@@ -121,8 +116,158 @@
                 </ul>
 
                 <div class="assinar">
+                    <p style="font-weight: bold" class="preco" id="recomendavel">R$ <span style="font-size: 1.4rem;"
+                            class="preco">899,99</span>/mês</p>
+                    <a href="#"><button class="assinarbotao2">Assinar</button></a>
+                </div>
+            </div>
+            <!--PLANO 3 MENSAL-->
+            <div class="planoMensalPAR" id="p3m">
+                <h1>ENTERPRISE</h1>
+                <ul class="lista-de-info">
+                    <li>
+                        <p>Todas as funcionalidades dos outros planos incluídas</p>
+                    </li>
+                    <li>
+                        <p>Controle de entrada e saída de materiais</p>
+                    </li>
+                    <li>
+                        <p>Cálculo automático de estoque</p>
+                    </li>
+                    <li>
+                        <p>Capacidade atual do estoque</p>
+                    </li>
+                    <li>
+                        <p>Alertas de estoque baixo ou cheio</p>
+                    </li>
+                    <li>
+                        <p>Interface web para adição de dados</p>
+                    </li>
+                    <li>
+                        <p>Relatórios semanais em PDF</p>
+                    </li>
+                    <li>
+                        <p>Suporte padrão (48h úteis)</p>
+                    </li>
+                </ul>
+
+                <div class="assinar">
                     <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco">499,00</span>/mês</p>
+                            class="preco">1599,99</span>/mês</p>
+                    <a href="#"><button class="assinarbotao">Assinar</button></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="PLANOSTODOSANUAL">
+            <!-- PLANO 1 - ANUAL -->
+            <div class="planoMensalPAR" id="p1m">
+                <h1>ESSENCIAL</h1>
+                <ul class="lista-de-info">
+                    <li>
+                        <p>Controle de entrada e saída de materiais</p>
+                    </li>
+                    <li>
+                        <p>Cálculo automático de estoque</p>
+                    </li>
+                    <li>
+                        <p>Capacidade atual do estoque</p>
+                    </li>
+                    <li>
+                        <p>Alertas de estoque baixo ou cheio</p>
+                    </li>
+                    <li>
+                        <p>Interface web para adição de dados</p>
+                    </li>
+                    <li>
+                        <p>Relatórios semanais em PDF</p>
+                    </li>
+                    <li>
+                        <p>Suporte padrão (48h úteis)</p>
+                    </li>
+                </ul>
+
+                <div class="assinar" id="planos1assinar">
+                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
+                            class="preco">599,99</span>/mês</p>
+                    <a href="#"><button class="assinarbotao">Assinar</button></a>
+                </div>
+            </div>
+
+            <!-- PLANO 2 - MENSAL -->
+            <div class="planoMensalIMPAR" id="p2m">
+                <img src="/public/assets/images/seloAproved.png" alt="Selo de mais recomendado" id="selo">
+                <h1>PROFESSIONAL</h1>
+                <ul class="lista-de-info">
+                    <li>
+                        <p>Todas as funcionalidades do plano Essencial incluídas</p>
+                    </li>
+                    <li>
+                        <p>Controle completo de inventário com histórico</p>
+                    </li>
+                    <li>
+                        <p>Relatórios semanais e mensais em PDF e gráficos</p>
+                    </li>
+                    <li>
+                        <p>Análise gráfica mensal de estoque</p>
+                    </li>
+                    <li>
+                        <p>Análise comparativa entre unidades</p>
+                    </li>
+                    <li>
+                        <p>API/CNPJ com até 3 consultas/mês</p>
+                    </li>
+                    <li>
+                        <p>Painel avançado com filtros e buscas</p>
+                    </li>
+                    <li>
+                        <p>Exportação em Excel/CSV</p>
+                    </li>
+                    <li>
+                        <p>Suporte prioritário (12h úteis)</p>
+                    </li>
+                </ul>
+
+                <div class="assinar">
+                    <p style="font-weight: bold" class="preco" id="recomendavel">R$ <span style="font-size: 1.4rem;"
+                            class="preco">899,99</span>/mês</p>
+                    <a href="#"><button class="assinarbotao2">Assinar</button></a>
+                </div>
+            </div>
+            <!--PLANO 3 MENSAL-->
+            <div class="planoMensalPAR" id="p3m">
+                <h1>ENTERPRISE</h1>
+                <ul class="lista-de-info">
+                    <li>
+                        <p>Todas as funcionalidades dos outros planos incluídas</p>
+                    </li>
+                    <li>
+                        <p>Controle de entrada e saída de materiais</p>
+                    </li>
+                    <li>
+                        <p>Cálculo automático de estoque</p>
+                    </li>
+                    <li>
+                        <p>Capacidade atual do estoque</p>
+                    </li>
+                    <li>
+                        <p>Alertas de estoque baixo ou cheio</p>
+                    </li>
+                    <li>
+                        <p>Interface web para adição de dados</p>
+                    </li>
+                    <li>
+                        <p>Relatórios semanais em PDF</p>
+                    </li>
+                    <li>
+                        <p>Suporte padrão (48h úteis)</p>
+                    </li>
+                </ul>
+
+                <div class="assinar">
+                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
+                            class="preco">1599,99</span>/mês</p>
                     <a href="#"><button class="assinarbotao">Assinar</button></a>
                 </div>
             </div>
