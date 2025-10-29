@@ -1,23 +1,4 @@
 :root {
-    --bg: #ffffff;
-    --text: #111;
-    --muted: #374151;
-    --white: #fff;
-    --primary-50: #f52d9b;
-    --primary-100: #8E52F5;
-    --primary-200: #7A3FF2;
-    --primary-300: #6F1FB9;
-    --purple-700: #650082;
-    --purple-800: #9c14c2;
-    --radius: 14px;
-    --shadow-sm: 0 2px 6px rgba(0, 0, 0, .06);
-    --transition-fast: .2s;
-    --fontsizeTitulo1: 4rem;
-    --fontsizeTitulo2: 3rem;
-    --fontsizeTitulo3: 2.4rem;
-}
-
-:root {
     /* ==========================
           CORES E VARIÁVEIS
     =========================== */
@@ -34,6 +15,8 @@
     --radius: 14px;
     --shadow-sm: 0 2px 6px rgba(0, 0, 0, .06);
     --transition-fast: .2s;
+    color-scheme: only light;
+
 
     /* ==========================
           FONTES E TIPOGRAFIA
@@ -392,7 +375,7 @@ body {
   ====================================================== */
 .resolvemos {
     height: 63rem;
-    background: #fff;
+    background-color: #fff;
     padding: 2rem;
 }
 
@@ -427,7 +410,7 @@ body {
 }
 
 .rz-card {
-    background: #fff;
+    background-color: #fff;
     border-radius: 16px;
     padding: 2.4rem 4rem;
     width: 390px;
@@ -2652,14 +2635,16 @@ body {
         height: 36rem;
         padding: 1rem 0rem 0rem 0rem;
     }
-    .equipe-container{
+
+    .equipe-container {
         height: 36rem;
-        background: linear-gradient(180deg,white,var(--purple-700) ,var(--purple-700) 100%);
+        background: linear-gradient(180deg, white, var(--purple-700), var(--purple-700) 100%);
         display: flex;
         flex-direction: column;
         align-items: center;
 
     }
+
     .equipe-title {
         font-size: 1.8rem;
         margin-bottom: 16rem;
@@ -2700,6 +2685,7 @@ body {
         color: #fff;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     }
+
     .equipe-img-wrapper {
         position: absolute;
         display: flex;
@@ -2710,9 +2696,11 @@ body {
         height: 16rem;
         z-index: 3;
     }
-    .equipe-img{
+
+    .equipe-img {
         width: 20rem;
     }
+
     .equipe-corte {
         position: absolute;
         bottom: 15rem;
@@ -2720,7 +2708,7 @@ body {
         z-index: 2;
     }
 
-   
+
 
     /* ===== REFINAMENTO FOOTER MOBILE ===== */
     .footer {

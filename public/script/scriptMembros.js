@@ -20,7 +20,8 @@ function generateUniqueLorem(name) {
     } else if (name=='Duda'){
         return `Oie! Eu sou a Duda, tenho 17 anos e atuei no desenvolvimento back-end do projeto. Adoro ouvir música, e meus hobbies favoritos são cozinhar e treinar, sempre buscando equilíbrio entre foco e diversão.`;
     } else if (name=='Giovana'){
-        return `--`;
+        return `Oiiee! Sou a Giovanna, tenho 17 anos. Tive contato com experiências diversas, tanto na área de Dados com banco de dados, machine learning e Inteligência Artificial quanto com a área de back-end.
+Sou apaixonada por expressões da vida por meio da arte, principalmente na música e literatura.`;
     } else if (name=='Guilherme'){
         return `Meu nome é Guilherme, tenho 15 anos e atuo com design e desenvolvimento full-stack de aplicativos. Sou apaixonado por futebol e outros esportes, além de gostar de explorar novos conhecimentos e lugares, sempre buscando evoluir em tudo o que faço.`;
     } else if (name=='Gustavo'){
@@ -32,7 +33,7 @@ function generateUniqueLorem(name) {
     } else if (name=='Lucas'){
         return `Sou o Lucas, tenho 16 anos e gosto de ler Invencível. Já trabalhei com Desenvolvimento de Sistemas — usando HTML, CSS e JavaScript — além de Inteligência Artificial e Excel. Gosto de unir criatividade e lógica em tudo o que faço.`;
     } else if (name=='Mayumi'){
-        return `Oi! Eu sou a Mayumi, tenho 17 anos e sou apaixonada por cultura, design e dados. Acredito que o futuro surge quando criatividade e lógica caminham juntas. Meus hobbies incluem idiomas, arte e algoritmos, que refletem bem meu jeito curioso e criativo de ver o mundo.`;
+        return `Oie gente! Eu sou a Mayumi, tenho 17 anos e trabalhei na parte de IA e machine learning do projeto. Amo dados e design, e acredito que o futuro nasce quando a criatividade e cálculos se combinam.`;
     } else if (name=='Natalia'){
         return `Sou a Natália, tenho 17 anos e trabalho principalmente com DevOps e back-end, além de contribuir com o design do projeto. No tempo livre, gosto de ler, assistir séries e escrever, o que me ajuda a exercitar a criatividade.`;
     }
