@@ -13,7 +13,7 @@
     --radius: 14px;
     --shadow-sm: 0 2px 6px rgba(0, 0, 0, .06);
     --transition-fast: .2s;
-    --fontsizeTitulo1: 4rem;
+     --fontsizeTitulo1: 4rem;
     --fontsizeTitulo2: 3rem;
     --fontsizeTitulo3: 2.4rem;
 }
@@ -330,7 +330,7 @@ body {
 
 #PLANOSTODOSMENSAL {
     position: relative;
-    top: 20px;
+    margin-top: 30px;
     right: 150px;
     display: flex;
     justify-content: space-evenly;
@@ -354,7 +354,7 @@ body {
 }
 
 #p1m {
-    height: 525px;
+    height: 550px;
 }
 
 .planoMensalPAR>h1 {
@@ -400,7 +400,7 @@ body {
 }
 
 #p2m {
-    height: 600px;
+    height: 625px;
 }
 
 .assinarbotao2 {
@@ -426,7 +426,7 @@ body {
 
 
 #p3m {
-    height: 525px;
+    height: 550px;
 }
 
 
@@ -437,7 +437,6 @@ body {
               ANUAIS
 ============================================*/
 
-#PLANOSTODOSANUAL{
+#PLANOSTODOSANUAL {
     display: none;
 }
-

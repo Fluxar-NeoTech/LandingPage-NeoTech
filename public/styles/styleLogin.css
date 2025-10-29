@@ -31,6 +31,7 @@ body {
     justify-content: center;
     padding: 32px;
 }
+
 /* Caixa central (card) */
 .caixa {
     width: min(520px, 94vw);
@@ -41,7 +42,7 @@ body {
     border: 1px solid rgba(111, 27, 185, 0.06);
     position: relative;
     top: 220px;
-    left: 100px;    
+    right: 100px;
 }
 
 /* Topo com logo e título */
@@ -90,21 +91,24 @@ fieldset {
     margin-top: 16px;
 }
 
-main{
+main {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.FluxarLogoSECTION{
+
+.FluxarLogoSECTION {
     width: 50%;
 }
+
 #logoFluxarAPP {
-    height: 150px; 
+    height: 150px;
     width: auto;
     position: relative;
     top: 340px;
     left: 310px;
 }
+
 #logo-container {
     background-color: var(--purple-800);
     height: 864px;
@@ -113,7 +117,7 @@ main{
     padding-right: 100px;
 }
 
-.formSECTION{
+.formSECTION {
     width: 50%;
 }
 

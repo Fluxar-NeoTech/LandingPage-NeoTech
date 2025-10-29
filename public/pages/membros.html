@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membros • Fluxar</title>
+
+    <!-- Fonte parecida com a do projeto -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/styles/styleMembros.css">
+</head>
+
+<body>
+    <!-- ======================================================
+        HEADER
+    ====================================================== -->
+    <header class="header">
+        <div class="container-header">
+            <div class="logo reveal" data-reveal="down">
+                <img src="/public/assets/icons/NeoTechLogo.png" alt="Logo NeoTech">
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html">Início</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html#NeoTech">NeoTech</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html#Fluxar">Fluxar</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/pages/planos.html">Planos</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/pages/membros.html">Sobre Nós</a></li>
+                </ul>
+            </nav>
+
+            <div class="buttons reveal" data-reveal="down">
+                <a href="public/pages/singUp.html"><button class="btn-cadastrar">Cadastrar</button></a>
+                <a href="public/pages/login.html" target="_blank"><button class="btn-entrar">Entrar</button></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================================================
+        CONTAINER PRINCIPAL
+    ====================================================== -->
+    <main class="main-content">
+        <!-- Seção de Carrossel de Membros -->
+        <section class="members-section">
+            <!-- Carrossel Circular na Direita -->
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel" id="carousel">
+                        <!-- As imagens serão inseridas aqui via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Área de Exibição da Imagem Ampliada -->
+            <div class="member-display">
+                <div class="member-display-content">
+                    <img id="memberImage" src="" alt="Membro selecionado" class="member-image">
+                    <div class="member-info">
+                        <h2 id="memberName"></h2>
+                        <p id="memberDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script JavaScript -->
+    <script src="/public/script/scriptMembros.js"></script>
+</body>
+
+</html>

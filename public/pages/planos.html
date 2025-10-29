@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Entrar • Fluxar</title>
+    <title>Planos • Fluxar</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles/stylePlanos.css">
+    <script src="/public/script/scriptPlanos.js"></script>
 </head>
 
 <body>
@@ -25,30 +26,31 @@
 
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li class="reveal" data-reveal="left"><a href="/public/index.html">Início</a></li>
-                    <li class="reveal" data-reveal="left"><a href="/public/index.html#NeoTech">NeoTech</a></li>
-                    <li class="reveal" data-reveal="left"><a href="/public/index.html#Fluxar">Fluxar</a></li>
-                    <li class="reveal" data-reveal="left"><a href="/public/pages/planos.html">Planos</a></li>
-                    <li class="reveal" data-reveal="left"><a href="#">Sobre Nós</a></li>
+                    <li class="reveal" data-reveal="left"><a href="./public/index.html">Início</a></li>
+                    <li class="reveal" data-reveal="left"><a href="./public/index.html#NeoTech">NeoTech</a></li>
+                    <li class="reveal" data-reveal="left"><a href="./public/index.html#Fluxar">Fluxar</a></li>
+                    <li class="reveal" data-reveal="left"><a href="./public/pages/planos.html">Planos</a></li>
+                    <li class="reveal" data-reveal="left"><a href="./public/pages/membros.html">Sobre Nós</a></li>
                 </ul>
             </nav>
 
             <div class="buttons reveal" data-reveal="down">
-                <a href="pages/singUp.html"><button class="btn-cadastrar">Cadastrar</button></a>
-                <a href="pages/login.html" target="_blank"><button class="btn-entrar">Entrar</button></a>
+                <a href="./public/pages/singUp.html"><button class="btn-cadastrar">Cadastrar</button></a>
+                <a href="./public/pages/login.html" target="_blank"><button class="btn-entrar">Entrar</button></a>
             </div>
         </div>
     </header>
     <main>
 
         <div class="buttonsPlanos" data-reveal="down">
-            <a href="#"><button class="btn-mensal">Mensal</button></a>
-            <a href="#" target="_blank"><button class="btn-anual">Anual</button></a>
+            <button class="btn-mensal" onclick="mudarConteudoMENSAL()">Mensal</button>
+            <button class="btn-anual" onclick="mudarConteudoANUAL()">Anual</button>
         </div>
 
         <div id="PLANOSTODOSMENSAL">
             <!-- PLANO 1 - MENSAL -->
             <div class="planoMensalPAR" id="p1m">
+                <p id="pp1">mensal</p>
                 <h1>ESSENCIAL</h1>
                 <ul class="lista-de-info">
                     <li>
@@ -76,7 +78,7 @@
 
                 <div class="assinar" id="planos1assinar">
                     <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco">599,99</span>/mês</p>
+                            class="preco" id="p1">599,99</span>/mês</p>
                     <a href="#"><button class="assinarbotao">Assinar</button></a>
                 </div>
             </div>
@@ -84,6 +86,7 @@
             <!-- PLANO 2 - MENSAL -->
             <div class="planoMensalIMPAR" id="p2m">
                 <img src="/public/assets/images/seloAproved.png" alt="Selo de mais recomendado" id="selo">
+                <p id="pp2">mensal</p>
                 <h1>PROFESSIONAL</h1>
                 <ul class="lista-de-info">
                     <li>
@@ -115,14 +118,15 @@
                     </li>
                 </ul>
 
-                <div class="assinar">
+                <div class="assinar" id="planos2assinar">
                     <p style="font-weight: bold" class="preco" id="recomendavel">R$ <span style="font-size: 1.4rem;"
-                            class="preco">899,99</span>/mês</p>
+                            class="preco" id="p2">899,99</span>/mês</p>
                     <a href="#"><button class="assinarbotao2">Assinar</button></a>
                 </div>
             </div>
             <!--PLANO 3 MENSAL-->
             <div class="planoMensalPAR" id="p3m">
+                <p id="pp3">mensal</p>
                 <h1>ENTERPRISE</h1>
                 <ul class="lista-de-info">
                     <li>
@@ -151,123 +155,9 @@
                     </li>
                 </ul>
 
-                <div class="assinar">
+                <div class="assinar" id="planos3assinar">
                     <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco">1599,99</span>/mês</p>
-                    <a href="#"><button class="assinarbotao">Assinar</button></a>
-                </div>
-            </div>
-        </div>
-
-
-        <div id="PLANOSTODOSANUAL">
-            <!-- PLANO 1 - ANUAL -->
-            <div class="planoMensalPAR" id="p1m">
-                <h1>ESSENCIAL</h1>
-                <ul class="lista-de-info">
-                    <li>
-                        <p>Controle de entrada e saída de materiais</p>
-                    </li>
-                    <li>
-                        <p>Cálculo automático de estoque</p>
-                    </li>
-                    <li>
-                        <p>Capacidade atual do estoque</p>
-                    </li>
-                    <li>
-                        <p>Alertas de estoque baixo ou cheio</p>
-                    </li>
-                    <li>
-                        <p>Interface web para adição de dados</p>
-                    </li>
-                    <li>
-                        <p>Relatórios semanais em PDF</p>
-                    </li>
-                    <li>
-                        <p>Suporte padrão (48h úteis)</p>
-                    </li>
-                </ul>
-
-                <div class="assinar" id="planos1assinar">
-                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco">599,99</span>/mês</p>
-                    <a href="#"><button class="assinarbotao">Assinar</button></a>
-                </div>
-            </div>
-
-            <!-- PLANO 2 - MENSAL -->
-            <div class="planoMensalIMPAR" id="p2m">
-                <img src="/public/assets/images/seloAproved.png" alt="Selo de mais recomendado" id="selo">
-                <h1>PROFESSIONAL</h1>
-                <ul class="lista-de-info">
-                    <li>
-                        <p>Todas as funcionalidades do plano Essencial incluídas</p>
-                    </li>
-                    <li>
-                        <p>Controle completo de inventário com histórico</p>
-                    </li>
-                    <li>
-                        <p>Relatórios semanais e mensais em PDF e gráficos</p>
-                    </li>
-                    <li>
-                        <p>Análise gráfica mensal de estoque</p>
-                    </li>
-                    <li>
-                        <p>Análise comparativa entre unidades</p>
-                    </li>
-                    <li>
-                        <p>API/CNPJ com até 3 consultas/mês</p>
-                    </li>
-                    <li>
-                        <p>Painel avançado com filtros e buscas</p>
-                    </li>
-                    <li>
-                        <p>Exportação em Excel/CSV</p>
-                    </li>
-                    <li>
-                        <p>Suporte prioritário (12h úteis)</p>
-                    </li>
-                </ul>
-
-                <div class="assinar">
-                    <p style="font-weight: bold" class="preco" id="recomendavel">R$ <span style="font-size: 1.4rem;"
-                            class="preco">899,99</span>/mês</p>
-                    <a href="#"><button class="assinarbotao2">Assinar</button></a>
-                </div>
-            </div>
-            <!--PLANO 3 MENSAL-->
-            <div class="planoMensalPAR" id="p3m">
-                <h1>ENTERPRISE</h1>
-                <ul class="lista-de-info">
-                    <li>
-                        <p>Todas as funcionalidades dos outros planos incluídas</p>
-                    </li>
-                    <li>
-                        <p>Controle de entrada e saída de materiais</p>
-                    </li>
-                    <li>
-                        <p>Cálculo automático de estoque</p>
-                    </li>
-                    <li>
-                        <p>Capacidade atual do estoque</p>
-                    </li>
-                    <li>
-                        <p>Alertas de estoque baixo ou cheio</p>
-                    </li>
-                    <li>
-                        <p>Interface web para adição de dados</p>
-                    </li>
-                    <li>
-                        <p>Relatórios semanais em PDF</p>
-                    </li>
-                    <li>
-                        <p>Suporte padrão (48h úteis)</p>
-                    </li>
-                </ul>
-
-                <div class="assinar">
-                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco">1599,99</span>/mês</p>
+                            class="preco" id="p3">1599,99</span>/mês</p>
                     <a href="#"><button class="assinarbotao">Assinar</button></a>
                 </div>
             </div>

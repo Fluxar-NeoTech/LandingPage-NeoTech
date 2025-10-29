@@ -214,6 +214,14 @@ body {
 }
 
 /* ===== Botão Cadastrar (principal) ===== */
+.buttons-nav {
+    display: none;
+}
+
+.logoFluxar {
+    display: none;
+}
+
 .btn-cadastrar {
     font-family: var(--font-subtitle);
     font-size: 1rem;
@@ -271,7 +279,7 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;
-    height: 90dvh;
+    height: 90lvh;
     width: 100%;
     padding: 1.5rem 2.5rem;
     overflow: hidden;
@@ -371,7 +379,7 @@ body {
 
 .corteInicio {
     width: 100%;
-    top: 40dvh;
+    top: 40lvh;
     height: 30rem;
     left: 0;
     position: absolute;
@@ -490,7 +498,7 @@ body {
   ====================================================== */
 .corteNeoTechCima {
     width: 100%;
-    top: 200dvh;
+    top: 200lvh;
     height: 10rem;
     left: 0;
     position: absolute;
@@ -1287,7 +1295,7 @@ body {
         top: 0;
         right: -100%;
         width: 70%;
-        height: 100vh;
+        height: 100lvh;
         background: rgba(101, 0, 130, 0.95);
         backdrop-filter: blur(8px);
         display: flex;
@@ -1322,11 +1330,6 @@ body {
 
     .nav-menu ul li a:hover {
         color: var(--primary-50);
-    }
-
-    /* oculta botões originais do header */
-    .buttons {
-        display: none;
     }
 
     /* recria botões dentro do menu */
@@ -1429,7 +1432,7 @@ body {
         /* começa fora da tela, à direita */
         width: 100%;
         max-width: 75%;
-        height: 100vh;
+        height: 100lvh;
         background: linear-gradient(180deg, #7200a8 0%, #54006b 100%);
         box-shadow: -6px 0 18px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
@@ -1501,20 +1504,6 @@ body {
         margin: 2rem auto;
     }
 
-    /* ===== BOTÕES ===== */
-    .nav-menu .btn-cadastrar,
-    .nav-menu .btn-entrar {
-        width: 180px;
-        font-size: 1rem;
-        border-radius: 10px;
-        margin: 0.5rem auto;
-    }
-
-    /* ===== ESCONDE BOTÕES ORIGINAIS ===== */
-    .buttons {
-        display: none;
-    }
-
     .menu-toggle {
         gap: 6px;
         width: 42px;
@@ -1549,7 +1538,7 @@ body {
 
     .inicio-content {
         padding: 2rem;
-        height: 90dvh;
+        height: 90lvh;
     }
 
     /* Texto */
@@ -1633,7 +1622,7 @@ body {
 
     .corteInicio {
         width: 100%;
-        top: 67dvh;
+        top: 67lvh;
         height: 10rem;
         left: 0;
         position: absolute;
@@ -1643,7 +1632,7 @@ body {
 
     /* ===== SEÇÃO "O QUE RESOLVEMOS" ===== */
     .corteNeoTechCima {
-        top: 279dvh;
+        top: 279lvh;
         height: 3rem;
     }
 
@@ -1715,7 +1704,7 @@ body {
     }
 
     .corteNeoTechBaixo {
-        top: 376dvh;
+        top: 376lvh;
         height: 3rem;
     }
 
@@ -2048,9 +2037,17 @@ body {
 /* ======================================================
      🔹 CELULARES PEQUENOS (320)
   ====================================================== */
-@media (min-width: 320px) {
+@media (max-width: 480px) {
+    .header {
+        transition: transform 0.4s ease;
+        z-index: 200;
+        border-radius: 4px;
+        width: 100vw;
+    }
+
     .container-header {
         margin: 0px;
+        width: 100%;
         padding: 0;
     }
 
@@ -2060,17 +2057,49 @@ body {
     }
 
     /* ===== MENU MOBILE ===== */
+    /* ===== LOGO DENTRO DO MENU MOBILE ===== */
+    .nav-menu .logoFluxar {
+        position: absolute;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-menu .logoFluxar img {
+        width: 150px;
+        height: 60px;
+        margin-left: 10px;
+        filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+    }
+
+    /* ===== LINHA DIVISÓRIA LOGO ===== */
+    .nav-menu .logoFluxar::after {
+        content: "";
+        display: block;
+        height: 1.5px;
+        width: 50%;
+        /* um pouco mais larga que a de baixo */
+        background: rgba(255, 255, 255, 0.25);
+        margin: 1.0rem auto 0 auto;
+    }
+
     .nav-menu {
         position: fixed;
         top: 0;
         left: 100%;
         /* começa fora da tela, à direita */
         width: 100%;
-        max-width: 75%;
-        height: 100vh;
+        max-width: 65%;
+        height: 100lvh;
         background: linear-gradient(180deg, var(--purple-800) 0%, var(--purple-700) 100%);
         box-shadow: -6px 0 18px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
+        border-bottom-left-radius: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2086,14 +2115,9 @@ body {
     }
 
     /* ===== HEADER ===== */
-    header.header {
-        transition: transform 0.4s ease;
-        z-index: 200;
-        border-radius: 4px;
-    }
 
     body.menu-open header.header {
-        transform: translateX(-75%);
+        transform: translateX(-65%);
     }
 
     /* ===== ESCURECIMENTO DO FUNDO ===== */
@@ -2148,10 +2172,44 @@ body {
         margin: 0.5rem auto;
     }
 
-    /* ===== ESCONDE BOTÕES ORIGINAIS ===== */
+    .nav-menu .buttons-nav {
+        display: flex;
+        /* mostra */
+        flex-direction: column;
+        /* um botão embaixo do outro */
+        align-items: center;
+        /* centraliza */
+        justify-content: flex-end;
+        /* empurra pra parte de baixo */
+        position: absolute;
+        /* fixa dentro do menu */
+        bottom: 2rem;
+        /* distância da base */
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .nav-menu .buttons-nav .btn-entrar {
+        width: 160px;
+        font-size: 1rem;
+        border-radius: 10px;
+        padding: 0.6rem 1rem;
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu .buttons-nav .btn-entrar:hover {
+        background: #fff;
+        color: var(--purple-700);
+    }
+
     .buttons {
         display: none;
     }
+
 
     .menu-toggle {
         gap: 6px;
@@ -2187,7 +2245,7 @@ body {
 
     .inicio-content {
         padding: 2rem;
-        height: 90dvh;
+        height: 33.5rem;
     }
 
     /* Texto */
@@ -2271,7 +2329,7 @@ body {
 
     .corteInicio {
         width: 100%;
-        top: 68dvh;
+        top: 25rem;
         height: 10rem;
         left: 0;
         position: absolute;
@@ -2282,13 +2340,17 @@ body {
     /* ===== SEÇÃO "O QUE RESOLVEMOS" ===== */
     .corteNeoTechCima {
         position: absolute;
-        top: 239dvh;
+        top: 107rem;
         height: 4rem;
     }
 
     .resolvemos {
-        height: 68rem;
+        height: 75rem;
         padding: 3rem 1rem;
+    }
+
+    .rz-container {
+        height: 100%;
     }
 
     .rz-title {
@@ -2355,7 +2417,7 @@ body {
     }
 
     .corteNeoTechBaixo {
-        top: 305dvh;
+        top: 138rem;
         height: 3rem;
     }
 
@@ -2483,6 +2545,9 @@ body {
         width: 100%;
         margin: 0;
         text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 0;
         padding-top: 8rem;
     }
@@ -2494,7 +2559,10 @@ body {
     }
 
     .texto-melhora p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
+        text-align: center;
+        letter-spacing: 2px;
+        width: 90%;
     }
 
     .img-melhora {
@@ -2534,10 +2602,11 @@ body {
 
     .dados-texto h3 {
         font-size: 1.2rem;
-        width: 90%;
+        width: 100%;
     }
 
     .dados-texto p {
+        width: 100%;
         font-size: 0.9rem;
         font-weight: 500;
     }
@@ -2549,7 +2618,7 @@ body {
 
     .corteRoxoIa {
         width: 95%;
-        top: 346.5pc;
+        top: 346rem;
         height: 6.5rem;
     }
 
@@ -2578,46 +2647,93 @@ body {
     /* ===== SEÇÃO "NOSSA EQUIPE" ===== */
     .nossa-equipe {
         display: flex;
-        align-items: center;
-        height: auto;
-        padding: 5rem 1rem;
+        align-items: end;
+        justify-content: start;
+        height: 36rem;
+        padding: 1rem 0rem 0rem 0rem;
     }
     .equipe-container{
+        height: 36rem;
+        background: linear-gradient(180deg,white,var(--purple-700) ,var(--purple-700) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
     }
     .equipe-title {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 16rem;
     }
 
-    .equipe-img {
-        max-width: 100%;
-        border-radius: 14px;
+    .equipe-text {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 4.5rem;
     }
-    .equipe-corte{
-        height: 14rem;
+
+    .equipe-text p {
+        width: 85%;
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #f8f8f8;
+    }
+
+    /* ===== BOTÃO "CONHEÇA" ===== */
+    .link-button {
+        background: #fff;
+        color: var(--purple-700);
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 1rem;
+        border: none;
+        padding: 0.8rem 3rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-bottom: 6rem;
+        transition: all 0.3s ease;
+    }
+
+    .link-button:hover {
+        background: var(--purple-800);
+        color: #fff;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     }
     .equipe-img-wrapper {
-
-        padding: 0;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 16rem;
+        width: 100%;
+        height: 16rem;
+        z-index: 3;
     }
+    .equipe-img{
+        width: 20rem;
+    }
+    .equipe-corte {
+        position: absolute;
+        bottom: 15rem;
+        height: 10rem;
+        z-index: 2;
+    }
+
+   
 
     /* ===== REFINAMENTO FOOTER MOBILE ===== */
     .footer {
-        padding: 3rem 1.5rem;
-        background: linear-gradient(180deg, var(--purple-700),#390048 100%);
+        padding: 2rem 1.5rem;
+        background: linear-gradient(180deg, var(--purple-700), #390048 100%);
     }
 
     .footer-logo img {
-        margin: 0 auto;
-        width: 110px;
+        display: none;
     }
 
     .footer-logo p {
-        font-size: 0.85rem;
-        color: #e5e5e5;
-        margin-bottom: 2rem;
-        line-height: 1.6;
+        display: none;
     }
 
     .footer-links {
@@ -2626,6 +2742,12 @@ body {
         text-align: left;
         border-bottom: 1px solid rgba(255, 255, 255, 0.25);
         /* linha entre Produto e Empresa */
+    }
+
+    .footer-container .footer-links:first-of-type {
+        /* estilos específicos só para o primeiro bloco */
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        background-color: rgba(255, 255, 255, 0.05);
     }
 
     .footer-links h4 {
