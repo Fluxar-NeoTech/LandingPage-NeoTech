@@ -15,6 +15,8 @@
     --radius: 14px;
     --shadow-sm: 0 2px 6px rgba(0, 0, 0, .06);
     --transition-fast: .2s;
+    color-scheme: light only;
+    forced-color-adjust: none;
 
 
     /* ==========================
@@ -48,6 +50,8 @@ body {
 }
 
 * {
+    forced-color-adjust: none !important;
+    -webkit-text-fill-color: inherit !important;
     background-color: transparent;
     forced-color-adjust: none !important;
 }
@@ -1690,7 +1694,7 @@ body {
     }
 
     .nt-text p {
-        font-size: 0.8rem;
+        font-size: 1.3rem;
         padding: 1rem;
         line-height: 1.4;
     }
@@ -2033,6 +2037,20 @@ body {
 /* ======================================================
      🔹 CELULARES PEQUENOS (320)
   ====================================================== */
+/* ===== AJUSTES PARA TELAS PEQUENAS ===== */
+@media (max-height: 600px) {
+    .nav-menu .logoFluxar {
+        margin-top: 1rem; /* reduz espaço no topo */
+    }
+
+    .nav-menu ul {
+        gap: 1rem; /* reduz espaçamento entre links */
+    }
+
+    .nav-menu .buttons-nav {
+        padding-bottom: 1rem; /* mantém os botões visíveis */
+    }
+}
 @media (max-width: 480px) {
     .header {
         transition: transform 0.4s ease;
@@ -2056,7 +2074,7 @@ body {
     /* ===== LOGO DENTRO DO MENU MOBILE ===== */
     .nav-menu .logoFluxar {
         position: absolute;
-        top: 1rem;
+        top: 2rem;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -2081,28 +2099,32 @@ body {
         width: 50%;
         /* um pouco mais larga que a de baixo */
         background: rgba(255, 255, 255, 0.25);
-        margin: 1.0rem auto 0 auto;
+        margin: 0.3rem auto 0 auto;
     }
 
     .nav-menu {
         position: fixed;
+        /* precisa ser fixed pra ficar sobre a tela */
         top: 0;
         left: 100%;
-        /* começa fora da tela, à direita */
+        /* começa fora da tela */
         width: 100%;
         max-width: 65%;
-        height: 100lvh;
+        height: 100vh;
+        /* altura da viewport, sem lvh */
         background: linear-gradient(180deg, var(--purple-800) 0%, var(--purple-700) 100%);
         box-shadow: -6px 0 18px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(10px);
         border-bottom-left-radius: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
+        /* logo no topo, links no meio, botões embaixo */
         align-items: center;
         transition: left 0.45s cubic-bezier(.22, .9, .27, 1);
         z-index: 300;
     }
+
 
     /* ===== MENU ATIVO ===== */
     .nav-menu.active {
@@ -2128,11 +2150,16 @@ body {
 
     /* ===== LINKS ===== */
     .nav-menu ul {
+        margin-top: 50%;
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         text-align: center;
+        flex-grow: 1;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
     }
 
     .nav-menu ul li a {
@@ -2149,6 +2176,7 @@ body {
         text-shadow: 0 0 10px rgba(255, 138, 5, 0.4);
     }
 
+
     /* ===== LINHA DIVISÓRIA ===== */
     .nav-menu::after {
         content: "";
@@ -2156,7 +2184,7 @@ body {
         height: 1px;
         width: 50%;
         background: rgba(255, 255, 255, 0.25);
-        margin: 2rem auto;
+        margin: 8rem auto;
     }
 
     /* ===== BOTÕES ===== */
@@ -2205,7 +2233,6 @@ body {
     .buttons {
         display: none;
     }
-
 
     .menu-toggle {
         gap: 6px;
@@ -2398,12 +2425,12 @@ body {
     }
 
     .nt-title img {
-        width: 10rem;
-        margin: 0 auto 2rem auto;
+        width: 12rem;
+        margin: 3rem auto 2rem auto;
     }
 
     .nt-text p {
-        font-size: 0.7rem;
+        font-size: 1rem;
         padding: 1rem;
         line-height: 1.4;
     }
@@ -2479,8 +2506,8 @@ body {
     }
 
     .risco {
-        width: 8rem;
-        left: 74%;
+        width: 10rem;
+        left: 68%;
         bottom: 4.2rem;
     }
 
@@ -2551,11 +2578,11 @@ body {
     .texto-melhora h3 {
         width: 100%;
         font-size: 1.2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
     .texto-melhora p {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         text-align: center;
         letter-spacing: 2px;
         width: 90%;

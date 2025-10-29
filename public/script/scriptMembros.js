@@ -6,7 +6,7 @@
 function generateUniqueLorem(name) {
     // Adiciona o nome do membro para garantir que o texto seja único (e para fácil identificação)
     if (name == 'AnaGarcia') {
-        return `Meu nome é Ana Caroline Garcia, tenho 15 anos e já trabalhei com HTML, CSS, SQL, JavaScript, Java, Python e Shell Script. Gosto de desenhar, filosofia e música. Dedico-me ao que desperta minha afinidade, com destaque para o front-end, mas também atuo bem em desenvolvimento e banco de dados.`;
+        return `Meu nome é Ana Caroline Garcia, tenho 15 anos e já trabalhei com HTML, CSS, SQL, JavaScript, Java, Python, Excel e Shell Script. Gosto de desenhar, filosofia e música. Dedico-me ao que desperta minha afinidade, com destaque para o front-end, mas também atuo bem em desenvolvimento e banco de dados.`;
     } else if (name == 'AnnaBonfim') {
         return `Meu nome é Anna Bonfim, tenho 16 anos, Trabalhei com SQL, Java, Regex, UX (figma) e Excel. Gosto de escutar kpop, asistir filmes de teror, fazer modelos conceituais e lógicos (como hobbie), gosto de ler e cozinhar doces`;
     } else if (name == 'Caio') {
