@@ -5,36 +5,36 @@
 // Função auxiliar para gerar um lorem ipsum único para cada membro
 function generateUniqueLorem(name) {
     // Adiciona o nome do membro para garantir que o texto seja único (e para fácil identificação)
-    if (name=='AnaGarcia'){
+    if (name == 'AnaGarcia') {
         return `Meu nome é Ana Caroline Garcia, tenho 15 anos e já trabalhei com HTML, CSS, SQL, JavaScript, Java, Python e Shell Script. Gosto de desenhar, filosofia e música. Dedico-me ao que desperta minha afinidade, com destaque para o front-end, mas também atuo bem em desenvolvimento e banco de dados.`;
-    } else if (name=='AnnaBonfim'){
+    } else if (name == 'AnnaBonfim') {
         return `Meu nome é Anna Bonfim, tenho 16 anos, Trabalhei com SQL, Java, Regex, UX (figma) e Excel. Gosto de escutar kpop, asistir filmes de teror, fazer modelos conceituais e lógicos (como hobbie), gosto de ler e cozinhar doces`;
-    } else if (name=='Caio'){
+    } else if (name == 'Caio') {
         return `Sou Caio Marcos, tenho 16 anos e sou apaixonado por programação, atuando tanto em gestão de dados quanto no desenvolvimento de aplicações web e mobile. Sou speedcuber, resolvendo o cubo mágico com agilidade, e tenho como hobby pesquisar sobre ciência, aviões e foguetes.`;
-    } else if (name=='Carlos'){
+    } else if (name == 'Carlos') {
         return `Meu nome é Carlos, tenho 15 anos e gosto de trabalhar com Java, Python, HTML e SQL. No meu tempo livre, pratico academia, faço truques de mágica e gosto de assistir animes, atividades que me ajudam a equilibrar foco e criatividade.`;
-    } else if (name=='Diego'){
+    } else if (name == 'Diego') {
         return `Meu nome é Diego, tenho 16 anos e já trabalhei com Design, Java e SQL. Sou apaixonado por futebol, programação e por conhecer novas culturas e lugares, sempre buscando aprender algo diferente a cada experiência.`;
-    } else if (name=='Diogo'){
+    } else if (name == 'Diogo') {
         return `Meu nome é Diogo, tenho 17 anos e atuo com frontend e backend. Gosto de livros, séries e filmes, e no meu tempo livre costumo tocar instrumentos e aprender coisas novas, sempre buscando evoluir.`;
-    } else if (name=='Duda'){
+    } else if (name == 'Duda') {
         return `Oie! Eu sou a Duda, tenho 17 anos e atuei no desenvolvimento back-end do projeto. Adoro ouvir música, e meus hobbies favoritos são cozinhar e treinar, sempre buscando equilíbrio entre foco e diversão.`;
-    } else if (name=='Giovana'){
+    } else if (name == 'Giovana') {
         return `Oiiee! Sou a Giovanna, tenho 17 anos. Tive contato com experiências diversas, tanto na área de Dados com banco de dados, machine learning e Inteligência Artificial quanto com a área de back-end.
 Sou apaixonada por expressões da vida por meio da arte, principalmente na música e literatura.`;
-    } else if (name=='Guilherme'){
+    } else if (name == 'Guilherme') {
         return `Meu nome é Guilherme, tenho 15 anos e atuo com design e desenvolvimento full-stack de aplicativos. Sou apaixonado por futebol e outros esportes, além de gostar de explorar novos conhecimentos e lugares, sempre buscando evoluir em tudo o que faço.`;
-    } else if (name=='Gustavo'){
+    } else if (name == 'Gustavo') {
         return `Meu nome é Gustavo, tenho 16 anos e adoro trabalhar com HTML, CSS e JavaScript — enfim, sou um dev de coração. Curto ler manhwas, assistir animes e malhar, equilibrando mente e corpo no meu dia a dia.`;
-    } else if (name=='Heloisa'){
+    } else if (name == 'Heloisa') {
         return `Oi, gente! Eu sou a Heloisa, tenho 16 anos e gosto de trabalhar tanto com frontend quanto com backend. Sou apaixonada por séries e filmes, e adoro experimentar coisas novas, mesmo quando não domino de primeira.`;
-    } else if (name=='Leticia'){
+    } else if (name == 'Leticia') {
         return `Oiee, eu sou a Letícia, tenho 17 anos e amo a área de Análise de Dados. Explorar, descobrir coisas novas e conhecer novos mundos sempre foi meu objetivo. Além disso, no meu tempo livre, gosto de me dedicar à arte, desde desenhar até dançar, e também jogar vôlei.`;
-    } else if (name=='Lucas'){
+    } else if (name == 'Lucas') {
         return `Sou o Lucas, tenho 16 anos e gosto de ler Invencível. Já trabalhei com Desenvolvimento de Sistemas — usando HTML, CSS e JavaScript — além de Inteligência Artificial e Excel. Gosto de unir criatividade e lógica em tudo o que faço.`;
-    } else if (name=='Mayumi'){
+    } else if (name == 'Mayumi') {
         return `Oie gente! Eu sou a Mayumi, tenho 17 anos e trabalhei na parte de IA e machine learning do projeto. Amo dados e design, e acredito que o futuro nasce quando a criatividade e cálculos se combinam.`;
-    } else if (name=='Natalia'){
+    } else if (name == 'Natalia') {
         return `Sou a Natália, tenho 17 anos e trabalho principalmente com DevOps e back-end, além de contribuir com o design do projeto. No tempo livre, gosto de ler, assistir séries e escrever, o que me ajuda a exercitar a criatividade.`;
     }
 }
