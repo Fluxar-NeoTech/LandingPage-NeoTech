@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+
+# Variáveis de ambiente
+.env
+
+# IDEs e sistema
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Render ou outros builds
+*.log

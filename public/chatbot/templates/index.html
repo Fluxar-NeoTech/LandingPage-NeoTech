@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoTech ChatBot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Neo<span>Tech</span></div>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">ChatBot</a>
+            <a href="#">Relatórios</a>
+            <div class="profile">👤 Carlos</div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bem-vindo ao <span>NeoBot</span>, Carlos!</h1>
+        <p>Tire dúvidas, conheça a NeoTech e explore nossos serviços</p>
+
+        <div class="suggestions">
+            <button onclick="sendExample('Quais são os planos da NeoTech?')">Planos</button>
+            <button onclick="sendExample('Quem faz parte da equipe da NeoTech?')">Equipe</button>
+            <button onclick="sendExample('O que a NeoTech traz de bom?')">O que traz de bom</button>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-log" id="chat-log">
+                <p><b>NeoBot:</b> Olá! Sou o assistente da NeoTech. Clique em uma sugestão ou faça sua pergunta.</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Digite sua pergunta...">
+                <button id="send-btn">➡️</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
