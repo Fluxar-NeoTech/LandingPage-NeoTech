@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar • Fluxar</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/styles/styleSingUp.css">
+    <link rel="shortcut icon" href="/public/assets/icons/XFAVICOM 1.png" type="image/x-icon">
+</head>
+
+<body>
+    <style>
+        /* Estilos CSS serão adicionados aqui */
+        .otp-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            /* Apenas para visualização no exemplo */
+            box-sizing: border-box;
+        }
+
+        .otp-input-wrapper {
+            display: flex;
+            position: relative;
+            gap: 10px;
+            /* Espaçamento entre as caixas */
+        }
+
+        .otp-box {
+            width: 50px;
+            /* Largura da caixa */
+            height: 50px;
+            /* Altura da caixa, para ser quadrada */
+            border: 2px solid #800080;
+            /* Borda roxa (Purple) */
+            border-radius: 8px;
+            /* Cantos arredondados */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background-color: #fff;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+            pointer-events: none;
+            /* Impede que o clique nas caixas ative o foco */
+        }
+
+        /* Estilo para a caixa com foco (opcional, mas recomendado) */
+        .otp-box.active {
+            border-color: #4b0082;
+            /* Roxo mais escuro para foco */
+            box-shadow: 0 0 5px rgba(75, 0, 130, 0.5);
+        }
+
+        /* O input "flutuante" ou invisível */
+        .otp-hidden-input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            /* Torna o input invisível */
+            font-size: 1px;
+            /* Minimiza o cursor */
+            caret-color: transparent;
+            /* Oculta o cursor */
+            letter-spacing: 40px;
+            /* Ajuste o espaçamento para que os dígitos coincidam com as caixas */
+            box-sizing: border-box;
+            z-index: 10;
+        }
+
+        /* Ajuste fino para o input invisível */
+        /* É crucial que o 'letter-spacing' e o 'width' do input invisível sejam ajustados 
+        para cobrir exatamente as caixas visíveis. No entanto, para um input de código, 
+        a melhor abordagem é usar o 'maxlength' e manipular o valor via JavaScript.
+        Vamos manter o input invisível e sem 'letter-spacing' e focar no JS para a mágica. */
+    </style>
+
+
+    <main>
+
+        <section class="FluxarLogoSECTION">
+            <div id="logo-container">
+                <img src="/public/assets/icons/FluxarLogoBRANCA.png" alt="Logo do aplicativo fluxar" id="logoFluxarAPP">
+            </div>
+        </section>
+
+        <section class="formSECTION">
+            <div class="caixa">
+                <a href="/public/index.html">
+                    <p style="font-weight: bold;">← Voltar</p>
+                </a>
+                <div class="caixa__header">
+                    <div>
+                        <h1 class="caixa__title">Verificar código</h1>
+                        <div class="caixa__sub">Um código foi enviado para seu email. Insira o código no espaço à baixo
+                        </div>
+                    </div>
+                </div>
+
+                <form id="form">
+                    <fieldset>
+                        <div class="form-grid">
+                            <div class="inputs">
+
+                            </div>
+                            <div class="otp-container">
+                                <div class="otp-input-wrapper">
+                                    <!-- O input flutuante/invisível que realmente recebe o código -->
+                                    <input type="text" class="otp-hidden-input" id="otpInput" maxlength="6"
+                                        inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
+                                        aria-label="Código de 6 dígitos">
+
+                                    <!-- As 6 caixas visuais (divs) -->
+                                    <div class="otp-box" id="box1"></div>
+                                    <div class="otp-box" id="box2"></div>
+                                    <div class="otp-box" id="box3"></div>
+                                    <div class="otp-box" id="box4"></div>
+                                    <div class="otp-box" id="box5"></div>
+                                    <div class="otp-box" id="box6"></div>
+                                </div>
+                            </div>
+                            <button type="submit" id="submit">Verificar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        const input = document.getElementById('otpInput');
+        const boxes = [
+            document.getElementById('box1'),
+            document.getElementById('box2'),
+            document.getElementById('box3'),
+            document.getElementById('box4'),
+            document.getElementById('box5'),
+            document.getElementById('box6')
+        ];
+
+        // Função para atualizar as caixas visuais
+        function updateBoxes(value) {
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].textContent = value[i] || ''; // Exibe o dígito ou vazio
+
+                // Remove a classe 'active' de todas as caixas
+                boxes[i].classList.remove('active');
+            }
+
+            // Adiciona a classe 'active' à próxima caixa vazia ou à última
+            const nextIndex = value.length < boxes.length ? value.length : boxes.length - 1;
+            boxes[nextIndex].classList.add('active');
+        }
+
+        // Evento de entrada (digitação e colagem)
+        input.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\D/g, '').substring(0, 6); // Limpa não-dígitos e limita a 6
+            e.target.value = value; // Atualiza o valor do input (importante para colagem)
+            updateBoxes(value);
+
+            // Opcional: Foca no próximo campo ou envia o formulário se completo
+            if (value.length === 6) {
+                console.log('Código Completo:', value);
+                // Aqui você pode adicionar a lógica para enviar o formulário
+                // Ex: document.getElementById('meuFormulario').submit();
+            }
+        });
+
+        // Evento de foco
+        input.addEventListener('focus', (e) => {
+            updateBoxes(e.target.value); // Garante que a caixa ativa é destacada ao focar
+        });
+
+        // Evento de desfoque
+        input.addEventListener('blur', () => {
+            boxes.forEach(box => box.classList.remove('active'));
+        });
+
+        // Garante que o input invisível receba o foco ao clicar nas caixas
+        const wrapper = document.querySelector('.otp-input-wrapper');
+        wrapper.addEventListener('click', () => {
+            input.focus();
+        });
+
+        // Inicializa o estado visual
+        updateBoxes(input.value);
+
+    </script>
+</body>
+
+</html>

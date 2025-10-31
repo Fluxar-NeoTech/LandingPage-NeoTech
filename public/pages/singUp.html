@@ -21,8 +21,10 @@
     </section>
 
     <section class="formSECTION">
-      <a href="/public/index.html" style="margin-left: 550px;"><img src="/public/assets/icons/NeoTechLogo.png" alt="Voltar para a página inicial"></a>
       <div class="caixa">
+        <a href="/public/index.html">
+          <p style="font-weight: bold;">← Voltar</p>
+        </a>
         <div class="caixa__header">
           <div>
             <h1 class="caixa__title">Criar conta no Fluxar</h1>
@@ -32,7 +34,6 @@
 
         <form id="form">
           <fieldset>
-            <legend>Cadastro</legend>
             <div class="form-grid">
               <div class="inputs">
                 <input type="text" id="nome" name="nome" class="inputUser" placeholder=" " required />
@@ -43,12 +44,8 @@
                 <label for="email" class="labelinput">Email</label>
               </div>
               <div class="inputs">
-                <input type="password" id="senha" name="senha" class="inputUser" placeholder=" " required />
-                <label for="senha" class="labelinput">Senha</label>
-              </div>
-              <div class="inputs">
-                <input type="tel" id="tel" name="tel" class="inputUser" placeholder=" " required />
-                <label for="tel" class="labelinput">Telefone</label>
+                <input type="text" id="nome" name="nome" class="inputUser" placeholder=" " required />
+                <label for="nome" class="labelinput">CNPJ</label>
               </div>
 
               <button type="submit" id="submit">Cadastrar</button>

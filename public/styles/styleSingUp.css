@@ -39,7 +39,7 @@ body {
     box-shadow: 0 12px 40px rgba(70, 0, 90, 0.06), 0 4px 12px rgba(15, 15, 20, 0.04);
     border: 1px solid rgba(111, 27, 185, 0.06);
     position: relative;
-    top: 125px;
+    top: 220px;
     left: 80px;
 }
 
@@ -257,4 +257,31 @@ main {
         width: 42px;
         height: 42px;
     }
+}
+
+
+.icon-toggle {
+    width: 36px;
+    height: 30px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: rgba(111, 27, 185, 0.04);
+    color: var(--purple-700);
+    cursor: pointer;
+    border: none;
+}
+
+.inputUser:focus+.labelinput,
+.inputUser:not(:placeholder-shown)+.labelinput,
+.inputUser:valid+.labelinput {
+    transform: translateY(-22px) scale(.86);
+    color: var(--purple-700);
+}
+
+/* senha: mostra ícone eye (opcional) */
+.inputs--with-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
