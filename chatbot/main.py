@@ -44,11 +44,8 @@ Você é o NeoBot da NeoTech. Responda de forma amigável, curta e profissional.
 """
     resposta = llm.generate_content(prompt)
     return resposta.text.strip()
-app = Flask(__name__,
-            static_folder="chatbot/static",
-            template_folder="chatbot/templates")
 
-@app.route("/chatbot")
+@app.route("/")
 def chat_home():
     return render_template("index.html")  # index do chatbot
 
