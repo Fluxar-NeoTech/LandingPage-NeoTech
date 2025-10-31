@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastrar • Fluxar</title>
+    <title>Recuperar senha • Fluxar</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles/styleSingUp.css">
@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <style>
         /* Estilos CSS serão adicionados aqui */
         .otp-container {
@@ -85,7 +86,6 @@
         Vamos manter o input invisível e sem 'letter-spacing' e focar no JS para a mágica. */
     </style>
 
-
     <main>
 
         <section class="FluxarLogoSECTION">
@@ -101,32 +101,20 @@
                 </a>
                 <div class="caixa__header">
                     <div>
-                        <h1 class="caixa__title">Verificar código</h1>
-                        <div class="caixa__sub">Um código foi enviado para seu email. Insira o código no espaço à baixo
-                        </div>
+                        <h1 class="caixa__title">Recuperar senha</h1>
+                        <p>Um código foi enviado para teonech@gmail.com</p>
                     </div>
                 </div>
 
                 <form id="form">
                     <fieldset>
                         <div class="form-grid">
-                            <div class="otp-container">
-                                <div class="otp-input-wrapper">
-                                    <!-- O input flutuante/invisível que realmente recebe o código -->
-                                    <input type="text" class="otp-hidden-input" id="otpInput" maxlength="6"
-                                        inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
-                                        aria-label="Código de 6 dígitos">
-
-                                    <!-- As 6 caixas visuais (divs) -->
-                                    <div class="otp-box" id="box1"></div>
-                                    <div class="otp-box" id="box2"></div>
-                                    <div class="otp-box" id="box3"></div>
-                                    <div class="otp-box" id="box4"></div>
-                                    <div class="otp-box" id="box5"></div>
-                                    <div class="otp-box" id="box6"></div>
-                                </div>
+                            <div class="inputs">
+                                <input type="email" id="email" name="email" class="inputUser" placeholder=" "
+                                    required />
+                                <label for="email" class="labelinput">Email</label>
                             </div>
-                            <button type="submit" id="submit">Verificar</button>
+                            <button type="submit" id="submit">Enviar</button>
                         </div>
                     </fieldset>
                 </form>
