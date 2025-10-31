@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from dotenv import load_dotenv
 import os
 import google.generativeai as genai
@@ -17,7 +17,7 @@ genai.configure(api_key=api_key)
 llm = genai.GenerativeModel(model_name="gemini-2.5-flash")
 
 # Cria app Flask
-app = Flask(__name__, static_folder="static", template_folder="templates")
+app = Flask(__name__, static_folder="public", static_url_path="/public")
 
 
 def perguntar_ao_neobot(pergunta):
@@ -154,20 +154,30 @@ Resposta:
     resposta = llm.generate_content(prompt)
     return resposta.text.strip()
 
+# =====================
+# ROTAS PRINCIPAIS
+# =====================
+# 🔹 Landing page
 @app.route("/")
-def chat_home():
-    return render_template("index.html")  # index do chatbot
+def home():
+    return send_from_directory("public", "index.html")
 
+# 🔹 Arquivos estáticos (CSS, JS, imagens)
+@app.route("/public/<path:filename>")
+def public_files(filename):
+    return send_from_directory("public", filename)
+
+# 🔹 Página do chatbot
+@app.route("/chatbot")
+def chatbot():
+    return send_from_directory("public/pages", "chatBot.html")
+
+# 🔹 API do chatbot
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json.get("pergunta", "").strip()
     if not user_message:
         return jsonify({"resposta": "Digite uma pergunta válida."})
-    
-    # Verifica obscenidades
-    if contem_obscenidade(user_message):
-        return jsonify({"resposta": "Não posso responder conteúdo ofensivo ou obsceno."})
-    
     try:
         resposta = perguntar_ao_neobot(user_message)
         return jsonify({"resposta": resposta})
@@ -175,6 +185,6 @@ def chat():
         print("Erro na API Gemini:", e)
         return jsonify({"resposta": "Erro ao processar a pergunta."})
 
+# 🔹 Rodar local
 if __name__ == "__main__":
-    # Para desenvolvimento local
     app.run(host="0.0.0.0", port=5000, debug=True)
