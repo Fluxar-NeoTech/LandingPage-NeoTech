@@ -22,6 +22,9 @@
 
     <section class="formSECTION">
       <div class="caixa">
+        <a href="/public/index.html">
+          <p style="font-weight: bold;">← Voltar para a página principal</p>
+        </a>
         <div class="caixa__header">
           <div>
             <h1 class="caixa__title">Criar conta no Fluxar</h1>
@@ -31,32 +34,18 @@
 
         <form id="form">
           <fieldset>
-            <legend>Cadastro</legend>
             <div class="form-grid">
               <div class="inputs">
                 <input type="text" id="nome" name="nome" class="inputUser" placeholder=" " required />
-                <label for="nome" class="labelinput">Nome Completo</label>
+                <label for="nome" class="labelinput">Nome Da Empresa</label>
               </div>
               <div class="inputs">
                 <input type="email" id="email" name="email" class="inputUser" placeholder=" " required />
                 <label for="email" class="labelinput">Email</label>
               </div>
               <div class="inputs">
-                <input type="password" id="senha" name="senha" class="inputUser" placeholder=" " required />
-                <label for="senha" class="labelinput">Senha</label>
-              </div>
-              <div class="inputs">
-                <input type="tel" id="tel" name="tel" class="inputUser" placeholder=" " required />
-                <label for="tel" class="labelinput">Telefone</label>
-              </div>
-
-              <div>
-                <p style="margin:6px 0;font-weight:600;color:var(--purple-800)">Sexo:</p>
-                <div class="radio-group">
-                  <label><input type="radio" name="sexo" value="feminino" required /> Feminino</label>
-                  <label><input type="radio" name="sexo" value="masculino" required /> Masculino</label>
-                  <label><input type="radio" name="sexo" value="outro" required /> Outro</label>
-                </div>
+                <input type="text" id="nome" name="nome" class="inputUser" placeholder=" " required />
+                <label for="nome" class="labelinput">CNPJ</label>
               </div>
 
               <button type="submit" id="submit">Cadastrar</button>
