@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles/stylePlanos.css">
     <link rel="shortcut icon" href="/public/assets/icons/XFAVICOM 1.png" type="image/x-icon">
-    <script src="/public/script/scriptPlanos.js"></script>
 </head>
 
 <body>
@@ -27,31 +26,31 @@
 
             <nav class="nav-menu" id="nav-menu">
                 <ul>
-                    <li class="reveal" data-reveal="left"><a href="./public/index.html">Início</a></li>
-                    <li class="reveal" data-reveal="left"><a href="./public/index.html#NeoTech">NeoTech</a></li>
-                    <li class="reveal" data-reveal="left"><a href="./public/index.html#Fluxar">Fluxar</a></li>
-                    <li class="reveal" data-reveal="left"><a href="./public/pages/planos.html">Planos</a></li>
-                    <li class="reveal" data-reveal="left"><a href="./public/pages/membros.html">Sobre Nós</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html">Início</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html#NeoTech">NeoTech</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/index.html#Fluxar">Fluxar</a></li>
+                    <li class="reveal selecionado" data-reveal="left"><a href="/public/pages/planos.html">Planos</a></li>
+                    <li class="reveal" data-reveal="left"><a href="/public/pages/membros.html">Sobre Nós</a></li>
                 </ul>
             </nav>
 
             <div class="buttons reveal" data-reveal="down">
-                <a href="./public/pages/singUp.html"><button class="btn-cadastrar">Cadastrar</button></a>
-                <a href="./public/pages/login.html" target="_blank"><button class="btn-entrar">Entrar</button></a>
+                <a href="https://fluxar-admin.onrender.com/pages/cadastro/inicioCadastro.jsp" target="_blank"><button class="btn-cadastrar">Cadastrar</button></a>
+                <a href="https://fluxar-admin.onrender.com/" target="_blank"><button class="btn-entrar">Entrar</button></a>
             </div>
         </div>
     </header>
     <main>
-
-        <div class="buttonsPlanos" data-reveal="down">
-            <button class="btn-mensal" onclick="mudarConteudoMENSAL()">Mensal</button>
-            <button class="btn-anual" onclick="mudarConteudoANUAL()">Anual</button>
+        <a href="/public/pages/chatBot.html" class="chatbot-icon">
+            <img src="/public/assets/icons/ícone IA.png" alt="Chat NeoBot">
+        </a>
+        <div class="buttonsPlanos">
+            <button class="btn-mensal active" id="btnMensal" onclick="mudarConteudoMENSAL()">Mensal</button>
+            <button class="btn-anual" id="btnAnual" onclick="mudarConteudoANUAL()">Anual</button>
         </div>
 
         <div id="PLANOSTODOSMENSAL">
-            <!-- PLANO 1 - MENSAL -->
             <div class="planoMensalPAR" id="p1m">
-                <p id="pp1">mensal</p>
                 <h1>ESSENCIAL</h1>
                 <ul class="lista-de-info">
                     <li>
@@ -78,16 +77,14 @@
                 </ul>
 
                 <div class="assinar" id="planos1assinar">
-                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco" id="p1">599,99</span>/mês</p>
+                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;" class="preco"
+                            id="p1">599,99</span><span id="periodo1">/mês</span></p>
                     <a href="#"><button class="assinarbotao">Assinar</button></a>
                 </div>
             </div>
 
-            <!-- PLANO 2 - MENSAL -->
             <div class="planoMensalIMPAR" id="p2m">
                 <img src="/public/assets/images/seloAproved.png" alt="Selo de mais recomendado" id="selo">
-                <p id="pp2">mensal</p>
                 <h1>PROFESSIONAL</h1>
                 <ul class="lista-de-info">
                     <li>
@@ -121,13 +118,11 @@
 
                 <div class="assinar" id="planos2assinar">
                     <p style="font-weight: bold" class="preco" id="recomendavel">R$ <span style="font-size: 1.4rem;"
-                            class="preco" id="p2">899,99</span>/mês</p>
+                            class="preco" id="p2">899,99</span><span id="periodo2">/mês</span></p>
                     <a href="#"><button class="assinarbotao2">Assinar</button></a>
                 </div>
             </div>
-            <!--PLANO 3 MENSAL-->
             <div class="planoMensalPAR" id="p3m">
-                <p id="pp3">mensal</p>
                 <h1>ENTERPRISE</h1>
                 <ul class="lista-de-info">
                     <li>
@@ -157,14 +152,16 @@
                 </ul>
 
                 <div class="assinar" id="planos3assinar">
-                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;"
-                            class="preco" id="p3">1599,99</span>/mês</p>
+                    <p style="font-weight: bold" class="preco">R$ <span style="font-size: 1.4rem;" class="preco"
+                            id="p3">1599,99</span><span id="periodo3">/mês</span></p>
                     <a href="#"><button class="assinarbotao">Assinar</button></a>
                 </div>
             </div>
         </div>
 
     </main>
+    <script src="/public/script/scriptPlanos.js"></script>
+    <script src="/public/script/menuHamburguer.js"></script>
 </body>
 
 </html>

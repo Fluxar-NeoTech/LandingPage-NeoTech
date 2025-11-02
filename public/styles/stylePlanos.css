@@ -6,14 +6,17 @@
     --bg-2: #F5EEFF;
     --white: #fff;
     --purple-600: #7A3FF2;
-    --purple-700: #6F1FB9; /* Roxo principal */
-    --purple-800: #47005B; /* Roxo mais escuro (quase preto) */
+    --purple-700: #6F1FB9;
+    /* Roxo principal */
+    --purple-800: #47005B;
+    /* Roxo mais escuro (quase preto) */
     --muted: #6b7280;
     --card-bg: #ffffff;
     --accent: linear-gradient(90deg, var(--purple-800), var(--purple-700));
     --glass: rgba(111, 27, 185, 0.06);
-    --orange: #FF7F50; /* Cor Laranja para destaque (padrão) */
-    
+    --orange: #FF7F50;
+    /* Cor Laranja para destaque (padrão) */
+
     /* Tipografia base */
     --fontsizeTitulo1: 2.8rem;
     --fontsizeTitulo2: 1.8rem;
@@ -37,13 +40,16 @@ body {
 }
 
 body {
-    background-color: var(--purple-800); /* Fundo roxo */
+    background-color: var(--purple-800);
+    /* Fundo roxo */
     display: flex;
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
-    overflow-x: hidden; /* Garante que não haja scroll horizontal */
-    padding-top: 70px; /* Para descer o conteúdo abaixo do header fixo */
+    overflow-x: hidden;
+    /* Garante que não haja scroll horizontal */
+    padding-top: 70px;
+    /* Para descer o conteúdo abaixo do header fixo */
 }
 
 /* ======================================================
@@ -58,12 +64,12 @@ body {
     align-items: center;
     position: fixed;
     z-index: 100;
-   
     top: 0;
 }
 
 .container-header {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -76,21 +82,49 @@ body {
 }
 
 /* Menu Hambúrguer */
-.menu-toggle { display: none; /* Escondido por padrão */ }
-.menu-toggle span { /* Estilo do ícone */ }
-.menu-toggle.active span:nth-child(1) { /* Efeito X */ }
-.menu-toggle.active span:nth-child(2) { /* Efeito X */ }
-.menu-toggle.active span:nth-child(3) { /* Efeito X */ }
-
-/* Navegação */
-.nav-menu ul {
-    display: flex;
-    gap: 4rem;
-    list-style: none;
+.menu-toggle {
+    display: none;
+    /* Escondido por padrão */
 }
 
+.menu-toggle span {
+    /* Estilo do ícone */
+}
+
+.menu-toggle.active span:nth-child(1) {
+    /* Efeito X */
+}
+
+.menu-toggle.active span:nth-child(2) {
+    /* Efeito X */
+}
+
+.menu-toggle.active span:nth-child(3) {
+    /* Efeito X */
+}
+.nav-menu{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+/* Navegação */
+.nav-menu ul {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 4rem;
+}
+.nav-menu ul li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
 .nav-menu a {
+    display: flex;
+    align-items: center;
     font-size: 1.2rem;
+    height: 100%;
     text-decoration: none;
     color: #000;
     font-weight: 600;
@@ -143,14 +177,45 @@ body {
 }
 
 
+.selecionado {
+    border-bottom: 3.5px solid var(--purple-800);
+
+}
+
+.selecionado a {
+    color: var(--purple-800);
+    font-weight: 700;
+}
 /* ======================================================
     SEÇÃO PRINCIPAL (PLANOS)
 ====================================================== */
+.chatbot-icon {
+    position: fixed;
+    right: 26px;
+    bottom: 40px;
+    opacity: 0.7;
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.chatbot-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.chatbot-icon:hover {
+    transform: translateY(-5px);
+    opacity: 1;
+}
 
 /* Botões Mensal/Anual */
 .buttonsPlanos {
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,106 +223,225 @@ body {
     width: 100%;
 }
 
-.btn-mensal, .btn-anual {
+.btn-mensal,
+.btn-anual {
     font-size: 1rem;
     padding: 6px 28px;
     border-radius: 12px;
     font-weight: 600;
     cursor: pointer;
+    /* Transição para os estados ativo/hover */
     transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
 }
 
+/* Efeito Hover nos botões de seleção de plano */
+.btn-mensal:hover,
+.btn-anual:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 /* Estilos específicos para os botões */
-.btn-mensal { 
-    background: transparent; border: 2px solid var(--orange); color: var(--orange); 
+.btn-mensal {
+    background: transparent;
+    border: 2px solid var(--orange);
+    color: var(--orange);
 }
-.btn-mensal:hover { background: var(--orange); color: var(--white); }
 
-.btn-anual { 
-    background: transparent; border: 2px solid var(--white); color: var(--white); 
+.btn-mensal:hover {
+    background: var(--orange);
+    color: var(--white);
 }
-.btn-anual:hover { background: var(--white); color: var(--purple-700); }
 
+.btn-anual {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+}
 
-/* Contêiner de Todos os Planos */
-#PLANOSTODOSMENSAL,
-#PLANOSTODOSANUAL {
+.btn-anual:hover {
+    background: var(--white);
+    color: var(--purple-700);
+}
+
+/* ======================================================
+    ESTADO ATIVO PARA BOTÕES MENSAL/ANUAL
+====================================================== */
+
+/* Botão Mensal no estado ativo (padrão) */
+.btn-mensal.active {
+    background: var(--orange);
+    color: var(--white);
+    border: 2px solid var(--orange);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão Anual no estado ativo */
+.btn-anual.active {
+    background: var(--white);
+    color: var(--purple-700);
+    border: 2px solid var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Garante que o hover não interfira no estado ativo */
+.btn-mensal.active:hover,
+.btn-anual.active:hover {
+    transform: translateY(0);
+}
+
+/* Contêiner de Todos os Planos (apenas layout) */
+#PLANOSTODOSMENSAL {
     display: flex;
     justify-content: center;
-    align-items: stretch; /* Garante que os cards tenham a mesma altura */
-    gap: 35px; /* AUMENTADO ESPAÇAMENTO AQUI */
+    align-items: stretch;
+    gap: 36px;
     width: 100%;
-    max-width: 1300px; /* AUMENTADO MAX-WIDTH para acomodar o gap */
-    margin: 0 auto; /* Centraliza o contêiner */
-    padding: 0 25px; /* Adicionado padding para evitar que os cards toquem as bordas */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 25px;
+
+    /* REMOVEMOS A TRANSIÇÃO DESTE CONTAINER E APLICAMOS NOS CARDS */
 }
 
-#PLANOSTODOSANUAL {
-    display: none;
-}
 
 /* Estilo Base dos Planos */
 .planoMensalPAR,
 .planoMensalIMPAR {
-    flex-grow: 1; /* Permite que os itens cresçam */
-    flex-shrink: 1; /* Permite que os itens diminuam */
-    flex-basis: 0; /* Base flexível para ajuste de largura */
-    min-width: 280px; /* Largura mínima para evitar que fiquem muito pequenos */
-    padding: 40px 30px;
-    border-radius: 20px;
+    /* ADICIONA TODAS AS TRANSIÇÕES, INCLUINDO OPACITY E TRANSFORM */
+    transition: transform 0.4s cubic-bezier(.25, .8, .25, 1),
+        box-shadow 0.4s cubic-bezier(.25, .8, .25, 1),
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 450px;
+    padding: 50px 50px;
+    height: 600px;
+    border-radius: 70px;
     display: flex;
     flex-direction: column;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 17px 2.8px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
+
+/* 🚨 CLASSE USADA PELO JAVASCRIPT PARA INICIAR O FADE OUT/SLIDE OUT 🚨 */
+.is-leaving {
+    opacity: 0;
+    /* Faz ele deslizar para cima ao desaparecer */
+    transform: translateY(-20px) !important;
+    box-shadow: none !important;
+}
+
+/* ======================================================
+    EFEITOS HOVER (INTERATIVIDADE)
+====================================================== */
+
+/* Planos Essencial e Enterprise (PAR) - Efeito de 'Levantar' */
+.planoMensalPAR:hover {
+    transform: translateY(-10px) scale(1.02);
+    /* Levanta e aumenta um pouco */
+    box-shadow: 0 25px 15px rgba(0, 0, 0, 0.35);
+    /* Sombra mais profunda */
+}
+
+/* Plano Professional (IMPAR - Destaque) - Efeito de 'Pulso' */
+.planoMensalIMPAR:hover {
+    transform: scale(1.04);
+    /* Aumenta um pouco mais que os outros */
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.45);
+    /* Sombra mais destacada */
+}
+
+/* ======================================================
+    ESTILOS DOS PLANOS
+====================================================== */
+/* ... (Seus estilos de cores e layout dos cards mantidos) ... */
 
 /* Planos Essencial e Enterprise (PAR) */
 .planoMensalPAR {
+    margin-top: 40px;
     background-color: var(--white);
+    transform: scale(1);
     color: var(--purple-800);
 }
-.planoMensalPAR h1 { color: var(--purple-700); }
-.planoMensalPAR .assinarbotao { 
-    background-color: var(--purple-800); 
-    color: var(--white);
+
+.planoMensalPAR h1 {
+    color: var(--purple-800);
 }
+
+.planoMensalPAR .assinarbotao {
+    background-color: var(--purple-800);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover no botão Assinar (PAR) */
+.planoMensalPAR .assinarbotao:hover {
+    background-color: var(--purple-700);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Plano Professional (IMPAR - Destaque) */
 .planoMensalIMPAR {
-    background-color: var(--purple-700);
+    height: 660px;
+    background-color: #9000B9;
     color: var(--white);
-    transform: scale(1.05); /* Efeito de destaque */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    transform: scale(1);
 }
-.planoMensalIMPAR h1 { color: var(--white); }
-.planoMensalIMPAR .assinarbotao2 { 
-    background-color: var(--orange); 
+
+.planoMensalIMPAR h1 {
     color: var(--white);
 }
-#recomendavel { color: var(--orange); }
+
+.planoMensalIMPAR .assinarbotao2 {
+    background-color: var(--orange);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover no botão Assinar (IMPAR) */
+.planoMensalIMPAR .assinarbotao2:hover {
+    background-color: #FF6633;
+    /* Um laranja ligeiramente mais escuro */
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#recomendavel {
+    color: var(--orange);
+}
 
 /* Selo de Mais Recomendado */
 #selo {
-    width: 80px;
+    width: 110px;
     height: auto;
     position: absolute;
-    top: -40px; 
-    right: -10px;
+    top: -18px;
+    right: -29px;
+    transition: transform 0.4s ease;
 }
 
-/* Títulos dos Planos */
-.planoMensalPAR > h1, 
-.planoMensalIMPAR > h1 {
+.planoMensalIMPAR:hover #selo {
+    transform: rotate(5deg);
+}
+
+/* Títulos, Listas, Preço (mantidos) */
+.planoMensalPAR>h1,
+.planoMensalIMPAR>h1 {
     font-size: var(--fontsizeTitulo1);
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Listas de Recursos */
 .lista-de-info {
-    list-style: none;
     padding: 0;
-    margin-bottom: auto; /* Empurra o preço e o botão para baixo */
+    margin-bottom: auto;
 }
 
 .lista-de-info li {
@@ -266,15 +450,21 @@ body {
     margin-bottom: 15px;
 }
 
-.lista-de-info li p {
-    font-size: var(--fontsizeBody);
-    line-height: 1.4;
-    padding-left: 10px; /* Espaço para um possível ícone */
+.planoMensalPAR .lista-de-info li {
+    margin-bottom: 16px;
 }
 
-/* Área de Assinatura (Preço e Botão) */
+.planoMensalIMPAR .lista-de-info li {
+    margin-bottom: 5px;
+}
+
+.lista-de-info li p {
+    font-size: var(--fontsizeBody);
+    line-height: 1.2;
+    padding-left: 10px;
+}
+
 .assinar {
-    margin-top: 30px;
     text-align: center;
 }
 
@@ -284,54 +474,68 @@ body {
 }
 
 .assinar .preco span {
-    font-size: 2.2rem !important; /* Tamanho grande do valor */
+    font-size: 2.2rem !important;
     font-weight: 700;
 }
 
-.assinarbotao, .assinarbotao2 {
+.assinarbotao,
+.assinarbotao2 {
     font-size: 1.1rem;
     padding: 12px 30px;
     border-radius: 12px;
     border: none;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    width: 80%; /* Ocupa mais espaço no cartão */
+    width: 80%;
     max-width: 250px;
 }
+
 
 /* ======================================================
     RESPONSIVIDADE (MEDIA QUERIES)
 ====================================================== */
 
 /* --- DESKTOP MÉDIO (max-width: 1350px) --- */
-/* Ajusta o max-width para o contêiner principal para caber mais justo */
 @media (max-width: 1350px) {
-    #PLANOSTODOSMENSAL, #PLANOSTODOSANUAL {
-        max-width: 1100px; /* Reduz ligeiramente o max-width */
-        gap: 25px; /* Reduz um pouco o gap para caber */
+
+    #PLANOSTODOSMENSAL,
+    #PLANOSTODOSANUAL {
+        max-width: 1100px;
+        gap: 25px;
     }
 }
 
 
 /* --- TABLET GRANDE (max-width: 1080px) --- */
 @media (max-width: 1080px) {
-    /* Ajuste de fontes */
-    :root {
-        --fontsizeTitulo1: 2.2rem; /* Títulos menores */
-        --fontsizeBody: 1rem;      /* Corpo menor */
-    }
-    
-    /* Reduz o gap do contêiner */
-    #PLANOSTODOSMENSAL, #PLANOSTODOSANUAL {
-        max-width: 900px; /* Mais restrito */
-        gap: 20px; /* Menor gap */
-        padding: 0 15px;
+
+    /* ... (Remoção de Hover para telas touch mantida) ... */
+    .planoMensalPAR:hover {
+        transform: scale(1);
+        box-shadow: 0px 17px 2.8px 0px rgba(0, 0, 0, 0.25);
     }
 
-    /* Reduz o destaque do plano Professional */
-    .planoMensalIMPAR {
-        transform: scale(1.0); /* Remove o destaque de escala */
+    .planoMensalIMPAR:hover {
+        transform: scale(1);
+        box-shadow: 0px 17px 2.8px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    .planoMensalIMPAR:hover #selo {
+        transform: rotate(0deg);
+    }
+
+    /* Ajuste de fontes */
+    :root {
+        --fontsizeTitulo1: 2.2rem;
+        --fontsizeBody: 1rem;
+    }
+
+    /* Reduz o gap do contêiner */
+    #PLANOSTODOSMENSAL,
+    #PLANOSTODOSANUAL {
+        max-width: 900px;
+        gap: 20px;
+        padding: 0 15px;
     }
 
     /* Diminui os paddings internos dos planos */
@@ -339,16 +543,17 @@ body {
     .planoMensalIMPAR {
         padding: 30px 20px;
     }
-    
+
     .assinar .preco span {
-        font-size: 1.8rem !important; /* Preço menor */
+        font-size: 1.8rem !important;
     }
 }
 
 
 /* --- TABLET PEQUENO / SMARTPHONE GRANDE (max-width: 768px) --- */
 @media (max-width: 768px) {
-    /* --- HEADER: Ativa Menu Hambúrguer --- */
+    /* ... (Estilos de Header e Mobile Nav mantidos) ... */
+
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -360,18 +565,17 @@ body {
         z-index: 200;
         position: relative;
     }
-    
-    /* Esconde nav e botões padrão */
-    .nav-menu, .buttons {
+
+    .nav-menu,
+    .buttons {
         display: none;
     }
-    
+
     .logo img {
         margin-left: 1rem;
         width: 8rem;
     }
-    
-    /* Estilo do menu quando ativo (Mobile Nav) */
+
     .nav-menu.active {
         display: block;
         position: fixed;
@@ -382,7 +586,7 @@ body {
         background: var(--card-bg);
         transform: translateX(0) !important;
         transition: transform 0.4s ease-in-out;
-        z-index: 90;
+        z-index: 101;
         overflow-y: auto;
     }
 
@@ -392,66 +596,80 @@ body {
         padding: 40px 0;
         gap: 30px;
     }
-    
+
     .nav-menu a {
         font-size: 1.5rem;
     }
 
     /* --- PLANOS: Quebra para Coluna Única --- */
-    #PLANOSTODOSMENSAL, #PLANOSTODOSANUAL {
-        flex-direction: column; /* FORÇA UMA COLUNA */
+    #PLANOSTODOSMENSAL,
+    #PLANOSTODOSANUAL {
+        flex-direction: column;
         align-items: center;
-        gap: 25px; /* Espaçamento entre os cards em coluna */
-        padding: 0 15px; /* Padding menor */
-        max-width: 100%; /* Ocupa a largura total disponível */
+        gap: 25px;
+        padding: 0 15px;
+        max-width: 100%;
     }
-    
+
     .planoMensalPAR,
     .planoMensalIMPAR {
         width: 100%;
-        max-width: 350px; /* Largura máxima para os cards em mobile */
-        min-width: unset; /* Remove min-width, usa max-width */
+        max-width: 350px;
+        min-width: unset;
         padding: 25px 20px;
+        height: auto;
     }
-    
-    /* Títulos centralizados */
-    .planoMensalPAR > h1, 
-    .planoMensalIMPAR > h1 {
-        font-size: 2rem; /* Títulos um pouco menores */
+
+    .planoMensalIMPAR {
+        height: auto;
     }
-    
-    /* Selo no topo do Plano Professional */
+
+    .planoMensalPAR>h1,
+    .planoMensalIMPAR>h1 {
+        font-size: 2rem;
+    }
+
     #selo {
-        top: -10px; 
-        right: 10px;
+        width: 90px;
+        top: -10px;
+        right: -29px;
     }
-    
-    .assinarbotao, .assinarbotao2 {
+
+    .assinarbotao,
+    .assinarbotao2 {
         width: 90%;
-        max-width: 200px; /* Botão menor em mobile */
+        max-width: 200px;
         font-size: 1rem;
         padding: 10px 25px;
     }
-    
+
     .assinar .preco span {
-        font-size: 2rem !important; 
+        font-size: 2rem !important;
     }
 }
 
 /* --- SMARTPHONE PEQUENO (max-width: 480px) --- */
 @media (max-width: 480px) {
+    #selo {
+        width: 70px;
+        position: absolute;
+        top: -4px;
+        right: -15px;
+        transition: transform 0.4s ease;
+    }
     /* Ajustes finos para telas menores */
     .logo img {
         width: 7rem;
     }
-    
+
     .buttonsPlanos {
         margin-top: 30px;
         margin-bottom: 30px;
         gap: 0.8rem;
     }
 
-    .btn-mensal, .btn-anual {
+    .btn-mensal,
+    .btn-anual {
         padding: 5px 20px;
         font-size: 0.9rem;
     }
@@ -459,19 +677,19 @@ body {
     .planoMensalPAR,
     .planoMensalIMPAR {
         padding: 20px 15px;
-        max-width: 300px; /* Reduz ainda mais a largura máxima */
+        max-width: 300px;
     }
 
-    .planoMensalPAR > h1, 
-    .planoMensalIMPAR > h1 {
-        font-size: 1.8rem;
+    .planoMensalPAR>h1,
+    .planoMensalIMPAR>h1 {
+        font-size: 1.3rem;
     }
 
     .lista-de-info li p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .assinar .preco span {
-        font-size: 1.6rem !important; 
+        font-size: 1.6rem !important;
     }
 }

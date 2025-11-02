@@ -1,380 +1,3 @@
-/* ======================================================
-    VARIÁVEIS CSS - ROOT
-====================================================== */
-:root {
-    --bg-1: #FBF7FF;
-    --bg-2: #F5EEFF;
-    --white: #fff;
-    --purple-600: #7A3FF2;
-    --purple-700: #6F1FB9;
-    --purple-800: #47005B;
-    --muted: #6b7280;
-    --card-bg: #ffffff;
-    --accent: linear-gradient(90deg, var(--purple-800), var(--purple-700));
-    --glass: rgba(111, 27, 185, 0.06);
-}
-
-/* ======================================================
-    APLICAÇÃO GLOBAL
-====================================================== */
-* {
-    box-sizing: border-box;
-}
-
-html,
-body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Poppins', system-ui, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
-
-body {
-    background-color: var(--white);
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* ======================================================
-    HEADER
-====================================================== */
-.header {
-    width: 100%;
-    height: 70px;
-    background: var(--card-bg);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
-    display: flex;
-    align-items: center;
-    position: fixed;
-    z-index: 100;
-    border-bottom-left-radius: 1.3rem;
-    border-bottom-right-radius: 1.3rem;
-    top: 0;
-}
-
-.container-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1.5rem;
-}
-
-.logo img {
-    width: 10rem;
-    margin-left: 5rem;
-}
-
-/* Menu Hambúrguer - Mobile */
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 32px;
-    height: 26px;
-    cursor: pointer;
-    z-index: 200;
-    position: relative;
-}
-
-.menu-toggle span {
-    background-color: var(--purple-800);
-    height: 3px;
-    width: 100%;
-    border-radius: 3px;
-    transition: all 0.4s ease;
-}
-
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-}
-
-/* Navegação */
-.nav-menu ul {
-    display: flex;
-    gap: 4rem;
-    list-style: none;
-}
-
-.nav-menu a {
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #000;
-    font-weight: 600;
-    transition: color .3s ease;
-}
-
-.nav-menu a:hover {
-    color: var(--purple-800);
-    font-weight: 700;
-}
-
-/* Botões Header */
-.buttons {
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-    margin-right: 3rem;
-}
-
-.btn-cadastrar {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 12px;
-    color: var(--purple-700);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    background-color: transparent;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
-}
-
-.btn-cadastrar:hover {
-    transform: translateY(-2px);
-}
-
-.btn-cadastrar:active {
-    transform: translateY(1px);
-}
-
-.btn-entrar {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    padding: 6px 28px;
-    border-radius: 12px;
-    background: transparent;
-    border: 2px solid var(--purple-800);
-    color: var(--purple-800);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
-}
-
-.btn-entrar:hover {
-    background: var(--purple-800);
-    color: #fff;
-    box-shadow: 0 4px 12px rgba(70, 0, 90, 0.25);
-    transform: translateY(-2px);
-}
-
-.btn-entrar:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 6px rgba(70, 0, 90, 0.25);
-}
-
-.fundoMembros1ANO {
-    position: absolute;
-    width: 100%;
-    height: 450px;
-    top: 25.87rem;
-}
-
-/* ======================================================
-    ESTILO PARA O NOVO CARROSSEL CENTRALIZADO
-====================================================== */
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    /* Ajuste para descer o conteúdo abaixo do header fixo */
-    min-height: 100vh;
-    z-index: 1;
-    /* Para ficar acima do fundo roxo */
-    position: relative;
-    /* Adicione um padding bottom maior para compensar os blocos de texto */
-    padding-bottom: 50px;
-}
-
-/* ======================================================
-    CSS PARA O BLOCO DE CONTEXTO (DIV ANO) E SKILLS
-    (Adicione APENAS este bloco ao seu styleMembros.css)
-====================================================== */
-
-/* --- AJUSTE ESSENCIAL DE LAYOUT DO CARROSSEL --- */
-/* Garante que os elementos absolutos fiquem posicionados corretamente */
-.carousel-display-area {
-    position: relative;
-    /* Manter todas as outras regras existentes (display: flex, max-width, etc.) */
-}
-
-
-/* --- 1. CONTEXTO (DIV ANO) - LADO ESQUERDO --- */
-
-/* WRAPPER Absoluto para o Contexto (Define a Posição Geral) */
-.context-absolute-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 20%;
-    min-width: 140px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Centraliza verticalmente o conteúdo interno */
-}
-
-/* Lista Individual de Contexto (Os 15 Blocos Sobrepostos - Controlados pelo JS) */
-.context-info-list {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    /* Alinha o conteúdo à direita (próximo à imagem) */
-    transform: translateY(-50%);
-
-    /* Visibilidade e Transição */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-    width: 100%;
-    text-align: right;
-    padding-right: 15px;
-}
-
-/* Bloco 'div-ano' Ativo (Exibido) */
-.context-info-list.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Estilo do Título e Parágrafo dentro da div-ano */
-.div-ano p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-    line-height: 1.4;
-    color: var(--purple-800, #5a4bda);
-    /* Cor principal */
-}
-
-.div-ano p:first-child {
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.div-ano p:last-child {
-    font-size: 0.95rem;
-    color: var(--muted-text-color, #777);
-    /* Cor mais suave para a função */
-}
-
-
-/* --- 2. SKILLS (TAGS) - LADO DIREITO --- */
-
-/* WRAPPER Absoluto para o Skills (Define a Posição Geral) */
-.skills-absolute-wrapper {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 20%;
-    min-width: 140px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Lista Individual de Skills (Os 15 Blocos Sobrepostos - Controlados pelo JS) */
-.skills-list {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    /* Alinha o conteúdo à esquerda (próximo à imagem) */
-    transform: translateY(-50%);
-
-    /* Layout das Tags */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    /* Alinha as tags à esquerda */
-    gap: 8px;
-
-    /* Visibilidade e Transição */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
-    width: 100%;
-    padding-left: 15px;
-}
-
-/* Bloco de Skills Ativo (Exibido) */
-.skills-list.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Estilo de Cada Tag de Skill */
-.skill-badge {
-    background-color: var(--purple-700, #5a4bda);
-    /* Cor de fundo da tag */
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-
-/* --- RESPONSIVIDADE PARA MOBILE/TELAS PEQUENAS (RECOMENDADO) --- */
-
-@media (max-width: 900px) {
-
-    /* Oculta ou reposiciona os blocos laterais em telas menores */
-    .context-absolute-wrapper,
-    .skills-absolute-wrapper {
-        position: static;
-        /* Volta para o fluxo normal */
-        transform: none;
-        width: 100%;
-        height: auto;
-        margin-top: 15px;
-    }
-
-    .context-info-list,
-    .skills-list {
-        position: static;
-        transform: none;
-        opacity: 1 !important;
-        /* Força visibilidade */
-        pointer-events: auto;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .context-info-list {
-        text-align: center;
-        /* Centraliza o texto no topo/fundo da imagem */
-    }
-
-    .skills-list {
-        justify-content: center;
-        /* Centraliza as tags */
-    }
-}
-
 /* Área da Imagem e Setas (Círculo e Setas Verdes) */
 .carousel-display-area {
     display: flex;
@@ -518,7 +141,8 @@ body {
 
 html,
 body {
-    height: 100%;
+    position: relative;
+    min-height: 134rem;
     margin: 0;
     font-family: 'Poppins', system-ui, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -530,7 +154,8 @@ body {
     flex-direction: column;
     padding: 0;
     width: 100%;
-    min-height: 100vh;
+    position: relative;
+    min-height: 135.6rem;
     overflow-x: hidden;
 }
 
@@ -901,144 +526,607 @@ body {
 
 
 /* ======================================================
-    RESPONSIVIDADE GERAL
+    ESTILO PARA O NOVO CARROSSEL CENTRALIZADO
+====================================================== */
+.chatbot-icon {
+    position: fixed;
+    right: 26px;
+    bottom: 40px;
+    width: 120px;
+    opacity: 0.7;
+    height: 120px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.chatbot-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.chatbot-icon:hover {
+    transform: translateY(-5px);
+    opacity: 1;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    /* Ajuste para descer o conteúdo abaixo do header fixo */
+    min-height: 100vh;
+    z-index: 1;
+    /* Para ficar acima do fundo roxo */
+    position: relative;
+    /* Adicione um padding bottom maior para compensar os blocos de texto */
+    padding-bottom: 50px;
+}
+
+/* ======================================================
+    CSS PARA O BLOCO DE CONTEXTO (DIV ANO) E SKILLS
+    (Adicione APENAS este bloco ao seu styleMembros.css)
 ====================================================== */
 
-/* --- TELA GRANDE / DESKTOP (1200px+) --- */
-/* (Base já configurada) */
+/* --- AJUSTE ESSENCIAL DE LAYOUT DO CARROSSEL --- */
+/* Garante que os elementos absolutos fiquem posicionados corretamente */
+.carousel-display-area {
+    position: relative;
+    /* Manter todas as outras regras existentes (display: flex, max-width, etc.) */
+}
 
 
-/* --- TABLET GRANDE / DESKTOP PEQUENO (max-width: 1200px) --- */
-@media (max-width: 1200px) {
+/* --- 1. CONTEXTO (DIV ANO) - LADO ESQUERDO --- */
+
+/* WRAPPER Absoluto para o Contexto (Define a Posição Geral) */
+.context-absolute-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20%;
+    min-width: 140px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza verticalmente o conteúdo interno */
+}
+
+/* Lista Individual de Contexto (Os 15 Blocos Sobrepostos - Controlados pelo JS) */
+.context-info-list {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    /* Alinha o conteúdo à direita (próximo à imagem) */
+    transform: translateY(-50%);
+
+    /* Visibilidade e Transição */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
+
+/* Bloco 'div-ano' Ativo (Exibido) */
+.context-info-list.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Estilo do Título e Parágrafo dentro da div-ano */
+.div-ano p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--purple-800, #5a4bda);
+    /* Cor principal */
+}
+
+.div-ano p:first-child {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.div-ano p:last-child {
+    font-size: 0.95rem;
+    color: var(--muted-text-color, #777);
+    /* Cor mais suave para a função */
+}
+
+
+/* --- 2. SKILLS (TAGS) - LADO DIREITO --- */
+
+/* WRAPPER Absoluto para o Skills (Define a Posição Geral) */
+.skills-absolute-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 20%;
+    min-width: 140px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Lista Individual de Skills (Os 15 Blocos Sobrepostos - Controlados pelo JS) */
+.skills-list {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* Alinha o conteúdo à esquerda (próximo à imagem) */
+    transform: translateY(-50%);
+
+    /* Layout das Tags */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* Alinha as tags à esquerda */
+    gap: 8px;
+
+    /* Visibilidade e Transição */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    padding-left: 15px;
+}
+
+/* Bloco de Skills Ativo (Exibido) */
+.skills-list.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Estilo de Cada Tag de Skill */
+.skill-badge {
+    background-color: var(--purple-700, #5a4bda);
+    /* Cor de fundo da tag */
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.NeoTech {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.6rem;
+    padding-top: 4rem;
+    width: 100%;
+    background: linear-gradient(180deg, #650082, #CD23DF);
+}
+
+.NeoTech-Titulo {
+    margin: 3rem;
+}
+
+.container-Neotech {
+    margin: 0 auto;
+}
+
+.container-Neotech img {
+    width: 80rem;
+}
+
+/* ======================================================
+    TIMELINE VERTICAL (BOLAS E LINHA)
+====================================================== */
+
+/* 1. Contêiner principal e linha vertical */
+.bolas {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+    cursor: pointer;
+    padding: 20px 0;
+    left: 6.5rem;
+    top: 78rem;
+}
+
+/* Bolas inativas (posição base) */
+.historia,
+.fundacao,
+.objetivo {
+    width: 90px;
+    height: 90px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.5, 1),
+        box-shadow 0.3s ease-out,
+        width 0.3s ease,
+        height 0.3s ease;
+}
+
+/* Ao ativar: cresce e se move */
+.historia.active,
+.fundacao.active,
+.objetivo.active {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Movimento individual usando translateY */
+.historia.active {
+    transform: translate(220px, 150px);
+}
+
+.fundacao.active {
+    transform: translate(220px, 10px);
+}
+
+.objetivo.active {
+    transform: translate(220px, -130px);
+}
+
+/* 2. Estilo dos Contêineres de Ícones (historia, fundação, objetivo) */
+.historia,
+.fundacao,
+.objetivo {
+    position: relative;
+    /* Essencial para sobrepor a linha */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    /* Transforma em círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    /* Fica na frente da linha */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+/* 3. Estilos de Cor Específicos (Conforme a sua imagem 5d5bca.png, se for a mesma seção) */
+
+/* Círculo 1 (história) - Cor mais clara */
+.historia {
+    background: linear-gradient(190deg, #6000A0, #8619AB);
+}
+
+/* Círculo 2 (fundação) - Cor intermediária */
+.fundacao {
+    background: linear-gradient(190deg, #6000A0, #8619AB);
+}
+
+/* Círculo 3 (objetivo) - Cor mais escura */
+.objetivo {
+    background: linear-gradient(190deg, #6000A0, #8619AB);
+}
+
+
+/* 4. Estilo dos Ícones (Garante que a imagem seja centralizada e do tamanho certo) */
+.historia img,
+.fundacao img,
+.objetivo img {
+    width: 50%;
+    /* Ou o tamanho que você preferir para o ícone */
+    height: 50%;
+    object-fit: contain;
+}
+
+/* 5. Efeito Hover (Interatividade) */
+.historia:hover,
+.fundacao:hover,
+.objetivo:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.Texto-Historia,
+.Texto-Fundacao,
+.Texto-Objetivo {
+    display: none;
+}
+
+.titulo {
+    width: 600px;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: 31rem;
+    left: 28rem;
+    color: white;
+}
+
+.text {
+    width: 700px;
+    font-size: 1.4rem;
+    position: absolute;
+    bottom: 8rem;
+    left: 30rem;
+    color: rgb(0, 0, 0);
+}
+
+.Texto-Historia.active,
+.Texto-Fundacao.active,
+.Texto-Objetivo.active {
+    display: flex !important;
+    flex-direction: column;
+    position: relative;
+    animation: aparecer 0.5s ease forwards;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+        FOOTER GLOBAL - NEOTECH
+================================ */
+.footer {
+    width: 100%;
+    position: absolute;
+    /* mantém o original */
+    bottom: 0;
+    /* antes era -100% */
+    background: linear-gradient(180deg, #CD23DF, var(--purple-800));
+    color: white;
+    padding: 60px 0 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* LOGO E TEXTO */
+.footer-logo img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-logo p {
+    font-size: 0.9rem;
+    color: #f1f0f0;
+    line-height: 1.6;
+}
+
+/* LINKS */
+.footer-links h4 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #f1f0f0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: var(--primary-100);
+}
+
+/* REDES SOCIAIS */
+.footer-social h4 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-social .social-icons a img {
+    width: 25px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-social .social-icons a:hover img {
+    transform: scale(1.1);
+    filter: invert(47%) sepia(100%) saturate(600%) hue-rotate(260deg) brightness(100%) contrast(100%);
+}
+
+.footer-social .email a {
+    color: #f1f0f0;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-social .email a:hover {
+    color: var(--primary-100);
+}
+
+/* BASE DO FOOTER */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #f1f0f0;
+}
+
+.footer-bottom .heart {
+    color: var(--primary-100);
+}
+
+/* ======================================================
+    MEDIA QUERIES (RESPONSIVIDADE)
+====================================================== */
+
+/* --- 1. Para Tablets (Max-width: 1024px) --- */
+@media (max-width: 1024px) {
+
+    /* AJUSTE GERAL */
+    html,
+    body {
+        /* Reduz a altura mínima para se ajustar ao conteúdo menor */
+        min-height: auto;
+    }
+
+    /* HEADER */
     .logo img {
+        width: 8rem;
         margin-left: 2rem;
     }
 
     .nav-menu ul {
-        gap: 2.5rem;
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
     }
 
     .buttons {
-        margin-right: 2rem;
+        margin-right: 1.5rem;
+    }
+
+    /* CARROSSEL (Área Central) */
+    .carousel-display-area {
+        max-width: 600px;
+    }
+
+    /* Remove o posicionamento absoluto dos textos laterais em telas menores */
+    .context-absolute-wrapper,
+    .skills-absolute-wrapper {
+        display: none;
+    }
+
+    /* NEO TECH / TIMELINE */
+    .container-Neotech img {
+        /* Reduz a imagem do gráfico */
+        width: 65rem;
+    }
+
+    /* Reposiciona as bolas para ficarem um pouco mais perto do centro */
+    .bolas {
+        left: 4.5rem;
+        top: 75rem;
+        /* Ajuste se o gráfico diminuiu */
+    }
+
+    /* Reduz o tamanho dos blocos de texto (Título e P) */
+    .titulo {
+        width: 500px;
+        left: 25rem;
+        bottom: 25rem;
+        font-size: 1.6rem;
+    }
+
+    .text {
+        width: 600px;
+        left: 27rem;
+        bottom: 5rem;
+        font-size: 1.2rem;
+    }
+
+    /* FOOTER */
+    .footer-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 0 20px;
     }
 }
 
+/* --- 2. Para Celulares (Max-width: 768px) --- */
+@media (max-width: 768px) {
 
-/* --- TABLET / TELA MÉDIA (max-width: 900px) --- */
-@media (max-width: 900px) {
-
-    /* --- HEADER --- */
-    .menu-toggle {
-        display: flex;
-        /* Mostra o menu hambúrguer */
-        margin-right: 1rem;
-    }
-
+    /* HEADER (Ativa o Menu Hamburguer) */
     .logo img {
         margin-left: 1rem;
     }
 
     .nav-menu {
-        /* Configura o menu lateral para mobile */
+        /* Estilo do menu mobile (fora da tela) */
         position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
+        top: 0;
+        right: -100%;
         height: 100vh;
-        background: var(--card-bg);
-        transform: translateX(100%);
-        /* Oculta */
-        transition: transform 0.4s ease-in-out;
-        z-index: 90;
-        overflow-y: auto;
-    }
-
-    .nav-menu.active {
-        transform: translateX(0);
-        /* Exibe */
+        width: 70%;
+        background-color: var(--card-bg);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s ease-in-out;
+        padding-top: 100px;
+        z-index: 150;
     }
 
     .nav-menu ul {
         flex-direction: column;
         align-items: center;
-        padding: 40px 0;
         gap: 30px;
+        padding: 0;
     }
 
-    .nav-menu a {
-        font-size: 1.5rem;
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        /* Mostra o ícone de hambúrguer */
+        margin-right: 1rem;
     }
 
     .buttons {
         display: none;
-        /* Oculta botões de login/cadastro em mobile */
+        /* Esconde os botões para simplificar o layout mobile */
     }
 
-    /* --- CARROSSEL --- */
+    /* CARROSSEL (Imagem e Setas) */
     .carousel-display-area {
         flex-direction: column;
-        /* Quebra em coluna */
+        /* Coloca setas em cima/abaixo da imagem */
         margin-bottom: 2rem;
     }
 
-    /* Reposiciona os blocos laterais para aparecerem acima e abaixo da imagem */
-    .context-absolute-wrapper,
-    .skills-absolute-wrapper {
-        position: static;
-        /* Volta para o fluxo normal */
-        transform: none;
-        width: 100%;
-        height: auto;
-        min-width: auto;
-        margin-top: 15px;
-        order: 1;
-        /* Posição após a imagem */
+    .arrow-btn {
+        padding: 10px;
+    }
+
+    .arrow-btn:first-child {
+        /* Move a seta esquerda para cima da imagem */
+        order: -1;
     }
 
     .member-image-container {
-        order: 0;
-        /* Coloca a imagem no topo */
+        /* Reduz um pouco o tamanho da imagem */
         width: 180px;
         height: 180px;
-        margin-bottom: 30px;
-    }
-
-    .member-info-section {
-        order: 2;
-        /* Informações abaixo dos blocos laterais */
-    }
-
-    .arrow-btn {
-        position: absolute;
-        top: 180px;
-        /* Ajusta a posição vertical das setas em mobile */
-        /* Deixe o JS gerenciar a navegação, as setas podem ficar fixas ou escondidas */
-    }
-
-    /* Garante que os blocos laterais sejam visíveis e centrados em mobile */
-    .context-info-list,
-    .skills-list {
-        position: static;
-        transform: none;
-        opacity: 1 !important;
-        /* Força visibilidade */
-        pointer-events: auto;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .context-info-list {
-        text-align: center;
-    }
-
-    .skills-list {
-        justify-content: center;
-    }
-
-    .fundoMembros1ANO {
-        /* Ajusta o fundo roxo */
-        height: 550px;
-        top: 15.87rem;
+        margin-bottom: 40px;
     }
 
     .member-name-box h2 {
@@ -1048,36 +1136,56 @@ body {
     .member-description-box p {
         font-size: 1rem;
     }
-}
 
-/* --- SMARTPHONE (max-width: 600px) --- */
-@media (max-width: 600px) {
-
-    /* Ajustes finos para telas menores */
-    .logo img {
-        width: 8rem;
+    /* NEO TECH / TIMELINE */
+    .container-Neotech img {
+        /* Reduz muito a imagem para caber na tela */
+        width: 95%;
+        height: auto;
     }
 
-    .member-image-container {
-        width: 150px;
-        height: 150px;
-        margin-bottom: 20px;
+    /* Reposiciona as bolas para ficarem no canto (layout vertical esmagado) */
+    .bolas {
+        left: 1rem;
+        top: 60rem;
+        /* Ajuste a posição inicial */
+        gap: 50px;
     }
 
-    .arrow-btn {
-        top: 150px;
+    /* Ajusta o movimento lateral, já que a bola está menor */
+    .historia.active,
+    .fundacao.active,
+    .objetivo.active {
+        transform: translateX(30px) scale(1.1);
+        box-shadow: 0 0 0 3px #ff09a1, 0 6px 15px rgba(0, 0, 0, 0.4);
     }
 
-    .member-name-box h2 {
-        font-size: 1.8rem;
+    /* Move o bloco de texto para o centro (sob o gráfico) */
+    .titulo,
+    .text {
+        position: relative;
+        /* CRÍTICO: Deixa de ser ABSOLUTO */
+        left: auto;
+        bottom: auto;
+        margin: 1.5rem auto;
+        width: 90%;
+        max-width: 450px;
+        text-align: center;
     }
 
-    .div-ano p {
+    .titulo h1 {
+        font-size: 1.4rem;
+    }
+
+    .text p {
         font-size: 1rem;
+        text-align: center;
     }
 
-    .skill-badge {
-        font-size: 0.7rem;
-        padding: 4px 8px;
+    /* FOOTER */
+    .footer-container {
+        grid-template-columns: 1fr;
+        /* Uma coluna por seção */
+        padding: 0 15px;
     }
 }
