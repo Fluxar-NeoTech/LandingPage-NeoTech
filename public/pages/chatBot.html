@@ -1,43 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoTech ChatBot</title>
+
     <link rel="stylesheet" href="/public/styles/styleChatBot.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">Neo<span>Tech</span></div>
-        <nav>
-            <a href="#">Dashboard</a>
-            <a href="#">ChatBot</a>
-            <a href="#">Relatórios</a>
-            <div class="profile">👤 Carlos</div>
-        </nav>
-    </header>
+    <div class="container">
 
-    <main>
-        <h1>Bem-vindo ao <span>NeoBot</span>, Carlos!</h1>
-        <p>Tire dúvidas, conheça a NeoTech e explore nossos serviços</p>
+        <aside class="sidebar collapsed">
+            <div class="sidebar-header">
+                <img src="/public/assets/icons/NeoTech_Logo-Branca.png" alt="logo" class="header-logo"
+                    style="height:44px;">
+                <button class="sidebar-toggle">
+                    <span class="material-symbols-rounded">chevron_left</span>
+                </button>
+            </div>
 
-        <div class="suggestions">
-            <button onclick="sendExample('Quais são os planos da NeoTech?')">Planos</button>
-            <button onclick="sendExample('Quem faz parte da equipe da NeoTech?')">Equipe</button>
-            <button onclick="sendExample('O que a NeoTech traz de bom?')">O que traz de bom</button>
+            <div class="sidebar-content">
+                <ul class="menu-list">
+                    <li class="menu-item">
+                        <a href="/public/index.html" class="menu-link active">
+                            <span class="material-symbols-rounded">home</span>
+                            <span class="menu-label">Início</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/public/pages/membros.html" class="menu-link">
+                            <span class="material-symbols-rounded">info</span>
+                            <span class="menu-label">Sobre</span>
+                        </a>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="menu-link faq-toggle">
+                            <span class="material-symbols-rounded">quiz</span>
+                            <span class="menu-label">FAQ</span>
+                            <span class="material-symbols-rounded submenu-arrow">expand_more</span>
+                        </a>
+                        <ul class="submenu-list">
+                            <li class="submenu-item">
+                                <a href="#" class="submenu-link" data-question="O que é a NeoTech?">O que é a
+                                    NeoTech?</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#" class="submenu-link" data-question="Quais serviços a NeoTech oferece?">Quais
+                                    serviços a NeoTech oferece?</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#" class="submenu-link"
+                                    data-question="Quanto custam os planos de assinatura?">Quanto custam os planos de
+                                    assinatura?</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#" class="submenu-link"
+                                    data-question="Como entro em contato com o suporte?">Como entro em contato com o
+                                    suporte?</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#" class="submenu-link"
+                                    data-question="Onde posso me cadastrar na plataforma?">Onde posso me cadastrar na
+                                    plataforma?</a>
+                            </li>
+                            <li class="submenu-item">
+                                <a href="#" class="submenu-link"
+                                    data-question="Quais linguagens de programação são usadas?">Quais linguagens de
+                                    programação são usadas?</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="" class="menu-link">
+                            <span class="material-symbols-rounded">mail</span>
+                            <span class="menu-label">Contato</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/public/pages/singUp.html" class="menu-link">
+                            <span class="material-symbols-rounded">person_add</span>
+                            <span class="menu-label">Cadastrar</span>
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="/public/pages/login.html" class="menu-link">
+                            <span class="material-symbols-rounded">login</span>
+                            <span class="menu-label">Entrar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <button class="theme-toggle">
+                    <div class="theme-label">
+                        <span class="theme-icon material-symbols-rounded">dark_mode</span>
+                        <span class="theme-text">Dark Mode</span>
+                    </div>
+                    <div class="theme-toggle-track">
+                        <div class="theme-toggle-indicator"></div>
+                    </div>
+                </button>
+            </div>
+        </aside>
+        <div class="main-content">
+            <nav class="site-nav">
+                <button class="sidebar-toggle">
+                    <span class="material-symbols-rounded">menu</span>
+                </button>
+            </nav>
+
+            <main>
+                <div id="initial-message" class="initial-message">
+                    <h1>Bem-vindo ao <span>Neo!</span></h1>
+                    <p>Tire dúvidas, conheça a NeoTech e explore nossos serviços</p>
+
+                    <div class="suggestions">
+                        <button data-question="Valor das assinaturas">Valor das assinaturas</button>
+                        <button data-question="Nossa Equipe">Nossa Equipe</button>
+                        <button data-question=" que traz de bom">O que traz de bom</button>
+                    </div>
+                </div>
+
+                <div id="chat-container" class="chat-container">
+                    <div id="chat-log" class="chat-log">
+                    </div>
+
+                    <div id="thinking" class="thinking" style="display: none;">
+                        <div class="typing">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" id="user-input" placeholder="Digite sua pergunta...">
+                        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </main>
         </div>
 
-        <div class="chat-container">
-            <div class="chat-log" id="chat-log">
-                <p><b>NeoBot:</b> Olá! Sou o assistente da NeoTech. Clique em uma sugestão ou faça sua pergunta.</p>
-            </div>
-            <div class="chat-input">
-                <input type="text" id="user-input" placeholder="Digite sua pergunta...">
-                <button id="send-btn">➡️</button>
-            </div>
-        </div>
-    </main>
-
+    </div>
     <script src="/public/script/scriptChatBot.js"></script>
+    <script src="/public/script/sideBarChat.js"></script>
 </body>
+
 </html>

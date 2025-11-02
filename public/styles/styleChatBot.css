@@ -1,132 +1,663 @@
+/* ======================================================
+    RESET E FONTES
+====================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
+/* ======================================================
+    CONFIGURAÇÃO DE TEMAS (DARK MODE)
+====================================================== */
+
+/* :root define o "MODO CLARO" (TEMA ROXO/LILÁS) */
+:root {
+    --color-text-primary: #ffffff;
+    /* Cor principal do texto na sidebar (branco) */
+    --color-text-body: #4b0082;
+    /* Cor principal do texto no corpo (roxo escuro) */
+    --color-text-placeholder: #ffb6e6;
+    --color-bg-primary: #f9fafb;
+    /* Fundo principal do corpo (branco/quase branco) */
+    --color-bg-secondary: #5c3d9a;
+    /* Fundo de botões e toggles (roxo médio) */
+    --color-bg-sidebar: #3a0061;
+    /* Fundo da Sidebar (roxo escuro) */
+    --color-border-hr: #4B007D;
+    /* Cor da borda/linha divisória */
+    --color-hover-primary: #7f00ff;
+    /* Cor de destaque ao passar o mouse */
+    --color-hover-secondary: #7f00ff;
+    --color-shadow: rgba(0, 0, 0, 0.2);
+    --color-chat-text: #4b0082;
+    --color-chat-bg: rgba(255, 255, 255, 0.6);
+}
+
+/* body.dark-theme define o "MODO ESCURO" */
+body.dark-theme {
+    --color-text-primary: #e0e0e0;
+    /* Texto principal do corpo/sidebar (cinza claro) */
+    --color-text-body: #3a0061;
+    --color-text-placeholder: #ffb6e6;
+    --color-bg-primary: #121212;
+    /* Fundo principal do corpo (preto/cinza muito escuro) */
+    --color-bg-secondary: #331c4b;
+    --color-bg-sidebar: #24003d;
+    --color-border-hr: #3a0061;
+    --color-hover-primary: #9d00ff;
+    --color-hover-secondary: #9d00ff;
+    --color-shadow: rgba(0, 0, 0, 0.4);
+    --color-chat-text: #e0e0e0;
+    --color-chat-bg: rgba(50, 50, 50, 0.6);
+}
+
+
+/* ======================================================
+    LAYOUT PRINCIPAL: CONTAINER e CHAT EM TELA CHEIA
+====================================================== */
 body {
-    background: linear-gradient(135deg, #7f00ff, #e100ff);
-    color: #fff;
+    min-height: 100vh;
+    background: var(--color-bg-primary);
+    color: var(--color-text-body);
+    /* Usando a variável */
+}
+
+.container {
+    display: flex;
     min-height: 100vh;
 }
 
-header {
+.container .main-content {
+    flex: 1;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(6px);
+    flex-direction: column;
+    color: var(--color-chat-text);
+    /* O texto do chat usa esta cor */
+    /* Gradiente original aplicado no conteúdo principal */
+    background: linear-gradient(135deg, #f8a8ff, #ffc3a0);
 }
 
-header .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-}
-
-header .logo span {
-    color: #ffcbf2;
-}
-
-header nav a {
-    margin: 0 0.8rem;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-}
-
-header .profile {
-    margin-left: 1rem;
-}
-
+/* MAIN (ÁREA CENTRAL DO CHAT) */
 main {
-    max-width: 700px;
-    margin: 4rem auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 0;
+    max-width: 100%;
 }
 
-main h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+
+/* ======================================================
+    ESTILOS ESPECÍFICOS DO CHAT E MENSAGEM INICIAL
+====================================================== */
+
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
 
-main h1 span {
-    color: #ffcbf2;
+.initial-message {
+    position: absolute;
+    top: 40%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 800px;
+    z-index: 10;
+    transition: opacity 0.5s ease;
 }
 
-main p {
-    margin-bottom: 2rem;
+.initial-message h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-text-body);
+    margin-top: 1rem;
+    transition: margin-top 0.5s ease;
+}
+
+.initial-message h1 span {
+    color: var(--color-hover-primary);
+}
+
+.initial-message p {
+    margin-top: 0.9rem;
+    color: var(--color-bg-secondary);
     font-size: 1.1rem;
-    opacity: 0.9;
 }
 
 .suggestions {
+    margin-top: 1.5rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    transition: opacity 0.5s ease;
 }
 
 .suggestions button {
-    background: rgba(255, 255, 255, 0.15);
+    background: #fff;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    color: #fff;
-    font-weight: bold;
+    padding: 1.5rem 2rem;
+    font-size: 1rem;
+    border-radius: 15px;
+    color: #4b0082;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 .suggestions button:hover {
-    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-4px);
+    background: #ffecff;
 }
 
 .chat-container {
-    background: rgba(0, 0, 0, 0.25);
-    border-radius: 15px;
-    padding: 1.5rem;
+    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
 }
 
 .chat-log {
     flex: 1;
     overflow-y: auto;
-    padding: 0.5rem;
     text-align: left;
-    margin-bottom: 1rem;
+    padding: 0;
+    background: transparent;
+    color: var(--color-chat-text);
+    opacity: 0;
+    transition: all 0.5s ease;
+    border-radius: 25px;
+
+    /* ESCONDER SCROLLBAR */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
+.chat-log::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.chat-log.active {
+    opacity: 1;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: var(--color-chat-bg);
+    backdrop-filter: blur(10px);
+    height: auto;
+}
+
+/* Estilo para as mensagens dentro do chat-log */
 .chat-log p {
-    margin-bottom: 0.8rem;
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    max-width: 80%;
+    line-height: 1.5;
+    word-wrap: break-word;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* Mensagens do Usuário (Você) */
+.chat-log p:has(b:contains("Você:")) {
+    background-color: #7f00ff;
+    color: #fff;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+    text-align: left;
+}
+
+.chat-log p:has(b:contains("Você:")) b:first-child {
+    display: none;
+}
+
+/* Mensagens do Bot (NeoBot) */
+.chat-log p:has(b:contains("NeoBot:")) {
+    background-color: var(--color-bg-primary);
+    /* Corrigido: usa o BG primário (claro/escuro) */
+    color: var(--color-text-body);
+    /* Corrigido: usa a cor do corpo */
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+    text-align: left;
+}
+
+.chat-log p:has(b:contains("NeoBot:")) b:first-child {
+    color: var(--color-hover-primary);
+}
+
+.chat-log p:has(b:contains("Erro:")) {
+    background-color: #ffcccc;
+    color: #cc0000;
+}
+
+
+/* CAMPO DE INPUT */
 .chat-input {
     display: flex;
     gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
 }
 
 .chat-input input {
     flex: 1;
-    padding: 0.6rem 1rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 25px;
     border: none;
     outline: none;
+    font-size: 1rem;
+    background: transparent;
 }
 
 .chat-input button {
-    padding: 0 1.2rem;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
     background: #7f00ff;
     color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 1.2rem;
     transition: 0.3s;
+    flex-shrink: 0;
 }
 
 .chat-input button:hover {
     background: #9d00ff;
+}
+
+
+/* Efeitos de digitação ("PENSANDO...") */
+.thinking {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.5rem 1rem 1rem 1rem;
+}
+
+.typing span {
+    width: 8px;
+    height: 8px;
+    background: var(--color-text-body);
+    /* Usa a cor do texto do corpo */
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    animation: blink 1.4s infinite both;
+}
+
+.typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+
+    0%,
+    80%,
+    100% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 1;
+    }
+}
+
+
+/* ======================================================
+    ESTILOS DO SIDEBAR (MENU LATERAL) - CORRIGIDOS
+====================================================== */
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 270px;
+    height: 100vh;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    /* CORREÇÃO: Mantenho a cor do sidebar original */
+    background: var(--color-bg-sidebar);
+    border-right: 1px solid var(--color-border-hr);
+    box-shadow: 0 3px 9px var(--color-shadow);
+    transition: width 0.4s ease;
+}
+
+.sidebar.collapsed {
+    width: 90px;
+}
+
+.sidebar .sidebar-header {
+    padding: 20px 18px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border-hr);
+}
+
+.sidebar-header .header-logo {
+    display: block;
+    object-fit: contain;
+    transition: opacity 0.4s ease;
+}
+
+.sidebar.collapsed .header-logo {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.site-nav .sidebar-toggle,
+.sidebar-header .sidebar-toggle {
+    height: 40px;
+    width: 40px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    right: 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+    transition: 0.4s ease;
+}
+
+.site-nav .sidebar-toggle:hover,
+.sidebar-header .sidebar-toggle:hover {
+    background: var(--color-hover-secondary);
+}
+
+.sidebar.collapsed .sidebar-header .sidebar-toggle {
+    transform: translateX(-2px);
+    height: 48px;
+    width: 50px;
+}
+
+.sidebar-header .sidebar-toggle span {
+    font-size: 1.75rem;
+    transition: transform 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-toggle span {
+    transform: rotate(180deg);
+}
+
+.sidebar .sidebar-content {
+    flex: 1;
+    padding: 20px 18px;
+    overflow: hidden auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-text-placeholder) transparent;
+}
+
+.sidebar.collapsed .sidebar-content {
+    scrollbar-width: none;
+}
+
+.sidebar-content .menu-list {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    flex-direction: column;
+}
+
+/* ======================================================
+    ESTILOS ESPECÍFICOS DO FAQ (ACORDEÃO NA SIDEBAR)
+====================================================== */
+
+.menu-list .menu-link.faq-toggle {
+    position: relative;
+    padding-right: 40px;
+    /* Espaço para a seta */
+}
+
+/* Estilo da seta (triângulo) */
+.menu-list .submenu-arrow {
+    position: absolute;
+    right: 15px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotação da seta quando o FAQ está aberto */
+.menu-item.open .submenu-arrow {
+    transform: rotate(180deg);
+}
+
+/* Oculta o submenu por padrão */
+.submenu-list {
+    list-style: none;
+    max-height: 0;
+    /* Começa fechado */
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding-left: 0;
+    /* Garante que a lista não tenha padding */
+    margin-top: 4px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    /* Fundo sutil para o submenu */
+}
+
+/* Estado aberto do submenu (max-height alto para a transição) */
+.menu-item.open .submenu-list {
+    max-height: 500px;
+    /* Valor alto o suficiente para caber o conteúdo */
+}
+
+/* Estilos dos itens do submenu (perguntas) */
+.submenu-list .submenu-link {
+    display: block;
+    padding: 8px 15px 8px 25px;
+    /* Recuo para sub-item */
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.submenu-list .submenu-link:hover {
+    background: var(--color-hover-primary);
+    filter: brightness(1.2);
+    /* Deixa a cor mais clara no hover */
+}
+
+/* Esconder o label quando o sidebar está colapsado */
+.sidebar.collapsed .menu-item .submenu-list {
+    display: none;
+    /* Não exibe o submenu no modo colapsado */
+}
+
+.menu-list .menu-link {
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+    border-radius: 8px;
+    padding: 12px 15px;
+    align-items: center;
+    text-decoration: none;
+    /* CORREÇÃO: Links usam a cor principal do texto (branco no light mode) */
+    color: var(--color-text-primary);
+    transition: 0.3s ease;
+}
+
+.menu-link .menu-label {
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .menu-link .menu-label {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-list .menu-link:is(:hover, .active) {
+    color: #fff;
+    background: var(--color-hover-primary);
+}
+
+.sidebar .sidebar-footer {
+    padding: 20px 18px;
+    white-space: nowrap;
+    border-top: 1px solid var(--color-border-hr);
+}
+
+.sidebar-footer .theme-toggle {
+    width: 100%;
+    min-height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    padding: 0 15px;
+    white-space: nowrap;
+    /* CORREÇÃO: Toggles usam a cor principal do texto */
+    color: var(--color-text-primary);
+    background: var(--color-bg-secondary);
+    transition: 0.3s ease;
+}
+
+.sidebar-footer .theme-toggle:hover {
+    background: var(--color-hover-secondary);
+}
+
+.theme-toggle .theme-label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.theme-toggle .theme-label .theme-text {
+    font-size: 1rem;
+    transition: opacity 0.4s 0.2s ease;
+}
+
+.sidebar.collapsed .theme-toggle :where(.theme-text, .theme-toggle-track) {
+    opacity: 0;
+    width: 0;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle .theme-toggle-track {
+    height: 24px;
+    width: 48px;
+    border-radius: 999px;
+    margin-left: auto;
+    background: #c3d1ec;
+    position: relative;
+    transition: opacity 0.4s 0.2s ease, background-color 0.3s ease;
+}
+
+body.dark-theme .theme-toggle-track {
+    background: #695CFE;
+}
+
+.theme-toggle-track .theme-toggle-indicator {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+body.dark-theme .theme-toggle-indicator {
+    transform: translateX(24px);
+}
+
+.site-nav {
+    top: 0;
+    display: none;
+    padding: 15px 20px;
+    position: sticky;
+    background: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border-hr);
+}
+
+.site-nav .sidebar-toggle {
+    position: unset;
+}
+
+/* ======================================================
+    RESPONSIVIDADE
+====================================================== */
+@media (max-width: 768px) {
+    /* Layout Mobile */
+
+    .container .main-content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .chat-container {
+        padding: 20px;
+    }
+
+    .initial-message {
+        width: 95%;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        opacity: 0;
+        pointer-events: none;
+        background: rgba(0, 0, 0, 0.6);
+        transition: 0.4s ease;
+    }
+
+    body:has(.sidebar:not(.collapsed))::before {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    body:has(.sidebar:not(.collapsed)) {
+        overflow: hidden;
+    }
+
+    .site-nav {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 20;
+        width: 270px;
+        transition: left 0.4s ease;
+    }
+
+    .sidebar.collapsed {
+        left: -270px;
+        width: 270px;
+    }
 }

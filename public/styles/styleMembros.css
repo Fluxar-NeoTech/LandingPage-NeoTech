@@ -1,5 +1,5 @@
 /* ======================================================
-   VARIÁVEIS CSS - ROOT
+    VARIÁVEIS CSS - ROOT
 ====================================================== */
 :root {
     --bg-1: #FBF7FF;
@@ -15,7 +15,7 @@
 }
 
 /* ======================================================
-   APLICAÇÃO GLOBAL
+    APLICAÇÃO GLOBAL
 ====================================================== */
 * {
     box-sizing: border-box;
@@ -40,7 +40,7 @@ body {
 }
 
 /* ======================================================
-     HEADER
+    HEADER
 ====================================================== */
 .header {
     width: 100%;
@@ -178,315 +178,906 @@ body {
     box-shadow: 0 2px 6px rgba(70, 0, 90, 0.25);
 }
 
-/* ======================================================
-     CONTEÚDO PRINCIPAL
-====================================================== */
-.main-content {
-    position: relative;
-    top: 50px;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 32px 32px 32px;
-    width: 100%;
-    min-height: calc(100vh - 70px);
-}
-
-/* ======================================================
-     SEÇÃO DE MEMBROS
-====================================================== */
-.members-section {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1400px;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-/* ======================================================
-     CARROSSEL CIRCULAR
-====================================================== */
-.carousel-container {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    order: 2;
-}
-
-.carousel-wrapper {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Estilos para as imagens do carrossel */
-.carousel-item {
+.fundoMembros1ANO {
     position: absolute;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    cursor: pointer;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 3px solid transparent;
-}
-
-.carousel-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Estado hover do carrossel */
-.carousel-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-    border-color: var(--purple-700);
-}
-
-/* Estado ativo do carrossel */
-.carousel-item.active {
-    width: 160px;
-    height: 160px;
-    z-index: 10;
-    border-color: var(--purple-800);
-    box-shadow: 0 8px 30px rgba(70, 0, 90, 0.4);
+    height: 450px;
+    top: 25.87rem;
 }
 
 /* ======================================================
-     ÁREA DE EXIBIÇÃO DA IMAGEM AMPLIADA
+    ESTILO PARA O NOVO CARROSSEL CENTRALIZADO
 ====================================================== */
-.member-display {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    order: 1;
-}
 
-.member-display-content {
-    width: 100%;
+.main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.member-image {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-}
-
-.member-info {
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.member-info h2 {
-    font-size: 2rem;
-    color: var(--purple-800);
-    margin: 0 0 15px 0;
-    font-weight: 700;
-}
-
-.member-info p {
-    font-size: 1rem;
-    color: var(--muted);
-    line-height: 1.6;
-    margin: 0;
-    text-align: justify;
+    padding-top: 100px;
+    /* Ajuste para descer o conteúdo abaixo do header fixo */
+    min-height: 100vh;
+    z-index: 1;
+    /* Para ficar acima do fundo roxo */
+    position: relative;
+    /* Adicione um padding bottom maior para compensar os blocos de texto */
+    padding-bottom: 50px;
 }
 
 /* ======================================================
-     RESPONSIVIDADE
+    CSS PARA O BLOCO DE CONTEXTO (DIV ANO) E SKILLS
+    (Adicione APENAS este bloco ao seu styleMembros.css)
 ====================================================== */
-@media (max-width: 1024px) {
-    .members-section {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .carousel-container {
-        order: 1;
-        max-width: 100%;
-    }
+/* --- AJUSTE ESSENCIAL DE LAYOUT DO CARROSSEL --- */
+/* Garante que os elementos absolutos fiquem posicionados corretamente */
+.carousel-display-area {
+    position: relative;
+    /* Manter todas as outras regras existentes (display: flex, max-width, etc.) */
+}
 
-    .member-display {
-        order: 2;
+
+/* --- 1. CONTEXTO (DIV ANO) - LADO ESQUERDO --- */
+
+/* WRAPPER Absoluto para o Contexto (Define a Posição Geral) */
+.context-absolute-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20%;
+    min-width: 140px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza verticalmente o conteúdo interno */
+}
+
+/* Lista Individual de Contexto (Os 15 Blocos Sobrepostos - Controlados pelo JS) */
+.context-info-list {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    /* Alinha o conteúdo à direita (próximo à imagem) */
+    transform: translateY(-50%);
+
+    /* Visibilidade e Transição */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
+
+/* Bloco 'div-ano' Ativo (Exibido) */
+.context-info-list.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Estilo do Título e Parágrafo dentro da div-ano */
+.div-ano p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--purple-800, #5a4bda);
+    /* Cor principal */
+}
+
+.div-ano p:first-child {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.div-ano p:last-child {
+    font-size: 0.95rem;
+    color: var(--muted-text-color, #777);
+    /* Cor mais suave para a função */
+}
+
+
+/* --- 2. SKILLS (TAGS) - LADO DIREITO --- */
+
+/* WRAPPER Absoluto para o Skills (Define a Posição Geral) */
+.skills-absolute-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 20%;
+    min-width: 140px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Lista Individual de Skills (Os 15 Blocos Sobrepostos - Controlados pelo JS) */
+.skills-list {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    /* Alinha o conteúdo à esquerda (próximo à imagem) */
+    transform: translateY(-50%);
+
+    /* Layout das Tags */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* Alinha as tags à esquerda */
+    gap: 8px;
+
+    /* Visibilidade e Transição */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    padding-left: 15px;
+}
+
+/* Bloco de Skills Ativo (Exibido) */
+.skills-list.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Estilo de Cada Tag de Skill */
+.skill-badge {
+    background-color: var(--purple-700, #5a4bda);
+    /* Cor de fundo da tag */
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+/* --- RESPONSIVIDADE PARA MOBILE/TELAS PEQUENAS (RECOMENDADO) --- */
+
+@media (max-width: 900px) {
+
+    /* Oculta ou reposiciona os blocos laterais em telas menores */
+    .context-absolute-wrapper,
+    .skills-absolute-wrapper {
+        position: static;
+        /* Volta para o fluxo normal */
+        transform: none;
         width: 100%;
+        height: auto;
+        margin-top: 15px;
     }
 
-    .carousel-wrapper {
-        width: 350px;
-        height: 350px;
+    .context-info-list,
+    .skills-list {
+        position: static;
+        transform: none;
+        opacity: 1 !important;
+        /* Força visibilidade */
+        pointer-events: auto;
+        padding-left: 0;
+        padding-right: 0;
     }
 
-    .carousel-item {
-        width: 100px;
-        height: 100px;
+    .context-info-list {
+        text-align: center;
+        /* Centraliza o texto no topo/fundo da imagem */
     }
 
-    .carousel-item.active {
-        width: 140px;
-        height: 140px;
+    .skills-list {
+        justify-content: center;
+        /* Centraliza as tags */
     }
 }
 
-@media (max-width: 768px) {
-    .main-content {
-        padding: 100px 16px 16px 16px;
-    }
+/* Área da Imagem e Setas (Círculo e Setas Verdes) */
+.carousel-display-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    /* Largura máxima para a área central */
+    margin-bottom: 5rem;
+}
 
-    .carousel-wrapper {
-        width: 300px;
-        height: 300px;
-    }
+/* Contêiner da Imagem (Círculo Azul) */
+/* Contêiner da Imagem (Círculo Azul do seu desenho, agora Gradiente) */
+.member-image-container {
+    /* Mantenha estas propriedades de dimensões e formato */
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-bottom: 80px;
 
-    .carousel-item {
-        width: 80px;
-        height: 80px;
-    }
+    /* REMOVEMOS:
+    border: 5px solid var(--purple-800); 
+    box-shadow: 0 0 0 10px rgba(122, 63, 242, 0.2); 
+    */
 
-    .carousel-item.active {
-        width: 120px;
-        height: 120px;
-    }
+    /* NOVO: Propriedades para Borda Gradiente */
+    padding: 5px;
+    /* Define a espessura da "borda" (5px) */
 
-    .member-image {
-        max-width: 300px;
-    }
+    /* Define o gradiente de fundo que será usado como a borda */
+    background: linear-gradient(135deg, #FE791A, #FF09A1) border-box;
 
-    .member-info h2 {
-        font-size: 1.5rem;
-    }
+    /* background-clip garante que o background (gradiente) só apareça na área do padding */
+    background-clip: padding-box;
 
-    .member-info p {
-        font-size: 0.9rem;
+    /* A imagem agora precisa ocupar o espaço interno sem ser afetada pelo padding */
+    position: relative;
+
+    overflow: hidden;
+    transition: transform 0.4s ease-out;
+}
+
+/* Garante que a imagem fique dentro do contêiner, respeitando o padding */
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Faz a imagem preencher o espaço interno após o padding de 5px */
+    border-radius: 50%;
+}
+
+/* Setas de Navegação (Verdes) */
+.arrow-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--purple-800);
+    /* Cor roxa (similar ao verde do seu desenho, mas usando a paleta) */
+    padding: 10px 20px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.arrow-btn:hover {
+    color: var(--purple-700);
+    transform: scale(1.1);
+}
+
+.arrow-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Área de Informação (Blocos Brancos) */
+.member-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 700px;
+    /* Largura máxima para os blocos de texto */
+    padding: 0 1.5rem;
+}
+
+/* Bloco H2 (Nome - Bloco branco menor) */
+.member-name-box {
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.member-name-box h2 {
+    color: var(--purple-800);
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+/* Bloco P (Descrição - Bloco branco maior) */
+.member-description-box {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.member-description-box p {
+    color: rgba(0, 0, 0, 0.804);
+    margin: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* ======================================================
+    VARIÁVEIS CSS - ROOT
+====================================================== */
+:root {
+    --bg-1: #FBF7FF;
+    --bg-2: #F5EEFF;
+    --white: #fff;
+    --purple-600: #7A3FF2;
+    --purple-700: #6F1FB9;
+    --purple-800: #47005B;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --accent: linear-gradient(90deg, var(--purple-800), var(--purple-700));
+    --glass: rgba(111, 27, 185, 0.06);
+    /* NOVO: Variável para texto suave em divs ano */
+    --muted-text-color: #777;
+}
+
+/* ======================================================
+    APLICAÇÃO GLOBAL
+====================================================== */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', system-ui, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ======================================================
+    HEADER
+====================================================== */
+.header {
+    width: 100%;
+    height: 70px;
+    background: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    border-bottom-left-radius: 1.3rem;
+    border-bottom-right-radius: 1.3rem;
+    top: 0;
+}
+
+.container-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+
+.logo img {
+    width: 10rem;
+    margin-left: 5rem;
+}
+
+/* Menu Hambúrguer - Mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 200;
+    position: relative;
+}
+
+.menu-toggle span {
+    background-color: var(--purple-800);
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Navegação */
+.nav-menu ul {
+    display: flex;
+    gap: 4rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    transition: color .3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--purple-800);
+    font-weight: 700;
+}
+
+/* Botões Header */
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-right: 3rem;
+}
+
+.btn-cadastrar {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: var(--purple-700);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
+}
+
+.btn-cadastrar:hover {
+    transform: translateY(-2px);
+}
+
+.btn-cadastrar:active {
+    transform: translateY(1px);
+}
+
+.btn-entrar {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 6px 28px;
+    border-radius: 12px;
+    background: transparent;
+    border: 2px solid var(--purple-800);
+    color: var(--purple-800);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(.22, .9, .27, 1);
+}
+
+.btn-entrar:hover {
+    background: var(--purple-800);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(70, 0, 90, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-entrar:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(70, 0, 90, 0.25);
+}
+
+.fundoMembros1ANO {
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    top: 25.87rem;
+}
+
+/* ======================================================
+    ESTILO PARA O CARROSSEL CENTRALIZADO
+====================================================== */
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    min-height: 100vh;
+    z-index: 1;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+/* --- AJUSTE ESSENCIAL DE LAYOUT DO CARROSSEL --- */
+.carousel-display-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 5rem;
+}
+
+/* Contêiner da Imagem (Borda Gradiente) */
+.member-image-container {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-bottom: 80px;
+
+    padding: 5px;
+    /* Espessura da "borda" */
+    background: linear-gradient(135deg, #FE791A, #FF09A1) border-box;
+    background-clip: padding-box;
+
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease-out;
+}
+
+/* Garante que a imagem fique dentro do contêiner */
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+/* Setas de Navegação */
+.arrow-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--purple-800);
+    padding: 10px 20px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.arrow-btn:hover {
+    color: var(--purple-700);
+    transform: scale(1.1);
+}
+
+.arrow-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* Área de Informação (Blocos de Texto Abaixo da Imagem) */
+.member-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 700px;
+    padding: 0 1.5rem;
+}
+
+.member-name-box {
+    padding: 1rem 2rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.member-name-box h2 {
+    color: var(--purple-800);
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.member-description-box {
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+.member-description-box p {
+    color: rgba(0, 0, 0, 0.804);
+    margin: 0;
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* ======================================================
+    1. CONTEXTO (DIV ANO) - LADO ESQUERDO
+====================================================== */
+
+.context-absolute-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20%;
+    min-width: 140px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.context-info-list {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.context-info-list.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.div-ano p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--purple-800);
+}
+
+.div-ano p:first-child {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.div-ano p:last-child {
+    font-size: 0.95rem;
+    color: var(--muted-text-color);
+}
+
+
+/* ======================================================
+    2. SKILLS (TAGS) - LADO DIREITO
+====================================================== */
+
+.skills-absolute-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 20%;
+    min-width: 140px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills-list {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    padding-left: 15px;
+}
+
+.skills-list.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.skill-badge {
+    background-color: var(--purple-700);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+
+/* ======================================================
+    RESPONSIVIDADE GERAL
+====================================================== */
+
+/* --- TELA GRANDE / DESKTOP (1200px+) --- */
+/* (Base já configurada) */
+
+
+/* --- TABLET GRANDE / DESKTOP PEQUENO (max-width: 1200px) --- */
+@media (max-width: 1200px) {
+    .logo img {
+        margin-left: 2rem;
     }
 
     .nav-menu ul {
-        gap: 2rem;
+        gap: 2.5rem;
     }
 
-    .nav-menu a {
-        font-size: 1rem;
-    }
-
-    .logo img {
-        width: 8rem;
-        margin-left: 2rem;
+    .buttons {
+        margin-right: 2rem;
     }
 }
 
-@media (max-width: 480px) {
-    .header {
-        height: 60px;
-    }
 
-    .main-content {
-        padding: 80px 12px 12px 12px;
-        min-height: calc(100vh - 60px);
-    }
+/* --- TABLET / TELA MÉDIA (max-width: 900px) --- */
+@media (max-width: 900px) {
 
-    .carousel-wrapper {
-        width: 250px;
-        height: 250px;
-    }
-
-    .carousel-item {
-        width: 70px;
-        height: 70px;
-    }
-
-    .carousel-item.active {
-        width: 100px;
-        height: 100px;
-    }
-
-    .member-image {
-        max-width: 250px;
-    }
-
-    .member-info h2 {
-        font-size: 1.2rem;
-    }
-
-    .member-info p {
-        font-size: 0.85rem;
-    }
-
+    /* --- HEADER --- */
     .menu-toggle {
         display: flex;
+        /* Mostra o menu hambúrguer */
+        margin-right: 1rem;
+    }
+
+    .logo img {
+        margin-left: 1rem;
     }
 
     .nav-menu {
+        /* Configura o menu lateral para mobile */
         position: fixed;
-        left: -100%;
-        top: 60px;
-        flex-direction: column;
-        background-color: var(--card-bg);
+        top: 70px;
+        left: 0;
         width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        height: 100vh;
+        background: var(--card-bg);
+        transform: translateX(100%);
+        /* Oculta */
+        transition: transform 0.4s ease-in-out;
+        z-index: 90;
+        overflow-y: auto;
     }
 
     .nav-menu.active {
-        left: 0;
+        transform: translateX(0);
+        /* Exibe */
     }
 
     .nav-menu ul {
         flex-direction: column;
-        gap: 1rem;
-        padding: 2rem 0;
+        align-items: center;
+        padding: 40px 0;
+        gap: 30px;
     }
 
+    .nav-menu a {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        display: none;
+        /* Oculta botões de login/cadastro em mobile */
+    }
+
+    /* --- CARROSSEL --- */
+    .carousel-display-area {
+        flex-direction: column;
+        /* Quebra em coluna */
+        margin-bottom: 2rem;
+    }
+
+    /* Reposiciona os blocos laterais para aparecerem acima e abaixo da imagem */
+    .context-absolute-wrapper,
+    .skills-absolute-wrapper {
+        position: static;
+        /* Volta para o fluxo normal */
+        transform: none;
+        width: 100%;
+        height: auto;
+        min-width: auto;
+        margin-top: 15px;
+        order: 1;
+        /* Posição após a imagem */
+    }
+
+    .member-image-container {
+        order: 0;
+        /* Coloca a imagem no topo */
+        width: 180px;
+        height: 180px;
+        margin-bottom: 30px;
+    }
+
+    .member-info-section {
+        order: 2;
+        /* Informações abaixo dos blocos laterais */
+    }
+
+    .arrow-btn {
+        position: absolute;
+        top: 180px;
+        /* Ajusta a posição vertical das setas em mobile */
+        /* Deixe o JS gerenciar a navegação, as setas podem ficar fixas ou escondidas */
+    }
+
+    /* Garante que os blocos laterais sejam visíveis e centrados em mobile */
+    .context-info-list,
+    .skills-list {
+        position: static;
+        transform: none;
+        opacity: 1 !important;
+        /* Força visibilidade */
+        pointer-events: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .context-info-list {
+        text-align: center;
+    }
+
+    .skills-list {
+        justify-content: center;
+    }
+
+    .fundoMembros1ANO {
+        /* Ajusta o fundo roxo */
+        height: 550px;
+        top: 15.87rem;
+    }
+
+    .member-name-box h2 {
+        font-size: 2rem;
+    }
+
+    .member-description-box p {
+        font-size: 1rem;
+    }
+}
+
+/* --- SMARTPHONE (max-width: 600px) --- */
+@media (max-width: 600px) {
+
+    /* Ajustes finos para telas menores */
     .logo img {
-        width: 6rem;
-        margin-left: 0;
+        width: 8rem;
     }
 
-    .container-header {
-        padding: 0 1rem;
+    .member-image-container {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+
+    .arrow-btn {
+        top: 150px;
+    }
+
+    .member-name-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .div-ano p {
+        font-size: 1rem;
+    }
+
+    .skill-badge {
+        font-size: 0.7rem;
+        padding: 4px 8px;
     }
 }

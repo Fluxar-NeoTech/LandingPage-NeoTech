@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Membros • Fluxar</title>
 
-    <!-- Fonte parecida com a do projeto -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles/styleMembros.css">
     <link rel="shortcut icon" href="/public/assets/icons/XFAVICOM 1.png" type="image/x-icon">
 </head>
 
 <body>
-    <!-- ======================================================
-        HEADER
-    ====================================================== -->
     <header class="header">
         <div class="container-header">
             <div class="logo reveal" data-reveal="down">
@@ -44,36 +40,345 @@
             </div>
         </div>
     </header>
-
-    <!-- ======================================================
-        CONTAINER PRINCIPAL
-    ====================================================== -->
+    <img class="fundoMembros1ANO" src="/public/assets/images/Membros.png" alt="">
     <main class="main-content">
-        <!-- Seção de Carrossel de Membros -->
-        <section class="members-section">
-            <!-- Carrossel Circular na Direita -->
-            <div class="carousel-container">
-                <div class="carousel-wrapper">
-                    <div class="carousel" id="carousel">
-                        <!-- As imagens serão inseridas aqui via JavaScript -->
+
+        <div class="carousel-display-area" style="position: relative;">
+
+            <button class="arrow-btn arrow-left">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-left">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="member-image-container">
+                <img id="memberImage" src="/public/assets/images/AnaGarcia--1.png" alt="Membro selecionado"
+                    class="member-image">
+            </div>
+
+            <button class="arrow-btn arrow-right">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-chevron-right">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <div id="contextWrapper" class="context-absolute-wrapper">
+
+                <div id="context-AnaGarcia" class="context-info-list active">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Front-end</p>
+                    </div>
+                </div>
+
+                <div id="context-AnnaBonfim" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Analista de Dados</p>
+                    </div>
+                </div>
+
+                <div id="context-Caio" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Full-Stack</p>
+                    </div>
+                </div>
+
+                <div id="context-Carlos" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Back-end</p>
+                    </div>
+                </div>
+
+                <div id="context-Diego" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Analista de Dados</p>
+                    </div>
+                </div>
+
+                <div id="context-Diogo" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Full-Stack</p>
+                    </div>
+                </div>
+
+                <div id="context-Eduarda" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Back-end</p>
+                    </div>
+                </div>
+
+                <div id="context-Giovana" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Analista de Dados</p>
+                    </div>
+                </div>
+
+                <div id="context-Guilherme" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Full-Stack</p>
+                    </div>
+                </div>
+
+                <div id="context-Gustavo" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Front-end</p>
+                    </div>
+                </div>
+
+                <div id="context-Heloisa" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Full-Stack</p>
+                    </div>
+                </div>
+
+                <div id="context-Leticia" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Analista de Dados</p>
+                    </div>
+                </div>
+
+                <div id="context-Lucas" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Desenvolvedor: Front-end & IA</p>
+                    </div>
+                </div>
+
+                <div id="context-Mayumi" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>Especialista em IA/ML</p>
+                    </div>
+                </div>
+
+                <div id="context-Natalia" class="context-info-list">
+                    <div class="div-ano">
+                        <p>Membro: 1 Ano</p>
+                        <p>DevOps & Back-end</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Área de Exibição da Imagem Ampliada -->
-            <div class="member-display">
-                <div class="member-display-content">
-                    <img id="memberImage" src="" alt="Membro selecionado" class="member-image">
-                    <div class="member-info">
-                        <h2 id="memberName"></h2>
-                        <p id="memberDescription"></p>
-                    </div>
+            <div id="skillsContainer" class="skills-absolute-wrapper">
+
+                <div id="skills-AnaGarcia" class="skills-list active">
+                    <div class="skill-badge">HTML5</div>
+                    <div class="skill-badge">CSS3</div>
+                    <div class="skill-badge">JavaScript</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">Java</div>
+                </div>
+
+                <div id="skills-AnnaBonfim" class="skills-list">
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">Java</div>
+                    <div class="skill-badge">UX/Figma</div>
+                    <div class="skill-badge">Modelagem Lóg.</div>
+                    <div class="skill-badge">Excel</div>
+                    <div class="skill-badge">Regex</div>
+                </div>
+
+                <div id="skills-Caio" class="skills-list">
+                    <div class="skill-badge">JavaScript</div>
+                    <div class="skill-badge">Mobile Dev</div>
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">React</div>
+                    <div class="skill-badge">Node.js</div>
+                    <div class="skill-badge">HTML/CSS</div>
+                </div>
+
+                <div id="skills-Carlos" class="skills-list">
+                    <div class="skill-badge">Java</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">Back-end</div>
+                    <div class="skill-badge">APIs REST</div>
+                    <div class="skill-badge">GIT</div>
+                </div>
+
+                <div id="skills-Diego" class="skills-list">
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">Java</div>
+                    <div class="skill-badge">Design UI</div>
+                    <div class="skill-badge">Visualização</div>
+                    <div class="skill-badge">Estatística</div>
+                    <div class="skill-badge">Figma</div>
+                </div>
+
+                <div id="skills-Diogo" class="skills-list">
+                    <div class="skill-badge">Front-end</div>
+                    <div class="skill-badge">Back-end</div>
+                    <div class="skill-badge">JavaScript</div>
+                    <div class="skill-badge">APIs</div>
+                    <div class="skill-badge">GIT</div>
+                    <div class="skill-badge">MySQL</div>
+                </div>
+
+                <div id="skills-Eduarda" class="skills-list">
+                    <div class="skill-badge">Back-end</div>
+                    <div class="skill-badge">Java</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">Debugging</div>
+                    <div class="skill-badge">Testes</div>
+                </div>
+
+                <div id="skills-Giovana" class="skills-list">
+                    <div class="skill-badge">Machine Learning</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">Back-end</div>
+                    <div class="skill-badge">IA</div>
+                    <div class="skill-badge">Banco de Dados</div>
+                </div>
+
+                <div id="skills-Guilherme" class="skills-list">
+                    <div class="skill-badge">Design UI/UX</div>
+                    <div class="skill-badge">Full-Stack</div>
+                    <div class="skill-badge">Mobile Dev</div>
+                    <div class="skill-badge">JavaScript</div>
+                    <div class="skill-badge">React Native</div>
+                    <div class="skill-badge">HTML/CSS</div>
+                </div>
+
+                <div id="skills-Gustavo" class="skills-list">
+                    <div class="skill-badge">HTML5</div>
+                    <div class="skill-badge">CSS3</div>
+                    <div class="skill-badge">JavaScript</div>
+                    <div class="skill-badge">Front-end</div>
+                    <div class="skill-badge">GIT</div>
+                    <div class="skill-badge">Figma</div>
+                </div>
+
+                <div id="skills-Heloisa" class="skills-list">
+                    <div class="skill-badge">Front-end</div>
+                    <div class="skill-badge">Back-end</div>
+                    <div class="skill-badge">JavaScript</div>
+                    <div class="skill-badge">Java</div>
+                    <div class="skill-badge">Node.js</div>
+                    <div class="skill-badge">SQL</div>
+                </div>
+
+                <div id="skills-Leticia" class="skills-list">
+                    <div class="skill-badge">Análise de Dados</div>
+                    <div class="skill-badge">SQL</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">Estatística</div>
+                    <div class="skill-badge">Power BI</div>
+                    <div class="skill-badge">Storytelling</div>
+                </div>
+
+                <div id="skills-Lucas" class="skills-list">
+                    <div class="skill-badge">HTML/CSS</div>
+                    <div class="skill-badge">JavaScript</div>
+                    <div class="skill-badge">IA</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">Excel</div>
+                    <div class="skill-badge">Machine Learning</div>
+                </div>
+
+                <div id="skills-Mayumi" class="skills-list">
+                    <div class="skill-badge">Machine Learning</div>
+                    <div class="skill-badge">Deep Learning</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">Data Science</div>
+                    <div class="skill-badge">UX/UI</div>
+                    <div class="skill-badge">TensorFlow</div>
+                </div>
+
+                <div id="skills-Natalia" class="skills-list">
+                    <div class="skill-badge">DevOps</div>
+                    <div class="skill-badge">Back-end</div>
+                    <div class="skill-badge">Docker</div>
+                    <div class="skill-badge">Kubernetes</div>
+                    <div class="skill-badge">APIs REST</div>
+                    <div class="skill-badge">Cloud AWS</div>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="member-info-section">
+
+            <div class="member-name-box">
+                <h2 id="memberName">Ana Garcia</h2>
+            </div>
+
+            <div class="member-description-box">
+                <p id="memberDescription">Meu nome é Ana Caroline Garcia, tenho 15 anos e já trabalhei com HTML,
+                    CSS,
+                    SQL, JavaScript, Java, Python, Excel e Shell Script. Gosto de desenhar, filosofia e música.
+                    Dedico-me ao que desperta minha afinidade, com destaque para o front-end, mas também atuo bem em
+                    desenvolvimento e banco de dados.</p>
+            </div>
+
+            <div id="membersData" style="display: none;">
+                <div data-name="Ana Garcia" data-image="/public/assets/images/AnaGarcia--1.png"
+                    data-desc="Meu nome é Ana Caroline Garcia, tenho 15 anos e já trabalhei com HTML, CSS, SQL, JavaScript, Java, Python, Excel e Shell Script. Gosto de desenhar, filosofia e música. Dedico-me ao que desperta minha afinidade, com destaque para o front-end, mas também atuo bem em desenvolvimento e banco de dados.">
+                </div>
+                <div data-name="Anna Bonfim" data-image="/public/assets/images/AnnaBonfim--1.png"
+                    data-desc="Meu nome é Anna Bonfim, tenho 16 anos, Trabalhei com SQL, Java, Regex, UX (figma) e Excel. Gosto de escutar kpop, assistir filmes de teror, fazer modelos conceituais e lógicos (como hobbie), gosto de ler e cozinhar doces">
+                </div>
+                <div data-name="Caio" data-image="/public/assets/images/Caio--1.png"
+                    data-desc="Sou Caio Marcos, tenho 16 anos e sou apaixonado por programação, atuando tanto em gestão de dados quanto no desenvolvimento de aplicações web e mobile. Sou speedcuber, resolvendo o cubo mágico com agilidade, e tenho como hobby pesquisar sobre ciência, aviões e foguetes.">
+                </div>
+                <div data-name="Carlos" data-image="/public/assets/images/Carlos--1.png"
+                    data-desc="Meu nome é Carlos, tenho 15 anos e gosto de trabalhar com Java, Python, HTML e SQL. No meu tempo livre, pratico academia, faço truques de mágica e gosto de assistir animes, atividades que me ajudam a equilibrar foco e criatividade.">
+                </div>
+                <div data-name="Diego" data-image="/public/assets/images/Diego--1.png"
+                    data-desc="Meu nome é Diego, tenho 16 anos e já trabalhei com Design, Java e SQL. Sou apaixonado por futebol, programação e por conhecer novas culturas e lugares, sempre buscando aprender algo diferente a cada experiência.">
+                </div>
+                <div data-name="Diogo" data-image="/public/assets/images/Diogo--2.png"
+                    data-desc="Meu nome é Diogo, tenho 17 anos e atuo com frontend e backend. Gosto de livros, séries e filmes, e no meu tempo livre costumo tocar instrumentos e aprender coisas novas, sempre buscando evoluir.">
+                </div>
+                <div data-name="Eduarda" data-image="/public/assets/images/Duda--2.png"
+                    data-desc="Oie! Eu sou a Duda, tenho 17 anos e atuei no desenvolvimento back-end do projeto. Adoro ouvir música, e meus hobbies favoritos são cozinhar e treinar, sempre buscando equilíbrio entre foco e diversão.">
+                </div>
+                <div data-name="Giovana" data-image="/public/assets/images/Giovana--2.png"
+                    data-desc="Oiiee! Sou a Giovanna, tenho 17 anos. Tive contato com experiências diversas, tanto na área de Dados com banco de dados, machine learning e Inteligência Artificial quanto com a área de back-end. Sou apaixonada por expressões da vida por meio da arte, principalmente na música e literatura.">
+                </div>
+                <div data-name="Guilherme" data-image="/public/assets/images/Guilherme--1.png"
+                    data-desc="Meu nome é Guilherme, tenho 15 anos e atuo com design e desenvolvimento full-stack de aplicativos. Sou apaixonado por futebol e outros esportes, além de gostar de explorar novos conhecimentos e lugares, sempre buscando evoluir em tudo o que faço.">
+                </div>
+                <div data-name="Gustavo" data-image="/public/assets/images/Gustavo--1.png"
+                    data-desc="Meu nome é Gustavo, tenho 16 anos e adoro trabalhar com HTML, CSS e JavaScript — enfim, sou um dev de coração. Curto ler manhwas, assistir animes e malhar, equilibrando mente e corpo no meu dia a dia.">
+                </div>
+                <div data-name="Heloisa" data-image="/public/assets/images/Heloisa--2.png"
+                    data-desc="Oi, gente! Eu sou a Heloisa, tenho 16 anos e gosto de trabalhar tanto com frontend quanto com backend. Sou apaixonada por séries e filmes, e adoro experimentar coisas novas, mesmo quando não domino de primeira.">
+                </div>
+                <div data-name="Leticia" data-image="/public/assets/images/Leticia--2.png"
+                    data-desc="Oiee, eu sou a Letícia, tenho 17 anos e amo a área de Análise de Dados. Explorar, descobrir coisas novas e conhecer novos mundos sempre foi meu objetivo. Além disso, no meu tempo livre, gosto de me dedicar à arte, desde desenhar até dançar, e também jogar vôlei.">
+                </div>
+                <div data-name="Lucas" data-image="/public/assets/images/Lucas--1.png"
+                    data-desc="Sou o Lucas, tenho 16 anos e gosto de ler Invencível. Já trabalhei com Desenvolvimento de Sistemas — usando HTML, CSS e JavaScript — além de Inteligência Artificial e Excel. Gosto de unir criatividade e lógica em tudo o que faço.">
+                </div>
+                <div data-name="Mayumi" data-image="/public/assets/images/Mayumi--2.png"
+                    data-desc="Oie gente! Eu sou a Mayumi, tenho 17 anos e trabalhei na parte de IA e machine learning do projeto. Amo dados e design, e acredito que o futuro nasce quando a criatividade e cálculos se combinam.">
+                </div>
+                <div data-name="Natalia" data-image="/public/assets/images/Natalia--2.png"
+                    data-desc="Sou a Natália, tenho 17 anos e trabalho principalmente com DevOps e back-end, além de contribuir com o design do projeto. No tempo livre, gosto de ler, assistir séries e escrever, o que me ajuda a exercitar a criatividade.">
                 </div>
             </div>
+
         </section>
     </main>
 
-    <!-- Script JavaScript -->
     <script src="/public/script/scriptMembros.js"></script>
 </body>
 
