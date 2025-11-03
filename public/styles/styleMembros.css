@@ -203,9 +203,7 @@ body {
     position: relative;
 }
 
-.corteEmCimaNeoTech {
-    display: none;
-}
+
 
 /* ======================================================
         ESTILO PARA O CARROSSEL CENTRALIZADO (CONSOLIDADO)
@@ -462,6 +460,8 @@ body {
     margin-top: 2.6rem;
     padding-top: 4rem;
     width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     /* Manter altura mínima para o visual de desktop */
     min-height: 1000px;
     background: linear-gradient(180deg, #650082, #CD23DF);
@@ -920,14 +920,6 @@ body {
     }
 
     /* =================== NEO TECH / TIMELINE (FLUIDEZ) =================== */
-    .corteEmCimaNeoTech {
-        display: block;
-        width: 100%;
-        height: 138px;
-        /* Posição ajustada */
-        top: 41.6rem;
-        position: absolute;
-    }
 
     .NeoTech {
         background: linear-gradient(180deg, #650082, #CD23DF);

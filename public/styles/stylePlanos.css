@@ -84,29 +84,49 @@ body {
 /* Menu Hambúrguer */
 .menu-toggle {
     display: none;
-    /* Escondido por padrão */
+    flex-direction: column;
+    justify-content: space-around;
+    /* Distribui os traços uniformemente */
+    gap: 5px;
+    width: 32px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 200;
+    position: relative;
 }
 
 .menu-toggle span {
-    /* Estilo do ícone */
+    /* CORREÇÃO CRÍTICA: Define a aparência dos traços */
+    background-color: var(--purple-800);
+    /* Cor dos traços */
+    height: 3px;
+    /* Espessura dos traços */
+    width: 100%;
+    /* Largura total */
+    border-radius: 3px;
+    transition: all 0.4s ease;
+    /* Transição suave para animação */
 }
 
+/* Animação do X */
 .menu-toggle.active span:nth-child(1) {
-    /* Efeito X */
+    transform: rotate(45deg) translateY(8px);
 }
 
 .menu-toggle.active span:nth-child(2) {
-    /* Efeito X */
+    opacity: 0;
 }
 
 .menu-toggle.active span:nth-child(3) {
-    /* Efeito X */
+    transform: rotate(-45deg) translateY(-8px);
 }
-.nav-menu{
+
+.nav-menu {
     height: 100%;
     display: flex;
     align-items: center;
 }
+
 /* Navegação */
 .nav-menu ul {
     height: 100%;
@@ -115,11 +135,13 @@ body {
     list-style: none;
     gap: 4rem;
 }
-.nav-menu ul li{
+
+.nav-menu ul li {
     height: 100%;
     display: flex;
     align-items: center;
 }
+
 .nav-menu a {
     display: flex;
     align-items: center;
@@ -186,6 +208,7 @@ body {
     color: var(--purple-800);
     font-weight: 700;
 }
+
 /* ======================================================
     SEÇÃO PRINCIPAL (PLANOS)
 ====================================================== */
@@ -552,53 +575,14 @@ body {
 
 /* --- TABLET PEQUENO / SMARTPHONE GRANDE (max-width: 768px) --- */
 @media (max-width: 768px) {
-    /* ... (Estilos de Header e Mobile Nav mantidos) ... */
-
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        width: 32px;
-        height: 26px;
-        cursor: pointer;
-        z-index: 200;
-        position: relative;
-    }
-
-    .nav-menu,
-    .buttons {
+    .nav-menu{
         display: none;
     }
-
-    .logo img {
-        margin-left: 1rem;
-        width: 8rem;
+    .buttons{
+        display: none;
     }
-
-    .nav-menu.active {
-        display: block;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: var(--card-bg);
-        transform: translateX(0) !important;
-        transition: transform 0.4s ease-in-out;
-        z-index: 101;
-        overflow-y: auto;
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 0;
-        gap: 30px;
-    }
-
-    .nav-menu a {
-        font-size: 1.5rem;
+    .logo img{
+        width: 90px;
     }
 
     /* --- PLANOS: Quebra para Coluna Única --- */
@@ -657,9 +641,11 @@ body {
         right: -15px;
         transition: transform 0.4s ease;
     }
+
     /* Ajustes finos para telas menores */
     .logo img {
-        width: 7rem;
+        width: 10rem;
+        margin-left: 10%;
     }
 
     .buttonsPlanos {
