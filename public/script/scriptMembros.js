@@ -90,3 +90,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // inicia com a primeira ativa
     activateItem('historia');
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Seletores dos Elementos do Header
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    // 2. Função de Alternância do Menu
+    const toggleMenu = () => {
+        // Alterna a classe 'active' no ícone (para a animação do X)
+        menuToggle.classList.toggle('active');
+        // Alterna a classe 'active' na navegação (para mostrar/esconder o menu lateral)
+        navMenu.classList.toggle('active');
+        
+        // Opcional: Bloqueia o scroll do corpo da página quando o menu estiver aberto
+        if (navMenu.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    };
+
+    // 3. Adicionar Listeners de Evento
+    
+    // A. Ao clicar no ícone Hambúrguer
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+
+    // B. Ao clicar em qualquer link de navegação (para fechar o menu)
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Verifica se o menu está aberto e fecha-o
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+});
