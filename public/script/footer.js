@@ -135,26 +135,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // =======================================================
   alert("Aperte F11 para melhor visualização!"); 
 
-  // O código do Menu Toggle e Nav Menu vem depois daqui...
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.querySelector('.nav-menu');
-  
-  // ABRE O MENU AUTOMATICAMENTE
-  menuToggle.classList.add('active');
-  navMenu.classList.add('active');
-
-  // MANTÉM O COMPORTAMENTO DE FECHAR AO CLICAR NO ÍCONE
-  menuToggle.addEventListener('click', () => {
-      menuToggle.classList.toggle('active');
-      navMenu.classList.toggle('active');
-  });
-
-  // OPCIONAL: Fecha o menu se o usuário clicar em um link
-  const navLinks = document.querySelectorAll('.nav-menu a');
-  navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          menuToggle.classList.remove('active');
-          navMenu.classList.remove('active');
-      });
-  });
 }); 
